@@ -1,0 +1,124 @@
+{
+  "python": "3.14.2",
+  "articulos_distintos": 9,
+  "fecha_revision": "2026-11-13",
+  "resultados": [
+    {
+      "alumno": "01",
+      "doi": "10.1038/s41467-022-29713-7",
+      "exit_code": 0,
+      "segundos": 0.69,
+      "comprobacion": {
+        "verificacion": "OK",
+        "metricas": {
+          "error_maximo_velocidad": 4.987514290455408e-10
+        }
+      }
+    },
+    {
+      "alumno": "02",
+      "doi": "10.3109/10717544.2014.887158",
+      "exit_code": 0,
+      "segundos": 0.78,
+      "comprobacion": {
+        "verificacion": "OK",
+        "metricas": {
+          "error_maximo_trabajo": 4.453658205560984e-07
+        }
+      }
+    },
+    {
+      "alumno": "03",
+      "doi": "10.1016/j.ces.2014.06.031",
+      "exit_code": 0,
+      "segundos": 0.63,
+      "comprobacion": {
+        "verificacion": "OK",
+        "metricas": {
+          "error_maximo_tiempo_parada": 2.2979150964275163e-06
+        }
+      }
+    },
+    {
+      "alumno": "04",
+      "doi": "10.1080/21645515.2015.1029211",
+      "exit_code": 0,
+      "segundos": 0.64,
+      "comprobacion": {
+        "verificacion": "OK",
+        "metricas": {
+          "error_limite_stokes": 3.0912827853057934e-11
+        }
+      }
+    },
+    {
+      "alumno": "05",
+      "doi": "10.1038/s41598-021-86549-9",
+      "exit_code": 0,
+      "segundos": 0.66,
+      "comprobacion": {
+        "verificacion": "OK",
+        "metricas": {
+          "sd_MC": 0.02849734356238508,
+          "sd_primer_orden": 0.028284271247461905,
+          "discrepancia_relativa": 0.007533243938264711
+        }
+      }
+    },
+    {
+      "alumno": "06",
+      "doi": "10.1038/s41467-025-60761-x",
+      "exit_code": 0,
+      "segundos": 0.65,
+      "comprobacion": {
+        "verificacion": "OK",
+        "metricas": {
+          "error_maximo_X": 1.1741774219586887e-11
+        }
+      }
+    },
+    {
+      "alumno": "07",
+      "doi": "10.1016/j.taml.2024.100567",
+      "exit_code": 0,
+      "segundos": 0.65,
+      "comprobacion": {
+        "verificacion": "OK",
+        "metricas": {
+          "error_maximo_velocidad": 2.1938006966593093e-13
+        }
+      }
+    },
+    {
+      "alumno": "08",
+      "doi": "10.1007/s11340-020-00639-9",
+      "exit_code": 0,
+      "segundos": 0.81,
+      "comprobacion": {
+        "verificacion": "OK",
+        "metricas": {
+          "factor_limite_viscoso": 1.0002097363049676,
+          "parada_fuerza_constante": 10.000000000000384
+        }
+      }
+    },
+    {
+      "alumno": "09",
+      "doi": "10.3923/jbs.2006.231.237",
+      "exit_code": 0,
+      "segundos": 0.69,
+      "comprobacion": {
+        "verificacion": "OK",
+        "metricas": {
+          "discrepancia_maximo_41_vs_81": 0.004323352297471163,
+          "Bi_verificado": 1.0
+        }
+      }
+    }
+  ],
+  "alcance": "Comprobaciones matemáticas y ejecución local; no validación biológica",
+  "dependencias": {
+    "numpy": "2.4.3",
+    "matplotlib": "3.10.8"
+  }
+}

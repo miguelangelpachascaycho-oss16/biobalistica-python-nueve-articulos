@@ -1,0 +1,276 @@
+[
+  {
+    "n": "01",
+    "tema": "Frenado viscoso de una nanopartícula",
+    "autor": "Fraire et al.",
+    "year": 2022,
+    "doi": "10.1038/s41467-022-29713-7",
+    "title": "Light triggered nanoscale biolistics for efficient intracellular delivery of functional macromolecules in mammalian cells",
+    "journal": "Nature Communications 13, 1996",
+    "url": "https://www.nature.com/articles/s41467-022-29713-7",
+    "lectura": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-022-29713-7/MediaObjects/41467_2022_29713_MOESM1_ESM.docx",
+    "ubicacion": "Suplemento: Theory and simulations, ecuaciones (4)-(9) y (11).",
+    "modelo": "m dv/dt = -6πηRv; τ = m/(6πηR); v = v0 exp(-t/τ); r = v0τ[1-exp(-t/τ)].",
+    "reduccion": "Se reproduce el submodelo analítico de movimiento en un medio uniforme. Se usan s=t/T, w=v/v0, z=r/(v0T), a=τ/T. No se calcula interacción con membrana.",
+    "parametro": "a",
+    "valores": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "xlabel": "Tiempo relativo s=t/T",
+    "ylabel": "Velocidad relativa w=v/v0",
+    "columnas": [
+      "s",
+      "w",
+      "z",
+      "w_analitica"
+    ],
+    "reto": "Cambiar a sin cambiar el resto del programa; comparar el error de Euler con pasos 0.04 y 0.02. Explicar por qué la distancia se aproxima a una asíntota.",
+    "defensa": "¿Dónde está la ecuación? ¿Qué diferencia hay entre τ, T y a? ¿Por qué z no es una profundidad experimental de transfección?",
+    "acceso": "Artículo abierto CC BY 4.0; el modelo está en su suplemento original."
+  },
+  {
+    "n": "02",
+    "tema": "Trabajo del gas y velocidad normalizada",
+    "autor": "Zhang, Rielly y Das",
+    "year": 2015,
+    "doi": "10.3109/10717544.2014.887158",
+    "title": "Microneedle-assisted microparticle delivery by gene guns: experiments and modeling on the effects of particle characteristics",
+    "journal": "Drug Delivery 22(3), 335-350; publicación en línea en 2014",
+    "url": "https://doi.org/10.3109/10717544.2014.887158",
+    "lectura": "https://repository.lboro.ac.uk/articles/journal_contribution/9243026",
+    "ubicacion": "Sección 2.4.1, Acceleration stage, ecuaciones (1)-(4) del manuscrito aceptado.",
+    "modelo": "P1 V1^γ = P2(V1+V2)^γ; E=∫P2 dV2; E=M u²/2.",
+    "reduccion": "Cambio de variables: s=V2/V1, Π=P2/P1, J=E/(P1V1), U=u/sqrt(2P1V1/M). Entonces Π=(1+s)^(-γ), J=∫Π ds y U=sqrt(J). Los valores de práctica no son ajustes del equipo.",
+    "parametro": "gamma",
+    "valores": [
+      1.2,
+      1.4,
+      1.6
+    ],
+    "xlabel": "Expansión relativa s=V2/V1",
+    "ylabel": "Trabajo relativo J=E/(P1 V1)",
+    "columnas": [
+      "s",
+      "J",
+      "U",
+      "J_analitica"
+    ],
+    "reto": "Repetir el cálculo con una malla más gruesa y explicar el error de integración. Añadir una gráfica de Π(s) sin mezclar presión, trabajo y velocidad en un mismo eje.",
+    "defensa": "¿Qué integra la función? ¿Por qué la velocidad tiene una raíz cuadrada? ¿Qué cambia cuando γ se aproxima a 1?",
+    "acceso": "Manuscrito aceptado de autores en Loughborough, CC BY-NC-ND 4.0. Enlace editorial separado."
+  },
+  {
+    "n": "03",
+    "tema": "Desaceleración y evento de parada",
+    "autor": "Zhang et al.",
+    "year": 2015,
+    "doi": "10.1016/j.ces.2014.06.031",
+    "title": "Microneedle assisted micro-particle delivery by gene guns: Mathematical model formulation and experimental verification",
+    "journal": "Chemical Engineering Science 125, 176-190",
+    "url": "https://doi.org/10.1016/j.ces.2014.06.031",
+    "lectura": "https://repository.lboro.ac.uk/articles/journal_contribution/9243128",
+    "ubicacion": "Sección 2.1.3.2: ecuaciones (15)-(18); sección 2.2 sobre programación y eventos.",
+    "modelo": "m dv/dt = -(a v + b v² + c), dx/dt=v, mientras v>0. Los coeficientes agrupan las tres fuerzas de las ecuaciones publicadas.",
+    "reduccion": "Una región 1D homogénea. Con s=t/T, w=v/Vref y z=x/(Vref T): dw/ds=-(A w+B w²+C), dz/ds=w; A=aT/m, B=bVrefT/m, C=cT/(mVref). B=0.2 y C=0.1 son docentes; se omiten las capas y huecos del modelo completo.",
+    "parametro": "A",
+    "valores": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "xlabel": "Tiempo relativo s",
+    "ylabel": "Velocidad relativa w",
+    "columnas": [
+      "s",
+      "w",
+      "z"
+    ],
+    "reto": "Explicar el evento que termina la integración y refinar el paso. Comparar el tiempo y la distancia de parada con una cuadratura independiente en el dominio de la velocidad.",
+    "defensa": "¿Por qué no basta integrar hasta un tiempo fijo? ¿Qué error cometerías si permitieras velocidades negativas después de la parada?",
+    "acceso": "Manuscrito aceptado de autores en Loughborough, CC BY-NC-ND 4.0."
+  },
+  {
+    "n": "04",
+    "tema": "Aceleración por arrastre a Reynolds intermedio",
+    "autor": "Pirmoradi et al.",
+    "year": 2015,
+    "doi": "10.1080/21645515.2015.1029211",
+    "title": "A microarray MEMS device for biolistic delivery of vaccine and drug powders",
+    "journal": "Human Vaccines & Immunotherapeutics 11(8), 1936-1944",
+    "url": "https://doi.org/10.1080/21645515.2015.1029211",
+    "lectura": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4635881/",
+    "ubicacion": "Device Operating Principle and Design, ecuación (1).",
+    "modelo": "m dv/dt=3πμd(u-v){1+[ρf d |u-v|/μ]^(2/3)/6}.",
+    "reduccion": "Flujo uniforme prescrito. s=t/τ, τ=m/(3πμd), w=v/u y Re0=ρfdu/μ: dw/ds=(1-w)[1+(Re0|1-w|)^(2/3)/6]. No se modelan los microcanales ni la presión del dispositivo.",
+    "parametro": "Re0",
+    "valores": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "xlabel": "Tiempo relativo s=t/τ",
+    "ylabel": "Velocidad relativa w=v/u",
+    "columnas": [
+      "s",
+      "w",
+      "z"
+    ],
+    "reto": "Añadir el caso Re0=0 y compararlo con w=1-exp(-s). Explicar por qué la velocidad se aproxima a la del fluido y no crece sin límite.",
+    "defensa": "¿Qué representa la velocidad relativa u-v? ¿Cuál es la diferencia con el frenado del alumno 01?",
+    "acceso": "Texto completo abierto, CC BY-NC 3.0; texto XML oficial alternativo en Europe PMC."
+  },
+  {
+    "n": "05",
+    "tema": "Simulación estadística de una razón y su incertidumbre",
+    "autor": "Miller et al.",
+    "year": 2021,
+    "doi": "10.1038/s41598-021-86549-9",
+    "title": "An improved biolistic delivery and analysis method for evaluation of DNA and CRISPR-Cas delivery efficacy in plant tissue",
+    "journal": "Scientific Reports 11, 7695",
+    "url": "https://www.nature.com/articles/s41598-021-86549-9",
+    "lectura": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8032657/",
+    "ubicacion": "Methods: Statistical analysis; fórmula Q=a/b y propagación de incertidumbre. Contexto de normalización: figura 2.",
+    "modelo": "Q=a/b; δQ/|Q|=sqrt[(δa/a)²+(δb/b)²], suponiendo incertidumbres independientes.",
+    "reduccion": "Se reproduce la propagación de incertidumbre. Para contrastarla por Monte Carlo se eligen variables lognormales positivas e independientes con medias 100 y coeficiente de variación CV. Esa distribución y los datos son docentes, no mediciones ni un supuesto atribuido a los autores.",
+    "parametro": "CV",
+    "valores": [
+      0.02,
+      0.05,
+      0.1
+    ],
+    "xlabel": "Repetición Monte Carlo",
+    "ylabel": "Razón Q=a/b",
+    "columnas": [
+      "repeticion",
+      "Q"
+    ],
+    "reto": "Comparar la desviación estándar simulada con sqrt(2)*CV. Cambiar la semilla y luego el número de repeticiones; explicar qué cambia. Identificar la independencia requerida por la fórmula.",
+    "defensa": "¿Qué simulas y qué ecuación procede del artículo? ¿Por qué un intervalo del 95 % no demuestra eficacia de transferencia?",
+    "acceso": "Texto completo abierto, CC BY 4.0. Es una simulación estadística de análisis, no de penetración."
+  },
+  {
+    "n": "06",
+    "tema": "Seguimiento lagrangiano de una partícula",
+    "autor": "Thorpe et al.",
+    "year": 2025,
+    "doi": "10.1038/s41467-025-60761-x",
+    "title": "Enhancing biolistic plant transformation and genome editing with a flow guiding barrel",
+    "journal": "Nature Communications 16, 5624",
+    "url": "https://www.nature.com/articles/s41467-025-60761-x",
+    "lectura": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12216195/",
+    "ubicacion": "Methods: COMSOL simulations; COMSOL simulation and particle tracking. Se identifica el seguimiento lagrangiano con arrastre de Stokes.",
+    "modelo": "m dv/dt=6πηR(uf-v); dx/dt=v, en forma vectorial.",
+    "reduccion": "Reducción 2D de la parte de seguimiento. Tiempo s=t/τ, uf=(1,α sin s), posiciones relativas a Urefτ. El campo de flujo es prescrito y docente. No se calcula el CFD compresible, la geometría ni los resultados biológicos del artículo.",
+    "parametro": "alpha",
+    "valores": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "xlabel": "Posición horizontal relativa X",
+    "ylabel": "Posición lateral relativa Y",
+    "columnas": [
+      "s",
+      "X",
+      "Y",
+      "vx",
+      "vy"
+    ],
+    "reto": "Añadir flechas de velocidad a la trayectoria y distinguir el campo de flujo del movimiento de la partícula. Explicar por qué prescribir un flujo no equivale a resolverlo.",
+    "defensa": "¿Qué contiene el vector estado? ¿Qué devuelve derivadas? ¿Qué parte de COMSOL reemplaza tu programa y cuál queda fuera?",
+    "acceso": "Texto completo abierto CC BY-NC-ND 4.0. Reproducción parcial de un submodelo físico."
+  },
+  {
+    "n": "07",
+    "tema": "Modelo analítico de Poncelet y parada",
+    "autor": "Shen et al.",
+    "year": 2025,
+    "doi": "10.1016/j.taml.2024.100567",
+    "title": "Investigation of dynamic behavior of human skin tissue under micro-particle impact in the context of transdermal drug delivery: numerical and analytical perspectives",
+    "journal": "Theoretical and Applied Mechanics Letters 15, 100567; disponible en línea en 2024",
+    "url": "https://doi.org/10.1016/j.taml.2024.100567",
+    "lectura": "https://pubs-en.cstam.org.cn/data/article/taml/preview/pdf/20250202.pdf",
+    "ubicacion": "Sección 2.1, Analytical model, ecuaciones (1) y (4)-(6).",
+    "modelo": "-M dV/dt=B V²+C; tf=M/sqrt(BC)*atan(v0 sqrt(B/C)).",
+    "reduccion": "Submodelo homogéneo con s=t sqrt(BC)/M, w=V sqrt(B/C), z=PB/M. Entonces w'=-(1+w²), z'=w; sf=atan(w0). No se reproduce el SPH-FEM ni las capas de piel del artículo.",
+    "parametro": "w0",
+    "valores": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "xlabel": "Tiempo relativo s",
+    "ylabel": "Velocidad relativa w",
+    "columnas": [
+      "s",
+      "w",
+      "z",
+      "w_analitica"
+    ],
+    "reto": "Comprobar la trayectoria numérica con las expresiones cerradas y verificar z_final=0.5*ln(1+w0²). Diferenciar verificar un cálculo y validar un tejido.",
+    "defensa": "¿Cómo obtienes el instante final? ¿Qué ocurre si continúas la tangente después de la parada? ¿Qué es verificación y qué es validación?",
+    "acceso": "Artículo completo abierto CC BY 4.0; PDF de la revista."
+  },
+  {
+    "n": "08",
+    "tema": "Arrastre de Clift-Gauvin en un gel",
+    "autor": "Veysset et al.",
+    "year": 2020,
+    "doi": "10.1007/s11340-020-00639-9",
+    "title": "High-Strain-Rate Behavior of a Viscoelastic Gel Under High-Velocity Microparticle Impact",
+    "journal": "Experimental Mechanics 60, 1179-1186",
+    "url": "https://link.springer.com/article/10.1007/s11340-020-00639-9",
+    "lectura": "https://www.researchgate.net/publication/343621209_High-Strain-Rate_Behavior_of_a_Viscoelastic_Gel_Under_High-Velocity_Microparticle_Impact",
+    "ubicacion": "Manuscrito aceptado de los autores, ecuaciones (1)-(2): modified Clift-Gauvin model.",
+    "modelo": "Cd=24/Re*(1+0.15 Re^0.687)+0.42/[1+42500 Re^(-1.16)]; F=0.5 Cd ρ A v²+A R.",
+    "reduccion": "Con Re=Re0*w, se resuelve w'=-[K Cd(Re0*w) w²+Y], z'=w, hasta w=0. K=0.02 e Y=0.1 son parámetros docentes adimensionales; no se ajusta viscosidad ni resistencia de un gel real.",
+    "parametro": "Re0",
+    "valores": [
+      5.0,
+      50.0,
+      500.0
+    ],
+    "xlabel": "Tiempo relativo s",
+    "ylabel": "Velocidad relativa w",
+    "columnas": [
+      "s",
+      "w",
+      "z"
+    ],
+    "reto": "Implementar la evaluación estable de Cd*w² cuando w tiende a cero. Añadir una comparación de Cd(Re) con Stokes a Reynolds pequeño y explicar qué término cambia con la velocidad.",
+    "defensa": "¿Por qué Cd no es constante? ¿Cómo evitas dividir por cero? ¿Qué evidencia faltaría para afirmar que tus parámetros representan un gel?",
+    "acceso": "La versión editorial requiere suscripción. Se localizó texto completo del manuscrito aceptado depositado por autores en ResearchGate; podría requerir cuenta. No se redistribuye ese PDF."
+  },
+  {
+    "n": "09",
+    "tema": "Transferencia térmica transitoria en dos capas",
+    "autor": "Liu",
+    "year": 2006,
+    "doi": "10.3923/jbs.2006.231.237",
+    "title": "Quantitative Evaluation of the Skin Heat Transfer Characteristics Subjected to a Transient High-speed Helium Gas Impingement",
+    "journal": "Journal of Biological Sciences 6(2), 231-237",
+    "url": "https://scialert.net/fulltext/index.php?doi=jbs.2006.231.237",
+    "lectura": "https://scialert.net/fulltext/index.php?doi=jbs.2006.231.237",
+    "ubicacion": "Results and Discussion: Skin heat transfer; modelo unidimensional de dos capas y figura 8.",
+    "modelo": "ρ c ∂T/∂t=∂(k ∂T/∂x)/∂x, con intercambio convectivo en la superficie.",
+    "reduccion": "Se explicita la ecuación de conducción estándar correspondiente al modelo 1D descrito en el texto; no tiene número de ecuación allí. Se usan coordenadas relativas, conductividad uniforme, capacidades relativas 1.3 y 1 en dos capas docentes y un pulso térmico de práctica. No se reproduce el flujo de gas calculado por los autores.",
+    "parametro": "Bi",
+    "valores": [
+      0.2,
+      0.5,
+      1.0
+    ],
+    "xlabel": "Tiempo relativo s",
+    "ylabel": "Temperatura superficial relativa θ",
+    "columnas": [
+      "s",
+      "theta_superficie",
+      "theta_interior"
+    ],
+    "reto": "Duplicar el número de nodos y comparar el máximo superficial. Explicar el paso de estabilidad y la condición convectiva. Probar una entrada térmica nula.",
+    "defensa": "¿Qué guarda el arreglo de temperaturas? ¿Por qué no puedes elegir cualquier paso temporal? ¿Qué datos has supuesto en la frontera?",
+    "acceso": "Texto completo accesible en la revista. No se copia ni se redistribuye el artículo."
+  }
+]
