@@ -1,170 +1,741 @@
 {
   "python": "3.14.2",
-  "articulos_distintos": 9,
+  "dependencias": {
+    "numpy": "2.4.3",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.8",
+    "Pillow": "12.1.1"
+  },
   "fecha_revision": "2026-11-13",
+  "articulos_distintos": 9,
+  "escenarios": 27,
+  "perfil_blanco": "Blanco plano en reposo; w(0)=q, perfil continuo y decae lejos del contacto",
   "resultados": [
     {
       "alumno": "01",
-      "doi": "10.1038/s41467-022-29713-7",
+      "doi": "10.3390/lubricants12060193",
       "exit_code": 0,
-      "segundos": 0.77,
+      "segundos": 1.45,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
-          "error_maximo_velocidad": 4.987514290455408e-10
+          "error_q_referencia": 6.457289443151382e-07,
+          "diferencia_refinamiento": 5.345326881123214e-07
+        }
+      },
+      "escenarios": {
+        "A": {
+          "indentacion_maxima_L": 1.3412307421039504,
+          "indentacion_maxima_sobre_R": 0.04470769140346501,
+          "fuerza_maxima": 0.931979799645023,
+          "tiempo_contacto": 3.9476112125717573,
+          "restitucion": 0.9999999998981108,
+          "indentacion_al_separar_L": 0.0,
+          "energia_disipada": 0.0,
+          "energia_elastica_al_separar": 0.0,
+          "error_balance_energia": 2.6703156352780866e-10,
+          "error_q_referencia": 6.457289443151382e-07,
+          "referencia": {
+            "qmax": 1.3412307599997093,
+            "restitucion": 1.0,
+            "tiempo_contacto": 3.9476112123639497,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
+        },
+        "B": {
+          "indentacion_maxima_L": 1.0933615387294153,
+          "indentacion_maxima_sobre_R": 0.03644538462431384,
+          "fuerza_maxima": 1.1432617903572426,
+          "tiempo_contacto": 3.2180654600072685,
+          "restitucion": 0.9999999998728787,
+          "indentacion_al_separar_L": 2.649397086267047e-15,
+          "energia_disipada": 0.0,
+          "energia_elastica_al_separar": 1.4451989162143428e-37,
+          "error_balance_energia": 4.450362300900679e-10,
+          "error_q_referencia": 5.264877809274537e-07,
+          "referencia": {
+            "qmax": 1.0933620739432781,
+            "restitucion": 1.0,
+            "tiempo_contacto": 3.2180654597220766,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
+        },
+        "C": {
+          "indentacion_maxima_L": 0.8642810678416553,
+          "indentacion_maxima_sobre_R": 0.028809368928055176,
+          "fuerza_maxima": 1.4462887394233368,
+          "tiempo_contacto": 2.543817039112964,
+          "restitucion": 0.9999999998426112,
+          "indentacion_al_separar_L": 0.0,
+          "energia_disipada": 0.0,
+          "energia_elastica_al_separar": 0.0,
+          "error_balance_energia": 8.010268559566214e-10,
+          "error_q_referencia": 4.1549670659613014e-07,
+          "referencia": {
+            "qmax": 0.8642810744472067,
+            "restitucion": 1.0,
+            "tiempo_contacto": 2.5438170387043653,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
         }
       }
     },
     {
       "alumno": "02",
-      "doi": "10.3109/10717544.2014.887158",
+      "doi": "10.1115/1.3423596",
       "exit_code": 0,
-      "segundos": 0.73,
+      "segundos": 1.65,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
-          "error_profundidad": 1.9241571691530623e-07
+          "error_q_referencia": 5.134146749963264e-07,
+          "diferencia_refinamiento": 2.838745233324502e-07
+        }
+      },
+      "escenarios": {
+        "A": {
+          "indentacion_maxima_L": 1.0657084639702725,
+          "indentacion_maxima_sobre_R": 0.03552361546567575,
+          "fuerza_maxima": 1.1044477836789646,
+          "tiempo_contacto": 3.2401478127743535,
+          "restitucion": 0.9374755797153907,
+          "indentacion_al_separar_L": 2.888585638044505e-16,
+          "energia_disipada": 0.060569768476073385,
+          "energia_elastica_al_separar": 5.672481790039773e-40,
+          "error_balance_energia": 4.450335655548088e-10,
+          "error_q_referencia": 5.134146749963264e-07,
+          "referencia": {
+            "qmax": 1.065708624609575,
+            "restitucion": 0.9374755799499276,
+            "tiempo_contacto": 3.2401478124695675,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
+        },
+        "B": {
+          "indentacion_maxima_L": 0.9970416548423714,
+          "indentacion_maxima_sobre_R": 0.033234721828079045,
+          "fuerza_maxima": 1.0458893454993914,
+          "tiempo_contacto": 3.3125170131761976,
+          "restitucion": 0.7885391255764775,
+          "indentacion_al_separar_L": 6.125200173456857e-16,
+          "energia_disipada": 0.1891030233368407,
+          "energia_elastica_al_separar": 3.714160839719539e-39,
+          "error_balance_energia": 4.4502301843607484e-10,
+          "error_q_referencia": 4.876472713410962e-07,
+          "referencia": {
+            "qmax": 0.9970419618617463,
+            "restitucion": 0.7885391259070653,
+            "tiempo_contacto": 3.3125170128283763,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
+        },
+        "C": {
+          "indentacion_maxima_L": 0.9277114494544171,
+          "indentacion_maxima_sobre_R": 0.030923714981813902,
+          "fuerza_maxima": 1.033299799729072,
+          "tiempo_contacto": 3.4191661299507774,
+          "restitucion": 0.6479674246404311,
+          "indentacion_al_separar_L": 0.0,
+          "energia_disipada": 0.29006910790939217,
+          "energia_elastica_al_separar": 0.0,
+          "error_balance_energia": 4.4501041740474534e-10,
+          "error_q_referencia": 4.682201595329616e-07,
+          "referencia": {
+            "qmax": 0.9277118032590342,
+            "restitucion": 0.6479674249327242,
+            "tiempo_contacto": 3.4191661295823206,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
         }
       }
     },
     {
       "alumno": "03",
-      "doi": "10.1016/j.ces.2014.06.031",
+      "doi": "10.1115/1.2912617",
       "exit_code": 0,
-      "segundos": 0.7,
+      "segundos": 1.65,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
-          "error_maximo_tiempo_parada": 2.2979150964275163e-06
+          "error_q_referencia": 5.166881271723156e-07,
+          "diferencia_refinamiento": 3.4604985543751354e-10
+        }
+      },
+      "escenarios": {
+        "A": {
+          "indentacion_maxima_L": 1.072858428600685,
+          "indentacion_maxima_sobre_R": 0.035761947620022834,
+          "fuerza_maxima": 1.1136112782991234,
+          "tiempo_contacto": 3.2340949290566496,
+          "restitucion": 0.9535060449538251,
+          "indentacion_al_separar_L": 0.0,
+          "energia_disipada": 0.04541311092526279,
+          "energia_elastica_al_separar": 0.0,
+          "error_balance_energia": 4.45034342710926e-10,
+          "error_q_referencia": 5.166881271723156e-07,
+          "referencia": {
+            "qmax": 1.072858871398132,
+            "restitucion": 0.9535060451421343,
+            "tiempo_contacto": 3.234094928756824,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
+        },
+        "B": {
+          "indentacion_maxima_L": 1.038781106886682,
+          "indentacion_maxima_sobre_R": 0.03462603689622273,
+          "fuerza_maxima": 1.075290562065561,
+          "tiempo_contacto": 3.2652824932237383,
+          "restitucion": 0.8779748397031125,
+          "indentacion_al_separar_L": 1.46150452851046e-15,
+          "energia_disipada": 0.11458009010745478,
+          "energia_elastica_al_separar": 3.266332594777456e-38,
+          "error_balance_energia": 4.4502923568501274e-10,
+          "error_q_referencia": 5.027172194083107e-07,
+          "referencia": {
+            "qmax": 1.0387812337258502,
+            "restitucion": 0.8779748399979488,
+            "tiempo_contacto": 3.2652824929007873,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
+        },
+        "C": {
+          "indentacion_maxima_L": 1.011879322737324,
+          "indentacion_maxima_sobre_R": 0.033729310757910795,
+          "fuerza_maxima": 1.0542558994660323,
+          "tiempo_contacto": 3.2944691335710603,
+          "restitucion": 0.8199338011376087,
+          "indentacion_al_separar_L": 2.0907754694210468e-15,
+          "energia_disipada": 0.16385428050557213,
+          "energia_elastica_al_separar": 7.995184336732342e-38,
+          "error_balance_energia": 4.4502479479291424e-10,
+          "error_q_referencia": 4.922720084898913e-07,
+          "referencia": {
+            "qmax": 1.0118793547610534,
+            "restitucion": 0.8199338014679161,
+            "tiempo_contacto": 3.294469133231347,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
         }
       }
     },
     {
       "alumno": "04",
-      "doi": "10.1080/21645515.2015.1029211",
+      "doi": "10.1007/s11044-010-9237-4",
       "exit_code": 0,
-      "segundos": 0.71,
+      "segundos": 1.65,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
-          "error_limite_stokes": 3.0912827853057934e-11
+          "error_q_referencia": 5.050499696235278e-07,
+          "diferencia_refinamiento": 3.822904215411427e-10
+        }
+      },
+      "escenarios": {
+        "A": {
+          "indentacion_maxima_L": 1.046058984547084,
+          "indentacion_maxima_sobre_R": 0.034868632818236135,
+          "fuerza_maxima": 1.0823498811336996,
+          "tiempo_contacto": 3.2581083331930323,
+          "restitucion": 0.8939206924371138,
+          "indentacion_al_separar_L": 0.0,
+          "energia_disipada": 0.10045289757593345,
+          "energia_elastica_al_separar": 0.0,
+          "error_balance_energia": 4.450305679526423e-10,
+          "error_q_referencia": 5.050499696235278e-07,
+          "referencia": {
+            "qmax": 1.04605950943455,
+            "restitucion": 0.8939206926633778,
+            "tiempo_contacto": 3.2581083328747162,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
+        },
+        "B": {
+          "indentacion_maxima_L": 0.9716678802140979,
+          "indentacion_maxima_sobre_R": 0.03238892934046993,
+          "fuerza_maxima": 1.0364869678218744,
+          "tiempo_contacto": 3.3469810237256774,
+          "restitucion": 0.7358974920968085,
+          "indentacion_al_separar_L": 0.0,
+          "energia_disipada": 0.22922744017557112,
+          "energia_elastica_al_separar": 0.0,
+          "error_balance_energia": 4.450185220328251e-10,
+          "error_q_referencia": 4.79679435061442e-07,
+          "referencia": {
+            "qmax": 0.9716679599398719,
+            "restitucion": 0.7358974924165987,
+            "tiempo_contacto": 3.3469810233662116,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
+        },
+        "C": {
+          "indentacion_maxima_L": 0.8906703638630769,
+          "indentacion_maxima_sobre_R": 0.02968901212876923,
+          "fuerza_maxima": 1.0418541452339334,
+          "tiempo_contacto": 3.4949155700376435,
+          "restitucion": 0.577276018606546,
+          "indentacion_al_separar_L": 1.467033959590136e-15,
+          "energia_disipada": 0.33337619875593,
+          "energia_elastica_al_separar": 3.297314780531467e-38,
+          "error_balance_energia": 4.450032009550853e-10,
+          "error_q_referencia": 4.600224242645723e-07,
+          "referencia": {
+            "qmax": 0.8906703646073806,
+            "restitucion": 0.5772760188829585,
+            "tiempo_contacto": 3.4949155696802716,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
         }
       }
     },
     {
       "alumno": "05",
-      "doi": "10.1016/j.jmbbm.2018.06.016",
+      "doi": "10.1016/j.mechmachtheory.2019.03.028",
       "exit_code": 0,
-      "segundos": 0.82,
+      "segundos": 1.67,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
-          "error_profundidad": 1.198146876157935e-07
+          "error_q_referencia": 5.130340907655295e-07,
+          "diferencia_refinamiento": 2.9963449621472904e-07
+        }
+      },
+      "escenarios": {
+        "A": {
+          "indentacion_maxima_L": 1.0647098810744455,
+          "indentacion_maxima_sobre_R": 0.035490329369148185,
+          "fuerza_maxima": 1.1029180318263774,
+          "tiempo_contacto": 3.2387979690772695,
+          "restitucion": 0.9374755796074516,
+          "indentacion_al_separar_L": 0.0,
+          "energia_disipada": 0.06056976846726358,
+          "energia_elastica_al_separar": 0.0,
+          "error_balance_energia": 4.450322332871792e-10,
+          "error_q_referencia": 5.130340907655295e-07,
+          "referencia": {
+            "qmax": 1.06470988718403,
+            "restitucion": 0.9374755799499277,
+            "tiempo_contacto": 3.238797968770173,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
+        },
+        "B": {
+          "indentacion_maxima_L": 0.9845200289740951,
+          "indentacion_maxima_sobre_R": 0.032817334299136504,
+          "fuerza_maxima": 1.0296967055721264,
+          "tiempo_contacto": 3.2939766428356605,
+          "restitucion": 0.788539125716731,
+          "indentacion_al_separar_L": 0.0,
+          "energia_disipada": 0.1891030234012998,
+          "energia_elastica_al_separar": 0.0,
+          "error_balance_energia": 4.450199098116059e-10,
+          "error_q_referencia": 4.821366973439822e-07,
+          "referencia": {
+            "qmax": 0.9845203470004004,
+            "restitucion": 0.7885391259070754,
+            "tiempo_contacto": 3.2939766424448456,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
+        },
+        "C": {
+          "indentacion_maxima_L": 0.8898284982523113,
+          "indentacion_maxima_sobre_R": 0.02966094994174371,
+          "fuerza_maxima": 0.9988523188653531,
+          "tiempo_contacto": 3.356539147214645,
+          "restitucion": 0.6479674245592586,
+          "indentacion_al_separar_L": 1.9354635082124982e-15,
+          "energia_disipada": 0.29006910794891877,
+          "energia_elastica_al_separar": 6.592079858130821e-38,
+          "error_balance_energia": 4.449978718845671e-10,
+          "error_q_referencia": 4.5293158035253356e-07,
+          "referencia": {
+            "qmax": 0.8898285059488011,
+            "restitucion": 0.6479674249327242,
+            "tiempo_contacto": 3.3565391466665075,
+            "tipo_referencia": "Primera integral exacta; tiempo por cuadratura (semianalítica)"
+          }
         }
       }
     },
     {
       "alumno": "06",
-      "doi": "10.1038/s41467-025-60761-x",
+      "doi": "10.1103/PhysRevE.53.5382",
       "exit_code": 0,
-      "segundos": 0.71,
+      "segundos": 1.47,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
-          "error_maximo_X": 1.1741774219586887e-11
+          "error_q_referencia": 1.558891501829418e-06,
+          "diferencia_refinamiento": 1.6274691416739984e-07
+        }
+      },
+      "escenarios": {
+        "A": {
+          "indentacion_maxima_L": 1.0784794661812507,
+          "indentacion_maxima_sobre_R": 0.03594931553937502,
+          "fuerza_maxima": 1.1203484497971963,
+          "tiempo_contacto": 3.199389431409469,
+          "restitucion": 0.9661406822128806,
+          "indentacion_al_separar_L": 0.028984220466387198,
+          "energia_disipada": 0.03322888168196943,
+          "energia_elastica_al_separar": 5.720895995903992e-05,
+          "error_balance_energia": 4.45007697358335e-10,
+          "error_q_referencia": 6.548308285891924e-08,
+          "referencia": {
+            "tipo_referencia": "Serie temporal de tiempo corto, s<=0.12; no exacta",
+            "limite_serie": 0.12,
+            "limite_elastico_sin_disipacion": {
+              "qmax": 1.0933620739432781,
+              "restitucion": 1.0,
+              "tiempo_contacto": 3.2180654597220766
+            }
+          }
+        },
+        "B": {
+          "indentacion_maxima_L": 1.0366441473392765,
+          "indentacion_maxima_sobre_R": 0.03455480491130922,
+          "fuerza_maxima": 1.060633306735224,
+          "tiempo_contacto": 3.1455791896436374,
+          "restitucion": 0.8733301128717282,
+          "indentacion_al_separar_L": 0.10479961354460521,
+          "energia_disipada": 0.11722506137792285,
+          "energia_elastica_al_separar": 0.0014221951531606474,
+          "error_balance_energia": 4.4471420990177535e-10,
+          "error_q_referencia": 3.550406634938996e-07,
+          "referencia": {
+            "tipo_referencia": "Serie temporal de tiempo corto, s<=0.12; no exacta",
+            "limite_serie": 0.12,
+            "limite_elastico_sin_disipacion": {
+              "qmax": 1.0933620739432781,
+              "restitucion": 1.0,
+              "tiempo_contacto": 3.2180654597220766
+            }
+          }
+        },
+        "C": {
+          "indentacion_maxima_L": 0.9637122307405763,
+          "indentacion_maxima_sobre_R": 0.032123741024685876,
+          "fuerza_maxima": 0.9741940812735227,
+          "tiempo_contacto": 3.0472148628126514,
+          "restitucion": 0.7220859617079591,
+          "indentacion_al_separar_L": 0.21662578851238665,
+          "energia_disipada": 0.23055947372462482,
+          "energia_elastica_al_separar": 0.008736457784446252,
+          "error_balance_energia": 4.4318848591018423e-10,
+          "error_q_referencia": 1.558891501829418e-06,
+          "referencia": {
+            "tipo_referencia": "Serie temporal de tiempo corto, s<=0.12; no exacta",
+            "limite_serie": 0.12,
+            "limite_elastico_sin_disipacion": {
+              "qmax": 1.0933620739432781,
+              "restitucion": 1.0,
+              "tiempo_contacto": 3.2180654597220766
+            }
+          }
         }
       }
     },
     {
       "alumno": "07",
-      "doi": "10.1016/j.taml.2024.100567",
+      "doi": "10.1103/PhysRevE.60.4465",
       "exit_code": 0,
-      "segundos": 0.7,
+      "segundos": 1.74,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
-          "error_maximo_velocidad": 2.1938006966593093e-13
+          "error_q_referencia": 1.1179073219902413e-07,
+          "diferencia_refinamiento": 3.5459605696175345e-08
+        }
+      },
+      "escenarios": {
+        "A": {
+          "indentacion_maxima_L": 1.0883457645473196,
+          "indentacion_maxima_sobre_R": 0.03627819215157732,
+          "fuerza_maxima": 1.1354430808511784,
+          "tiempo_contacto": 3.211798283913983,
+          "restitucion": 0.9885474645278562,
+          "indentacion_al_separar_L": 0.00988547464527679,
+          "energia_disipada": 0.011383068288088315,
+          "energia_elastica_al_separar": 3.88645646919378e-06,
+          "error_balance_energia": 4.450305679526423e-10,
+          "error_q_referencia": 2.949371791238775e-08,
+          "referencia": {
+            "tipo_referencia": "Serie temporal de tiempo corto, s<=0.12; no exacta",
+            "limite_serie": 0.12,
+            "limite_elastico_sin_disipacion": {
+              "qmax": 1.0933620739432781,
+              "restitucion": 1.0,
+              "tiempo_contacto": 3.2180654597220766
+            },
+            "e_serie_orden1": 0.9884656,
+            "e_serie_orden2": 0.9885454260000001,
+            "e_criterio_antiguo_q0": 0.9885448654339711,
+            "advertencia_criterio": "q=0 puede incluir fuerza atractiva; no se anima ese tramo"
+          }
+        },
+        "B": {
+          "indentacion_maxima_L": 1.0809256614549168,
+          "indentacion_maxima_sobre_R": 0.03603085538183056,
+          "fuerza_maxima": 1.1240551588671321,
+          "tiempo_contacto": 3.2024760000603383,
+          "restitucion": 0.971679961318206,
+          "indentacion_al_separar_L": 0.024291999032958235,
+          "energia_disipada": 0.027882236929363036,
+          "energia_elastica_al_separar": 3.678901238878759e-05,
+          "error_balance_energia": 4.4501502483029753e-10,
+          "error_q_referencia": 5.551817680582438e-08,
+          "referencia": {
+            "tipo_referencia": "Serie temporal de tiempo corto, s<=0.12; no exacta",
+            "limite_serie": 0.12,
+            "limite_elastico_sin_disipacion": {
+              "qmax": 1.0933620739432781,
+              "restitucion": 1.0,
+              "tiempo_contacto": 3.2180654597220766
+            },
+            "e_serie_orden1": 0.971164,
+            "e_serie_orden2": 0.9716629125,
+            "e_criterio_antiguo_q0": 0.9716547601716814,
+            "advertencia_criterio": "q=0 puede incluir fuerza atractiva; no se anima ese tramo"
+          }
+        },
+        "C": {
+          "indentacion_maxima_L": 1.0688284068217364,
+          "indentacion_maxima_sobre_R": 0.035627613560724546,
+          "fuerza_maxima": 1.1059521720202403,
+          "tiempo_contacto": 3.187146829439296,
+          "restitucion": 0.9443968986145218,
+          "indentacion_al_separar_L": 0.04721984493072887,
+          "energia_disipada": 0.053863440640375036,
+          "energia_elastica_al_separar": 0.00019380785843382543,
+          "error_balance_energia": 4.449691171082293e-10,
+          "error_q_referencia": 1.1179073219902413e-07,
+          "referencia": {
+            "tipo_referencia": "Serie temporal de tiempo corto, s<=0.12; no exacta",
+            "limite_serie": 0.12,
+            "limite_elastico_sin_disipacion": {
+              "qmax": 1.0933620739432781,
+              "restitucion": 1.0,
+              "tiempo_contacto": 3.2180654597220766
+            },
+            "e_serie_orden1": 0.942328,
+            "e_serie_orden2": 0.9443236500000001,
+            "e_criterio_antiguo_q0": 0.9442601444443416,
+            "advertencia_criterio": "q=0 puede incluir fuerza atractiva; no se anima ese tramo"
+          }
         }
       }
     },
     {
       "alumno": "08",
-      "doi": "10.1007/s11340-020-00639-9",
+      "doi": "10.1103/PhysRevE.78.051304",
       "exit_code": 0,
-      "segundos": 0.84,
+      "segundos": 1.7,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
-          "factor_limite_viscoso": 1.0002097363049676,
-          "parada_fuerza_constante": 10.000000000000384
+          "error_q_referencia": 3.8691892057934885e-06,
+          "diferencia_refinamiento": 5.090733667945102e-08
+        }
+      },
+      "escenarios": {
+        "A": {
+          "indentacion_maxima_L": 1.045596709183751,
+          "indentacion_maxima_sobre_R": 0.03485322363945837,
+          "fuerza_maxima": 1.072817103525505,
+          "tiempo_contacto": 3.1572554909165134,
+          "restitucion": 0.8928590992484636,
+          "indentacion_al_separar_L": 0.08928590992484658,
+          "energia_disipada": 0.10044847985073403,
+          "energia_elastica_al_separar": 0.0009528341491412773,
+          "error_balance_energia": 4.448068580131803e-10,
+          "error_q_referencia": 2.726644653394672e-07,
+          "referencia": {
+            "tipo_referencia": "Serie temporal de tiempo corto, s<=0.12; no exacta",
+            "limite_serie": 0.12,
+            "limite_elastico_sin_disipacion": {
+              "qmax": 1.0933620739432781,
+              "restitucion": 1.0,
+              "tiempo_contacto": 3.2180654597220766
+            },
+            "e_criterio_antiguo_q0": 0.8921479245584062,
+            "advertencia_criterio": "q=0 puede incluir fuerza atractiva; no se anima ese tramo"
+          }
+        },
+        "B": {
+          "indentacion_maxima_L": 0.9826974067620502,
+          "indentacion_maxima_sobre_R": 0.03275658022540167,
+          "fuerza_maxima": 0.9944137890828333,
+          "tiempo_contacto": 3.0733790168454975,
+          "restitucion": 0.7600376227442567,
+          "indentacion_al_separar_L": 0.19000940568606503,
+          "energia_disipada": 0.2048763764893307,
+          "energia_elastica_al_separar": 0.006295029073660342,
+          "error_balance_energia": 4.4373832386312984e-10,
+          "error_q_referencia": 1.141104518223579e-06,
+          "referencia": {
+            "tipo_referencia": "Serie temporal de tiempo corto, s<=0.12; no exacta",
+            "limite_serie": 0.12,
+            "limite_elastico_sin_disipacion": {
+              "qmax": 1.0933620739432781,
+              "restitucion": 1.0,
+              "tiempo_contacto": 3.2180654597220766
+            },
+            "e_criterio_antiguo_q0": 0.754527319247897,
+            "advertencia_criterio": "q=0 puede incluir fuerza atractiva; no se anima ese tramo"
+          }
+        },
+        "C": {
+          "indentacion_maxima_L": 0.8958805572203143,
+          "indentacion_maxima_sobre_R": 0.029862685240677145,
+          "fuerza_maxima": 0.9164816019220954,
+          "tiempo_contacto": 2.950443869947123,
+          "restitucion": 0.5952521946019493,
+          "indentacion_al_separar_L": 0.2976260973009748,
+          "energia_disipada": 0.30350715999157707,
+          "energia_elastica_al_separar": 0.019330251979342298,
+          "error_balance_energia": 4.400214637101385e-10,
+          "error_q_referencia": 3.8691892057934885e-06,
+          "referencia": {
+            "tipo_referencia": "Serie temporal de tiempo corto, s<=0.12; no exacta",
+            "limite_serie": 0.12,
+            "limite_elastico_sin_disipacion": {
+              "qmax": 1.0933620739432781,
+              "restitucion": 1.0,
+              "tiempo_contacto": 3.2180654597220766
+            },
+            "e_criterio_antiguo_q0": 0.5738253697646489,
+            "advertencia_criterio": "q=0 puede incluir fuerza atractiva; no se anima ese tramo"
+          }
         }
       }
     },
     {
       "alumno": "09",
-      "doi": "10.1007/s40571-024-00742-x",
+      "doi": "10.1007/s10035-007-0065-z",
       "exit_code": 0,
-      "segundos": 0.82,
+      "segundos": 1.41,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
-          "error_indentacion_maxima": 5.35213862118411e-07,
-          "restitucion": 0.9999999897606309
+          "error_q_referencia": 2.5240920464852934e-13,
+          "diferencia_refinamiento": 8.415490526658687e-14
+        }
+      },
+      "escenarios": {
+        "A": {
+          "indentacion_maxima_L": 0.9266918067316254,
+          "indentacion_maxima_sobre_R": 0.03088972689105418,
+          "fuerza_maxima": 0.9313447382529898,
+          "tiempo_contacto": 3.0453600221724035,
+          "restitucion": 0.8587581017751595,
+          "indentacion_al_separar_L": 0.08587581017751798,
+          "energia_disipada": 0.12757993393098035,
+          "energia_elastica_al_separar": 0.0036873273868225508,
+          "error_balance_energia": 4.0523140398818214e-14,
+          "error_q_referencia": 2.5240920464852934e-13,
+          "referencia": {
+            "tiempo_contacto": 3.0453600221721246,
+            "restitucion": 0.8587581017750918,
+            "tipo_referencia": "Solución temporal cerrada"
+          }
+        },
+        "B": {
+          "indentacion_maxima_L": 0.8061607012856803,
+          "indentacion_maxima_sobre_R": 0.026872023376189342,
+          "fuerza_maxima": 0.8438464975897249,
+          "tiempo_contacto": 2.87296079606676,
+          "restitucion": 0.64989522628891,
+          "indentacion_al_separar_L": 0.19496856788667297,
+          "energia_disipada": 0.2698117261916363,
+          "energia_elastica_al_separar": 0.019006371231890102,
+          "error_balance_energia": 8.326672684688674e-14,
+          "error_q_referencia": 2.035038804137912e-13,
+          "referencia": {
+            "tiempo_contacto": 2.87296079606657,
+            "restitucion": 0.6498952262887665,
+            "tipo_referencia": "Solución temporal cerrada"
+          }
+        },
+        "C": {
+          "indentacion_maxima_L": 0.6715468640261693,
+          "indentacion_maxima_sobre_R": 0.022384895467538975,
+          "fuerza_maxima": 0.8134031094890211,
+          "tiempo_contacto": 2.6544745637853033,
+          "restitucion": 0.45097545289328517,
+          "indentacion_al_separar_L": 0.27058527173597074,
+          "energia_disipada": 0.36170237580372716,
+          "energia_elastica_al_separar": 0.036608194640214566,
+          "error_balance_energia": 9.35918009759007e-14,
+          "error_q_referencia": 1.4799272918253337e-13,
+          "referencia": {
+            "tiempo_contacto": 2.6544745637853566,
+            "restitucion": 0.4509754528931285,
+            "tipo_referencia": "Solución temporal cerrada"
+          }
         }
       }
     }
   ],
-  "alcance": "Comprobaciones matemáticas y ejecución local; no validación biológica",
+  "alcance": "Verificación matemática y local; no validación de tejidos ni de campo 3D",
   "animaciones": [
     {
       "alumno": "01",
-      "cuadros": 60,
-      "tamano": 255842
+      "cuadros": 96,
+      "bytes": 1257521,
+      "indentacion_maxima": 1.0933615387294153
     },
     {
       "alumno": "02",
-      "cuadros": 60,
-      "tamano": 268050
+      "cuadros": 96,
+      "bytes": 1172274,
+      "indentacion_maxima": 0.9970416548423714
     },
     {
       "alumno": "03",
-      "cuadros": 60,
-      "tamano": 279358
+      "cuadros": 96,
+      "bytes": 1390374,
+      "indentacion_maxima": 1.038781106886682
     },
     {
       "alumno": "04",
-      "cuadros": 60,
-      "tamano": 280883
+      "cuadros": 96,
+      "bytes": 1362549,
+      "indentacion_maxima": 0.9716678802140979
     },
     {
       "alumno": "05",
-      "cuadros": 60,
-      "tamano": 265666
+      "cuadros": 96,
+      "bytes": 1332715,
+      "indentacion_maxima": 0.9845200289740951
     },
     {
       "alumno": "06",
-      "cuadros": 60,
-      "tamano": 283150
+      "cuadros": 96,
+      "bytes": 1050653,
+      "indentacion_maxima": 1.0366441473392765
     },
     {
       "alumno": "07",
-      "cuadros": 60,
-      "tamano": 256505
+      "cuadros": 96,
+      "bytes": 1077459,
+      "indentacion_maxima": 1.0809256614549168
     },
     {
       "alumno": "08",
-      "cuadros": 60,
-      "tamano": 264936
+      "cuadros": 96,
+      "bytes": 1055744,
+      "indentacion_maxima": 0.9826974067620502
     },
     {
       "alumno": "09",
-      "cuadros": 60,
-      "tamano": 378404
+      "cuadros": 96,
+      "bytes": 1394954,
+      "indentacion_maxima": 0.8061607012856803
     }
   ],
-  "dependencias": {
-    "numpy": "2.4.3",
-    "matplotlib": "3.10.8",
-    "PIL": "12.1.1"
-  }
+  "revision_visor": {
+    "escenas_comprobadas": 108,
+    "articulos": 9,
+    "alcance": "Controles y dibujo evaluados con DOM simulado; no prueba visual en navegador"
+  },
+  "revision_visual": "Revisados cuadros de los nueve GIF: esfera rígida, superficie del blanco deformada, ampliación y curva sincronizada."
 }

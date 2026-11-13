@@ -1,142 +1,135 @@
-# Biobalística en Python: nueve artículos, nueve alumnos
+# Biobalística: nueve prácticas de impacto y deformación del blanco
 
-Actividad de lectura, simulación y defensa del código con Visual Studio Code y GitHub Copilot.
+**Nueve artículos diferentes y nueve DOI únicos. En los nueve casos la esfera es rígida y el blanco se deforma.** Cada alumno tiene lectura, modelo, deducción analítica, código de referencia, tres escenarios y defensa de funciones con apoyo de GitHub Copilot.
 
-**Nueve artículos diferentes, nueve DOI únicos.** Cada alumno recibe su ficha y un programa de ejemplo ejecutable. Debe interpretar la lectura, modificar el programa y explicar qué realiza cada función.
+Esta edición reemplaza la selección anterior. Se priorizan fundamentos de contacto e impacto que permiten aprender soluciones analíticas y compararlas con cálculos numéricos. Los artículos son de mecánica del impacto relacionada con la biobalística; **no todos son estudios de biobalística ni de células**. Las adaptaciones al contacto esfera–blanco y los submodelos seleccionados están declarados en cada ficha.
 
-## Distribución sin artículos repetidos
+## Distribución: un artículo por alumno
 
-| Alumno | Artículo | DOI | Modelo o submodelo asignado |
+| Alumno | Artículo | DOI | Modelo |
 |---|---|---|---|
-| [01](ALUMNO_01.md) | Fraire et al. (2022) | [10.1038/s41467-022-29713-7](https://www.nature.com/articles/s41467-022-29713-7) | Frenado viscoso de una nanopartícula |
-| [02](ALUMNO_02.md) | Zhang, Rielly y Das (2015) | [10.3109/10717544.2014.887158](https://doi.org/10.3109/10717544.2014.887158) | Impacto con resistencia viscosa, inercial y de fluencia |
-| [03](ALUMNO_03.md) | Zhang et al. (2015) | [10.1016/j.ces.2014.06.031](https://doi.org/10.1016/j.ces.2014.06.031) | Desaceleración y evento de parada |
-| [04](ALUMNO_04.md) | Pirmoradi et al. (2015) | [10.1080/21645515.2015.1029211](https://doi.org/10.1080/21645515.2015.1029211) | Aceleración por arrastre a Reynolds intermedio |
-| [05](ALUMNO_05.md) | Veysset et al. (2018) | [10.1016/j.jmbbm.2018.06.016](https://doi.org/10.1016/j.jmbbm.2018.06.016) | Penetración de una microesfera en gel |
-| [06](ALUMNO_06.md) | Thorpe et al. (2025) | [10.1038/s41467-025-60761-x](https://www.nature.com/articles/s41467-025-60761-x) | Seguimiento lagrangiano de una partícula |
-| [07](ALUMNO_07.md) | Shen et al. (2025) | [10.1016/j.taml.2024.100567](https://doi.org/10.1016/j.taml.2024.100567) | Modelo analítico de Poncelet y parada |
-| [08](ALUMNO_08.md) | Veysset et al. (2020) | [10.1007/s11340-020-00639-9](https://link.springer.com/article/10.1007/s11340-020-00639-9) | Arrastre de Clift-Gauvin en un gel |
-| [09](ALUMNO_09.md) | Saifoori, Nezamabadi y Ghadiri (2024) | [10.1007/s40571-024-00742-x](https://link.springer.com/article/10.1007/s40571-024-00742-x) | Contacto elástico, indentación y rebote |
+| [01](ALUMNO_01.md) | Argatov (2024) | [10.3390/lubricants12060193](https://doi.org/10.3390/lubricants12060193) | hertz |
+| [02](ALUMNO_02.md) | Hunt y Crossley (1975) | [10.1115/1.3423596](https://doi.org/10.1115/1.3423596) | hc |
+| [03](ALUMNO_03.md) | Lankarani y Nikravesh (1990) | [10.1115/1.2912617](https://doi.org/10.1115/1.2912617) | ln |
+| [04](ALUMNO_04.md) | Flores, Machado, Silva y Martins (2011) | [10.1007/s11044-010-9237-4](https://doi.org/10.1007/s11044-010-9237-4) | flores |
+| [05](ALUMNO_05.md) | Carvalho y Martins (2019) | [10.1016/j.mechmachtheory.2019.03.028](https://doi.org/10.1016/j.mechmachtheory.2019.03.028) | exponencial |
+| [06](ALUMNO_06.md) | Brilliantov, Spahn, Hertzsch y Pöschel (1996) | [10.1103/PhysRevE.53.5382](https://doi.org/10.1103/PhysRevE.53.5382) | visco |
+| [07](ALUMNO_07.md) | Ramírez, Pöschel, Brilliantov y Schwager (1999) | [10.1103/PhysRevE.60.4465](https://doi.org/10.1103/PhysRevE.60.4465) | serie |
+| [08](ALUMNO_08.md) | Schwager y Pöschel (2008) | [10.1103/PhysRevE.78.051304](https://doi.org/10.1103/PhysRevE.78.051304) | recuperacion |
+| [09](ALUMNO_09.md) | Schwager y Pöschel (2007) | [10.1007/s10035-007-0065-z](https://doi.org/10.1007/s10035-007-0065-z) | lineal |
 
-Cada ficha contiene título completo, enlace, ubicación de ecuaciones o sección del modelo, alcance y paso a paso. Los temas cubren biobalística, penetración en geles y mecánica de contacto relacionada. El caso 09 es una referencia de mecánica de partículas, no un estudio de células.
+Los autores pueden repetirse; los artículos no. Algunos casos comparten una familia de ecuaciones y estudian aportes diferentes: selección del amortiguamiento, expansión analítica o criterio de separación. No se presentan como nueve algoritmos completamente distintos.
 
-## Alcance científico
+## Qué aprenderán
 
-Son reproducciones parciales de ecuaciones o submodelos identificados en las fuentes. Se explicitan las variables normalizadas y las simplificaciones. Los parámetros de práctica son docentes; no son calibraciones de organismos, recetas de laboratorio ni predicciones validadas de eficacia. Los casos 01/04/06 muestran movimiento en un fluido; 02/03/05/07/08 muestran impacto y penetración; 09 muestra indentación, fuerza y rebote elástico. El caso 06 prescribe un flujo y no reproduce el CFD completo.
+1. Extraer una ley, sus variables y supuestos de un artículo.
+2. Deducir una solución cerrada, una relación implícita o una aproximación analítica, según el caso.
+3. Construir funciones Python, integrar la dinámica y detectar la separación.
+4. Comparar predicción analítica y solución numérica con errores cuantitativos.
+5. Animar esfera y superficie deformada desde el mismo estado, y explicar cada función.
 
-Se ofrecen enlaces a los artículos. El caso 08 tiene editorial de suscripción y enlace al manuscrito de autores disponible en ResearchGate, que podría pedir cuenta; los otros casos tienen texto abierto o manuscrito de repositorio indicado. No se redistribuyen PDFs de terceros en este repositorio.
+Empieza por [Aprende a construir](APRENDE_A_CONSTRUIR.md), [Soluciones analíticas](SOLUCIONES_ANALITICAS.md) y [Explicación de funciones](EXPLICACION_FUNCIONES.md). Para una introducción, el caso 09 tiene solución temporal cerrada; después puede estudiarse Hertz y añadir disipación.
 
-## Preparación común en Windows y Visual Studio Code
+## Instalación y ejecución
 
-1. Instala Python 3 y Visual Studio Code. La extensión Python no incluye el intérprete: son componentes separados.
-2. En este repositorio pulsa **Code → Download ZIP**, extrae la carpeta y abre esa carpeta en VS Code mediante **File → Open Folder**. También puedes clonarlo con Git.
-3. Instala la extensión **Python** de Microsoft. Configura GitHub Copilot con tu propia cuenta y comprueba que puedes abrir su chat. No necesitas crear claves de API para estos programas.
-4. Abre **Terminal → New Terminal** y crea el entorno:
+1. Pulsa **Code → Download ZIP**, extrae la carpeta y ábrela en **Visual Studio Code → File → Open Folder**. También puedes clonar el repositorio.
+2. Instala Python 3.11 o posterior y la extensión **Python** de Microsoft para VS Code. Configura GitHub Copilot con tu cuenta si vas a utilizarlo como tutor. El código no necesita claves de IA ni acceso a Copilot para ejecutarse.
+3. Abre una terminal PowerShell en esta carpeta:
 
    ```powershell
    py -m venv .venv
    .\.venv\Scripts\python.exe -m pip install -r requirements.txt
    ```
 
-   Si `py` no existe, usa `python -m venv .venv`. Ejecuta los comandos desde la carpeta que contiene este README.
-5. En VS Code ejecuta **Python: Select Interpreter** y selecciona `.venv`. Los comandos siguientes usan directamente su ejecutable; no es necesario activar el entorno ni modificar la política de PowerShell.
-6. Abre la ficha de tu alumno y el archivo Python correspondiente. Lee la ecuación antes de pedir ayuda a Copilot.
+   Si `py` no existe, usa `python -m venv .venv`. En VS Code selecciona `.venv` con **Python: Select Interpreter**. Los comandos usan directamente su ejecutable: no requieren cambiar la política de ejecución de PowerShell.
+4. Lee tu ficha `ALUMNO_NN.md`, deduce primero la relación analítica y ejecuta tu caso. Ejemplo con el alumno 09:
 
-Documentación oficial: [Python en VS Code](https://code.visualstudio.com/docs/python/python-tutorial) y [configuración de Copilot](https://code.visualstudio.com/docs/copilot/setup).
+   ```powershell
+   .\.venv\Scripts\python.exe simulacion_09.py --escenario todos --verificar --animar
+   ```
 
-En macOS/Linux: crea el entorno con `python3 -m venv .venv` y reemplaza `.\.venv\Scripts\python.exe` por `.venv/bin/python`.
+5. Abre `resultados/alumno_09/visor.html` con un navegador y `animacion.gif` con un visor de imágenes. Sustituye `09` por tu número. Conserva `motor_contacto.py` y `animaciones.py` en la misma carpeta que el programa.
 
+En macOS/Linux usa `python3 -m venv .venv` y `.venv/bin/python`. Los pasos completos de cada práctica están en su ficha. Documentación oficial: [Python en VS Code](https://code.visualstudio.com/docs/python/python-tutorial), [Copilot en VS Code](https://code.visualstudio.com/docs/copilot/setup) y [raíces con SciPy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.brentq.html).
 
-## Primera ejecución
+## Qué se genera
 
-Ejemplo para el alumno 01:
+- `escenario_A.csv`, `B` y `C`: tiempo, indentación, velocidad, fuerza, energías, referencia y δ/R.
+- `metricas.json` y `parametros.json`: magnitudes calculadas y alcance.
+- `comparacion.png`: comparación analítica–numérica, fuerzas, histéresis y energía.
+- `visor.html`: reproducción, pausa, control del tiempo y elección de escenario.
+- `animacion.gif`: movimiento de la esfera y deformación del blanco; se genera con `--animar`.
+- Caso 07: también `restitucion_analitica.png`.
 
-```powershell
-.\.venv\Scripts\python.exe simulacion_01.py --escenario todos --verificar --animar
-```
+El [visor conjunto](visor_simulaciones.html) reúne los nueve casos. **Descarga el repositorio y abre ese HTML localmente**; GitHub muestra su código, no ejecuta el visor. Los GIF de abajo sí se ven directamente en GitHub.
 
-Sustituye `01` por tu número, entre `01` y `09`. El programa imprime el resultado de sus comprobaciones y crea CSV, parámetros y una figura en `resultados/alumno_01/`. Las figuras se guardan en archivo; abre `comparacion.png` para verlas.
+## Alcance de las soluciones
 
-Para revisar todos los programas, uno por uno:
+| Casos | Referencia que se aprende a construir |
+|---|---|
+| 01 | Conservación de energía y cuadratura de Hertz |
+| 02–04 | Primera integral exacta de la ley elegida y tiempo por cuadratura |
+| 05 | Primera integral de la ley exponencial y cuadratura |
+| 06 | Serie temporal corta y límite elástico |
+| 07 | Expansión de restitución de órdenes 1 y 2, más serie temporal inicial |
+| 08 | Relación analítica de separación, balance, serie inicial y límite elástico |
+| 09 | Solución temporal cerrada del oscilador y tiempo de separación |
+
+Una cuadratura evaluada numéricamente es una referencia semianalítica. Una serie truncada es aproximada y tiene una ventana de validez. No se etiqueta RK4 como solución analítica. Las fichas 03 y 04 distinguen restitución solicitada y obtenida.
+
+La deformación calculada es la **indentación global δ(t) del blanco**. Para dibujar la superficie se adopta una reconstrucción cuasiestática Hertz, declarada en [Modelo de deformación](MODELO_DEFORMACION_BLANCO.md). No es un campo 3D de deformaciones ni una predicción de daño celular, perforación o transfección. Los parámetros son docentes y relativos. Las lecturas de suscripción se identifican; no se redistribuyen PDFs de terceros.
+
+## Verificación
 
 ```powershell
 .\.venv\Scripts\python.exe verificar_todos.py
 ```
 
-## Qué debe explicar cada alumno
+Comprueba nueve DOI únicos, ejecución de los 27 escenarios, referencias analíticas, energía, refinamiento y reconstrucción del blanco. `VERIFICACION.json` registra las comprobaciones locales de la versión entregada. Estas son verificaciones matemáticas y de software; la actividad no ha sido calibrada con tejidos reales.
 
-1. La ecuación, sus variables, supuestos y la ubicación en su artículo.
-2. La estructura del archivo y el recorrido desde `main()`.
-3. Qué recibe, calcula y devuelve cada función; unidades o normalización y forma de los arreglos.
-4. Qué hacen el integrador, la comprobación, la exportación y las gráficas, cuando correspondan.
-5. Qué cambió personalmente y cómo comprobó que el cambio conserva el modelo.
-6. Qué permiten concluir las simulaciones y qué no está validado con experimentos.
+## Evaluación
 
-Consulta [guía de Copilot](GUIA_COPILOT.md) y [evaluación docente](GUIA_DOCENTE.md).
+Cada alumno debe entregar derivación, código propio, tres escenarios, métricas, animación, explicación de funciones y modificación justificada. Consulta [Guía docente](GUIA_DOCENTE.md) y [Guía de Copilot](GUIA_COPILOT.md). El docente puede pedir cambiar un parámetro y explicar una función elegida al azar.
 
-## Archivos
+## Vistas previas: los nueve blancos se deforman
 
-- `ALUMNO_01.md` a `ALUMNO_09.md`: pasos específicos, lectura, reto y defensa.
-- `simulacion_01.py` a `simulacion_09.py`: modelos individuales que usan el módulo común `animaciones.py`.
-- `requirements.txt`: dependencias comunes.
-- `verificar_todos.py`: comprobaciones de nueve fuentes distintas y ejecución de los nueve programas.
-- `FUENTES.json`: referencias, trazabilidad y alcance por caso.
-- `VERIFICACION.json`: resultado de la revisión local, si ya se generó.
+**Alumno 01 · Argatov (2024)**
 
-## Licencias
+![Impacto y deformación del blanco 01](animacion_01.gif)
 
-El código y las consignas originales del repositorio se ofrecen bajo MIT. Esa licencia no se extiende a los artículos enlazados, que conservan sus propios derechos y licencias. No se incluyen nombres ni datos personales de alumnos.
+**Alumno 02 · Hunt y Crossley (1975)**
 
-## Animaciones y mediciones
+![Impacto y deformación del blanco 02](animacion_02.gif)
 
-[**Abrir las nueve simulaciones interactivas**](visor_simulaciones.html): descarga el repositorio y abre ese HTML con tu navegador (GitHub muestra su código). Tiene selector de alumno y escenario, reproducción, pausa, control del tiempo y curvas sincronizadas. No necesita servidor.
+**Alumno 03 · Lankarani y Nikravesh (1990)**
 
-Cada programa genera su propio `visor.html`, `metricas.json`, CSV y figura. Añade `--animar` para guardar `animacion.gif`. Las animaciones son resultados numéricos con parámetros docentes adimensionales. Los contornos, la esfera ampliada y el tramo de aproximación previo al impacto son esquemas. No representan imágenes experimentales ni un cálculo de deformación celular.
+![Impacto y deformación del blanco 03](animacion_03.gif)
 
-| Casos | Qué se ve | Qué se cuantifica |
-|---|---|---|
-| 01, 04, 06 | Movimiento de partícula en fluido | Posición y velocidad; impacto fuera del submodelo |
-| 02, 03, 05, 07, 08 | Contacto inicial y penetración en un blanco | Profundidad máxima, velocidad y tiempo de parada |
-| 09 | Compresión elástica y rebote de esfera contra pared | Indentación máxima, fuerza, energía y restitución |
+**Alumno 04 · Flores, Machado, Silva y Martins (2011)**
 
-Para medir deformación **local** de una célula o un tejido se necesita un modelo continuo con geometría y ley constitutiva. Estas prácticas se concentran en modelos que el alumno pueda recorrer y comprobar; no convierten profundidad de penetración en deformación unitaria.
+![Impacto y deformación del blanco 04](animacion_04.gif)
 
-### Vistas previas animadas
+**Alumno 05 · Carvalho y Martins (2019)**
 
-**Alumno 01: Frenado viscoso de una nanopartícula**
+![Impacto y deformación del blanco 05](animacion_05.gif)
 
-![Movimiento alumno 01](animacion_01.gif)
+**Alumno 06 · Brilliantov, Spahn, Hertzsch y Pöschel (1996)**
 
-**Alumno 02: Impacto con resistencia viscosa, inercial y de fluencia**
+![Impacto y deformación del blanco 06](animacion_06.gif)
 
-![Movimiento alumno 02](animacion_02.gif)
+**Alumno 07 · Ramírez, Pöschel, Brilliantov y Schwager (1999)**
 
-**Alumno 03: Desaceleración y evento de parada**
+![Impacto y deformación del blanco 07](animacion_07.gif)
 
-![Movimiento alumno 03](animacion_03.gif)
+**Alumno 08 · Schwager y Pöschel (2008)**
 
-**Alumno 04: Aceleración por arrastre a Reynolds intermedio**
+![Impacto y deformación del blanco 08](animacion_08.gif)
 
-![Movimiento alumno 04](animacion_04.gif)
+**Alumno 09 · Schwager y Pöschel (2007)**
 
-**Alumno 05: Penetración de una microesfera en gel**
+![Impacto y deformación del blanco 09](animacion_09.gif)
 
-![Movimiento alumno 05](animacion_05.gif)
 
-**Alumno 06: Seguimiento lagrangiano de una partícula**
+## Licencia
 
-![Movimiento alumno 06](animacion_06.gif)
-
-**Alumno 07: Modelo analítico de Poncelet y parada**
-
-![Movimiento alumno 07](animacion_07.gif)
-
-**Alumno 08: Arrastre de Clift-Gauvin en un gel**
-
-![Movimiento alumno 08](animacion_08.gif)
-
-**Alumno 09: Contacto elástico, indentación y rebote**
-
-![Movimiento alumno 09](animacion_09.gif)
-
-Al copiar una práctica a otra carpeta, incluye `animaciones.py`. En el caso 09 la indentación es una magnitud global; el programa no calcula deformación unitaria, tensiones ni daño.
+MIT para el código y las consignas originales. Los artículos enlazados conservan sus derechos; no se incluyen sus PDFs ni datos personales de estudiantes.

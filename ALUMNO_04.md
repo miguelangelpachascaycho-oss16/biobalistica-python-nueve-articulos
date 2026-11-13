@@ -1,87 +1,78 @@
-# Alumno 04 · Aceleración por arrastre a Reynolds intermedio
+# Alumno 04 · Impacto y deformación del blanco
 
-Nombre: __________________________
+## Artículo distinto asignado
 
-## Artículo individual
+**Flores, Machado, Silva y Martins (2011). On the continuous contact force models for soft materials in multibody dynamics.** Multibody System Dynamics 25, 357-375. [DOI 10.1007/s11044-010-9237-4](https://doi.org/10.1007/s11044-010-9237-4).
 
-**Pirmoradi et al. (2015). A microarray MEMS device for biolistic delivery of vaccine and drug powders.** Human Vaccines & Immunotherapeutics 11(8), 1936-1944. DOI: [10.1080/21645515.2015.1029211](https://doi.org/10.1080/21645515.2015.1029211).
+[Lectura](https://www.researchgate.net/publication/225871744_On_the_continuous_contact_force_models_for_soft_materials_in_multibody_dynamics). Texto completo de los autores en ResearchGate y registro institucional https://researchportal.ulisboa.pt/en/publications/on-the-continuous-contact-force-models-for-soft-materials-in-mult/ . Puede requerir cuenta.
 
-[Lectura y versión disponible](https://pmc.ncbi.nlm.nih.gov/articles/PMC4635881/). Texto completo abierto, CC BY-NC 3.0; texto XML oficial alternativo en Europe PMC.
+**Localización:** Ecuación (44), nueva expresión de la fuerza normal; ecuación (43), amortiguamiento.
 
-**Dónde está el modelo:** Device Operating Principle and Design, ecuación (1).
+**Ley que vas a representar:** `F=k δ^(3/2)[1+8(1-e_obj) δ'/(5e_obj v0)]`.
 
-## Modelo y alcance
+**Adaptación declarada:** Modelo normal de materiales blandos. Se toma esfera rígida y blanco fijo con compliancia equivalente. No se asignan propiedades de un organismo.
 
-m dv/dt=3πμd(u-v){1+[ρf d |u-v|/μ]^(2/3)/6}.
+Todos los casos de esta edición calculan la indentación del **blanco deformable**, con esfera rígida. Se trabaja en coordenadas relativas y con propiedades docentes. No son calibraciones de células ni reproducciones completas de los experimentos del artículo. Consulta [cómo se dibuja y qué se mide](MODELO_DEFORMACION_BLANCO.md).
 
-**Qué hace este ejemplo:** Flujo uniforme prescrito. s=t/τ, τ=m/(3πμd), w=v/u y Re0=ρfdu/μ: dw/ds=(1-w)[1+(Re0|1-w|)^(2/3)/6]. No se modelan los microcanales ni la presión del dispositivo.
+## Construir la simulación analítica
 
-Los tres escenarios modifican únicamente `Re0`: A=0.1, B=1.0, C=10.0. Son escenarios de práctica, no condiciones experimentales recomendadas.
+Primera integral y cuadratura; comparación independiente de e_obj y la restitución real de esta ley.
 
-## Paso a paso
+**Tu derivación individual:** Comparar la indentación y el área de histéresis con la ficha 03. Identificar qué aproximación cambia.
 
-1. Completa la [preparación común](README.md#preparación-común-en-windows-y-visual-studio-code).
-2. Abre [simulacion_04.py](simulacion_04.py) en VS Code. Identifica las constantes, la ecuación y `main()`.
-3. Antes de ejecutar, escribe qué esperas que cambie entre A y C y por qué. Todavía no leas las gráficas de ejemplo.
-4. Ejecuta solo A:
+Consulta [las deducciones y límites](SOLUCIONES_ANALITICAS.md). Identifica si tu resultado es cerrado, implícito, semianalítico o una aproximación. No presentes una integración numérica como solución analítica.
 
-   ```powershell
-   .\.venv\Scripts\python.exe simulacion_04.py --escenario A
-   ```
+## Paso a paso en VS Code
 
-5. Revisa `resultados/alumno_04/escenario_A.csv`, `parametros.json` y `comparacion.png`. Explica cada columna y cada eje.
-6. Ejecuta los tres escenarios y sus comprobaciones:
+1. Sigue la [instalación común](README.md#instalación-y-ejecución). Conserva `motor_contacto.py` y `animaciones.py` junto al programa.
+2. Antes de ver el ejemplo, dibuja la esfera, el blanco y las fuerzas. Define δ, v, m, la reacción y la convención de signos.
+3. Escribe `m δ''=-F(δ,δ')`, las condiciones iniciales y la condición de separación. Desarrolla a mano tu relación analítica.
+4. Crea tu propio `mi_simulacion_04.py` siguiendo [Aprende a construir](APRENDE_A_CONSTRUIR.md). Primero implementa el cálculo de F; comprueba un valor a mano. Luego construye la referencia analítica de tu caso.
+5. Ejecuta la referencia preparada para contrastar tu implementación:
 
    ```powershell
-   .\.venv\Scripts\python.exe simulacion_04.py --escenario todos --verificar
+   .\.venv\Scripts\python.exe simulacion_04.py --escenario A --verificar --animar
    ```
 
-7. Explica qué comprueba `verificar()` y por qué una comprobación numérica no demuestra validación biológica.
-8. Desarrolla este reto: **Añadir el caso Re0=0 y compararlo con w=1-exp(-s). Explicar por qué la velocidad se aproxima a la del fluido y no crece sin límite.** Guarda tu modificación como `mi_simulacion_04.py` para conservar el ejemplo original.
-9. Trabaja con Copilot por etapas usando el prompt siguiente; después explica el código con tus propias palabras.
-10. Prepara tu informe, tabla de funciones y defensa. El programa de ejemplo es un punto de partida; debes aportar la modificación, la predicción y el análisis.
+6. Abre `resultados/alumno_04/visor.html`: reproduce, pausa y cambia el tiempo. Observa cómo la esfera desplaza la superficie del blanco. La curva de δ(t) usa exactamente el mismo estado que la escena.
+7. Ejecuta los tres escenarios:
 
-## Prompt inicial para Copilot
+   ```powershell
+   .\.venv\Scripts\python.exe simulacion_04.py --escenario todos --verificar --animar
+   ```
 
-> Actúa como tutor de Python. Estoy trabajando en el alumno 04, Aceleración por arrastre a Reynolds intermedio. Lee ALUMNO_04.md y simulacion_04.py. Primero explícame la ecuación y los supuestos; pídeme una predicción. Después revisemos una función por vez: sus argumentos, formas de los arreglos, retorno y quién la llama. Ayúdame a realizar el reto sin cambiar silenciosamente el modelo. Distingue ecuaciones publicadas, reducciones docentes y datos simulados. Hazme preguntas antes de avanzar y comprueba los cambios.
+8. El parámetro `e_obj` toma A=0.9, B=0.75, C=0.6. Predice qué pasará con la indentación máxima, la fuerza, la restitución y la energía antes de compararlos.
+9. Abre `comparacion.png`, `metricas.json` y los CSV. Explica el error numérico frente a la referencia y el error de aproximación cuando corresponda. Un vacío en las columnas de referencia significa que la serie ya está fuera de su ventana de validez.
+10. Reduce el paso a la mitad con `--paso 0.001`, cambia `--salida resultados/mi_refinamiento_04` y compara. Distingue resolución del integrador y número de cuadros del GIF.
+11. Implementa tu reto personal y ejecuta tu archivo desde una terminal nueva. Explica cada función sin leer respuestas de Copilot.
 
-## Mapa del código
+## Funciones que debes explicar
 
-| Función | Ubicación |
+| Función | Propósito |
 |---|---|
-| `integrar_rk4` | [Línea 17](simulacion_04.py#L17) |
-| `calcular_modelo` | [Línea 40](simulacion_04.py#L40) |
-| `verificar` | [Línea 53](simulacion_04.py#L53) |
-| `comparar_escenarios` | [Línea 64](simulacion_04.py#L64) |
-| `guardar_resultados` | [Línea 70](simulacion_04.py#L70) |
-| `graficar_resultados` | [Línea 81](simulacion_04.py#L81) |
-| `main` | [Línea 93](simulacion_04.py#L93) |
+| [`parametros_escenario`](simulacion_04.py#L20) | Transforma el parámetro del escenario en constantes de la ley. |
+| [`fuerza_contacto`](simulacion_04.py#L27) | Aplica la ecuación y devuelve la reacción del blanco. |
+| [`solucion_analitica`](simulacion_04.py#L33) | Construye la referencia sin reutilizar RK4. |
+| [`calcular_modelo`](simulacion_04.py#L38) | Coordina el integrador, la referencia y las métricas. |
+| [`comparar_escenarios`](simulacion_04.py#L51) | Organiza tres ejecuciones que cambian un parámetro. |
+| [`verificar`](simulacion_04.py#L57) | Contrasta referencias, balance de energía y paso temporal. |
+| [`guardar_resultados`](simulacion_04.py#L88) | Exporta resultados, con unidades relativas y alcance. |
+| [`main`](simulacion_04.py#L102) | Lee argumentos y define el orden de ejecución. |
 
-Para cada función prepara una fila con: propósito, entradas, unidades o escalas, forma del arreglo, salida, quién la llama y una prueba o comprobación. Explica la diferencia entre devolver un dato con `return`, imprimirlo y guardarlo en un archivo.
+Para cada una documenta **entradas, salida, forma de arreglos, unidades, quién la llama y una comprobación**. Amplía el mapa con las funciones de [motor_contacto.py](motor_contacto.py) y [animaciones.py](animaciones.py), descritas en [EXPLICACION_FUNCIONES.md](EXPLICACION_FUNCIONES.md).
 
-## Defensa individual
+## Copilot como tutor
 
-¿Qué representa la velocidad relativa u-v? ¿Cuál es la diferencia con el frenado del alumno 01?
+> Lee ALUMNO_04.md. Ayúdame a deducir la ley y la relación analítica antes de programar. Hazme una pregunta por paso y espera mi explicación. Después revisa mis funciones: argumentos, retorno, arreglo de estado y unidades. No cambies la ecuación del artículo sin avisarme. Diferencia fórmula cerrada, raíz de una ecuación implícita, cuadratura, serie aproximada y RK4. Ayúdame a comprobar mi código con un límite analítico y un balance de energía. No inventes propiedades ni resultados de células.
 
-Además, el docente podrá elegir una función al azar y pedirte cambiar un parámetro antes de volver a ejecutar. Debes predecir el efecto y explicar cualquier diferencia con tu predicción.
+## Entrega y defensa
 
-## Entrega
+- Tu código, dependencias y módulos utilizados, con una modificación propia justificada.
+- Derivación manuscrita o explicada de la relación analítica, referencia y supuestos.
+- Tres CSV, tabla de métricas A/B/C, figura comparativa, visor y GIF.
+- Tabla de funciones y tres ejemplos breves de ayuda de Copilot que revisaste.
+- Defensa: localizar la ecuación, recorrer `main()`, explicar dos funciones elegidas por el docente, predecir un cambio y ejecutarlo.
 
-- `mi_simulacion_04.py` y `requirements.txt`, junto con el módulo compartido `animaciones.py`.
-- Los tres CSV, los parámetros y la figura comparativa.
-- Informe de 2 páginas: referencia y ubicación de la ecuación; supuestos; predicción; resultados; comprobación; límites.
-- Tabla de funciones y registro breve de tres ayudas de Copilot, con lo que aceptaste, corregiste o verificaste.
+Debes distinguir **indentación δ**, **δ/R**, **penetración con perforación** y **deformación unitaria local**. Aquí se calculan las dos primeras; el perfil es una reconstrucción cuasiestática adoptada. No se modelan rotura, transfección, daño ni un campo 3D de deformaciones. En los modelos con separación a δ>0, el último cuadro termina el contacto y no demuestra una huella permanente.
 
-No entregues `.venv` ni conversaciones personales completas. Fecha y plataforma: las define el docente.
-
-[Volver a la distribución](README.md#distribución-sin-artículos-repetidos).
-
-## Ver el movimiento y analizarlo
-
-Ejecuta `python simulacion_04.py --escenario todos --verificar --animar`. Abre `resultados/alumno_04/visor.html` en el navegador: puedes pausar, arrastrar el tiempo y cambiar A/B/C. También se generan `animacion.gif` (escenario B si existe) y `metricas.json` con resultados de los tres escenarios. El tiempo de reproducción está ralentizado; las unidades del modelo son relativas.
-
-Explica `preparar_serie`, `resumir_metricas` y `exportar_movimiento` en [animaciones.py](animaciones.py): convierten los estados calculados en posiciones, métricas y cuadros. La ecuación permanece en tu archivo individual. El tamaño dibujado de la esfera se amplifica para verla.
-
-Entrega también el visor, el GIF y una tabla de métricas A/B/C. No deduzcas deformación del tejido a partir de una trayectoria: en 02/03/05/07/08 se calcula penetración; en 09, indentación y fuerza del contacto elástico; en 01/04/06 se calcula movimiento en el fluido y el impacto no está resuelto. El dibujo del contorno es esquemático y no proporciona tensiones ni deformaciones locales.
-
-Conserva `animaciones.py` en la misma carpeta que tu programa. El integrador y las ecuaciones están en el archivo individual; el módulo compartido transforma sus resultados en gráficos y animaciones.
+[Volver a la distribución](README.md).

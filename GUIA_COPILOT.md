@@ -1,16 +1,22 @@
-# Cómo trabajar con Copilot y poder defender el código
+# Copilot como tutor de modelado analítico y Python
 
-1. Lee la ecuación y escribe una predicción propia antes de ejecutar.
-2. Pide a Copilot un mapa de funciones y el recorrido de main().
-3. Para cada función, pide que te pregunte por propósito, argumentos, unidades, forma de arreglos y valor devuelto. Contesta con tus palabras.
-4. Identifica qué cálculo aplica una ecuación publicada y qué parte es una reducción o una elección docente.
-5. Pide ayuda para un cambio pequeño. Revisa el diff antes de aceptarlo.
-6. Ejecuta las comprobaciones, analiza los errores y compara los tres escenarios.
-7. Conserva tres ejemplos breves de ayuda de IA: pregunta, cambio propuesto y verificación que realizaste.
-8. Practica una defensa sin leer las respuestas de Copilot. Debes poder explicar cualquier función que elija el docente.
+1. Lee tu artículo y dibuja el problema antes de pedir código.
+2. Pide revisar un paso de tu deducción. Explica por qué se aplica y qué supuesto requiere.
+3. Clasifica el resultado: cerrado, implícito, semianalítico, serie aproximada o integración numérica.
+4. Programa una función a la vez. Para cada una explica entradas, unidades, retorno, forma del arreglo y quién la llama.
+5. Pide a Copilot preguntas sobre tu código y contesta sin copiar su explicación.
+6. Revisa el diff de cada cambio. Comprueba signos, energía, referencia y refinamiento.
+7. Verifica que la posición de la esfera, la superficie y el punto de la curva usen el mismo estado temporal.
+8. Registra tres ayudas concretas: solicitud, propuesta, qué aceptaste o corregiste y cómo lo comprobaste.
 
-Prompt útil: “No avances todavía. Hazme dos preguntas sobre los argumentos y el retorno de esta función y corrige mi explicación usando el código”.
+Prompts útiles:
 
-El código no requiere modelos de IA ni claves de API para ejecutarse. Copilot es un apoyo opcional de tutoría; su disponibilidad depende de tu cuenta.
+> «No generes el programa completo. Ayúdame a separar variables en mi ecuación y hazme explicar la primera integral».
 
-Para la animación, pregunta: «¿Cómo se obtiene la posición de cada cuadro a partir del vector de estado? ¿Qué se interpola, qué se mide sobre los datos originales y qué parte del dibujo es solo esquemática?». Explica `preparar_serie`, `resumir_metricas`, `crear_paquete`, `crear_gif` y `exportar_movimiento`. La cadena HTML contiene los controles del visor; no introduce un segundo modelo físico.
+> «Esta referencia es una serie truncada. Ayúdame a determinar su ventana de validez comparándola con mi integración, sin presentarla como exacta».
+
+> «Pregúntame qué contiene cada posición de este vector de estado y qué devuelve derivadas».
+
+> «Mi animación se ve bien. Propón una comprobación física o matemática que podría descubrir un error aunque la curva sea suave».
+
+Copilot puede proponer código incorrecto o cambiar una ecuación. La entrega es responsabilidad del alumno. El programa se ejecuta sin IA, Internet ni claves API; Copilot es apoyo de tutoría, no parte del cálculo físico.

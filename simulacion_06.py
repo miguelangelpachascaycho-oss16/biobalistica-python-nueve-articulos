@@ -1,114 +1,119 @@
-"""Seguimiento lagrangiano de una partícula.
+"""Alumno 06: impacto y deformación del blanco según su ficha.
 
-Ejemplo educativo del submodelo descrito en ALUMNO_06.md.
-Los parámetros relativos son docentes; no es calibración experimental.
+Modelo escalar normalizado: no son propiedades medidas de un organismo.
+El proyectil es rígido; q es la indentación global del blanco fijo.
 """
 from pathlib import Path
-import argparse
-import csv
-import json
+import argparse,csv,json
 import numpy as np
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-from animaciones import exportar_movimiento
+from motor_contacto import (COLUMNAS,integrar_contacto,completar_referencia,
+                           metricas_contacto,RADIO_RELATIVO)
+from animaciones import exportar_movimiento,graficar_comparacion
+
+NUMERO='06'
+TIPO='visco'
+DOI='10.1103/PhysRevE.53.5382'
+VALORES=[0.03, 0.12, 0.3]
+PARAMETRO='d'
 
 
-def integrar_rk4(derivadas, tiempos, estado_inicial):
-    """Integra y'=f(t,y). Recibe malla 1D y estado; devuelve matriz (n,m)."""
-    estados = np.empty((len(tiempos), len(estado_inicial)), dtype=float)
-    estados[0] = estado_inicial
-    for i, dt in enumerate(np.diff(tiempos)):
-        t, y = tiempos[i], estados[i]
-        k1 = np.asarray(derivadas(t, y))
-        k2 = np.asarray(derivadas(t + dt/2, y + dt*k1/2))
-        k3 = np.asarray(derivadas(t + dt/2, y + dt*k2/2))
-        k4 = np.asarray(derivadas(t + dt, y + dt*k3))
-        estados[i+1] = y + dt*(k1 + 2*k2 + 2*k3 + k4)/6
-    return estados
+def parametros_escenario(valor):
+    """Recibe el parámetro A/B/C y devuelve constantes adimensionales de la ley."""
+    p=dict(k=1.,n=1.5,beta=0.,eta=0.,d=0.,zeta=0.)
+    p["d"]=valor
+    return p
 
 
+def fuerza_contacto(q,v,p):
+    """Ecuación del artículo: q=indentación, v=velocidad, p=constantes; retorna F."""
+    q=max(float(q),0.)
+    return q**1.5+p["d"]*np.sqrt(q)*v
 
-TITULO = 'Seguimiento lagrangiano de una partícula'
-DOI = '10.1038/s41467-025-60761-x'
-PARAMETRO = 'alpha'
-VALORES = [0.1, 0.2, 0.3]
-COLUMNAS = ['s', 'X', 'Y', 'vx', 'vy']
-XLABEL = 'Posición horizontal relativa X'
-YLABEL = 'Posición lateral relativa Y'
 
-def calcular_modelo(alpha):
-    """Sigue un estado (X,Y,vx,vy) en un flujo de práctica prescrito."""
-    if alpha<0:
-        raise ValueError("alpha no puede ser negativo en esta práctica")
-    s=np.linspace(0,2*np.pi,801)
-    def derivadas(t,y):
-        X,Y,vx,vy=y
-        flujo_x,flujo_y=1.,alpha*np.sin(t)
-        return [vx,vy,flujo_x-vx,flujo_y-vy]
-    estado=integrar_rk4(derivadas,s,[0.,0.,0.,0.])
-    return np.column_stack((s,estado))
+def solucion_analitica(datos,valor,p):
+    """Construye la referencia independiente; distingue exacta, cuadratura y serie."""
+    return completar_referencia(datos,TIPO,valor,k=p['k'],beta=p['beta'],eta=p['eta'])
+
+
+def calcular_modelo(valor,paso=.002):
+    """Integra el contacto, añade referencia y calcula métricas de un escenario."""
+    p=parametros_escenario(valor)
+    f=lambda q,v:fuerza_contacto(q,v,p)
+    d=integrar_contacto(f,k=p['k'],n=p['n'],paso=paso,criterio='fuerza')
+    d,ref=solucion_analitica(d,valor,p)
+    if TIPO in ('serie','recuperacion'):
+        antiguo=integrar_contacto(f,k=p['k'],n=p['n'],paso=paso,criterio='q')
+        ref['e_criterio_antiguo_q0']=float(-antiguo[-1,2])
+        ref['advertencia_criterio']='q=0 puede incluir fuerza atractiva; no se anima ese tramo'
+    return dict(datos=d,parametros=p,referencia=ref,metricas=metricas_contacto(d,ref))
+
+
+def comparar_escenarios(seleccion='todos',paso=.002):
+    """Retorna un diccionario A/B/C con datos, constantes, referencia y métricas."""
+    etiquetas='ABC' if seleccion=='todos' else seleccion
+    return {e:calcular_modelo(VALORES['ABC'.index(e)],paso) for e in etiquetas}
 
 
 def verificar():
-    """Contrasta la trayectoria con la solución cerrada del flujo prescrito."""
+    """Comprueba soluciones, energía, fuerzas y refinamiento; no valida un tejido."""
     errores=[]
-    for alpha in VALORES:
-        d=calcular_modelo(alpha);s=d[:,0]
-        X=s-1+np.exp(-s)
-        Y=alpha/2*(2-np.cos(s)-np.sin(s)-np.exp(-s))
-        errores.append(float(np.max(np.abs(d[:,1]-X))))
-        assert np.max(np.abs(d[:,2]-Y))<1e-7
-    assert max(errores)<1e-7
-    return {"error_maximo_X":max(errores)}
-
-
-def comparar_escenarios(seleccion="todos"):
-    """Devuelve un diccionario etiqueta -> matriz calculada para A, B o C."""
-    etiquetas=list("ABC") if seleccion=="todos" else [seleccion]
-    return {etiqueta:calcular_modelo(VALORES["ABC".index(etiqueta)]) for etiqueta in etiquetas}
+    for valor in VALORES:
+        r=calcular_modelo(valor);d=r['datos'];m=r['metricas'];ref=r['referencia']
+        assert np.isfinite(d[:,:7]).all() and np.min(d[:,1])>=0
+        assert np.min(d[:,3])>-1e-8 and 0<m['restitucion']<=1.000001
+        assert m['error_balance_energia']<2e-5
+        assert np.min(d[:,5])>-1e-8
+        assert m['indentacion_maxima_sobre_R']<.06
+        assert m['error_q_referencia']<2e-5,(valor,m['error_q_referencia'])
+        if 'restitucion' in ref:
+            assert abs(m['restitucion']-ref['restitucion'])<2e-5
+        if TIPO=='serie':
+            assert abs(ref['e_criterio_antiguo_q0']-ref['e_serie_orden2'])<3e-4
+        if TIPO=='recuperacion':
+            assert abs(d[-1,1]+valor*d[-1,2])<1e-8
+            assert m['restitucion']>=ref['e_criterio_antiguo_q0']-1e-7
+        errores.append(m['error_q_referencia'])
+    if TIPO in ('visco','serie','recuperacion'):
+        elastico=integrar_contacto(lambda q,v:q**1.5)
+        elastico,limite=completar_referencia(elastico,'hertz',1.)
+        assert np.max(abs(elastico[:,1]-elastico[:,7]))<2e-5
+        assert abs(elastico[-1,2]+1)<1e-6
+    a=calcular_modelo(VALORES[1],.002)['metricas']
+    b=calcular_modelo(VALORES[1],.001)['metricas']
+    refinamiento=abs(a['indentacion_maxima_L']-b['indentacion_maxima_L'])
+    assert refinamiento<1e-5
+    return dict(error_q_referencia=max(errores),diferencia_refinamiento=refinamiento)
 
 
 def guardar_resultados(resultados,carpeta):
-    """Exporta cada escenario a CSV, con nombres de columnas y parámetros."""
+    """Guarda columnas, métricas y parámetros; deja vacía la serie no válida."""
     carpeta.mkdir(parents=True,exist_ok=True)
-    for etiqueta,datos in resultados.items():
-        with (carpeta/f"escenario_{etiqueta}.csv").open("w",newline="",encoding="utf-8") as f:
-            writer=csv.writer(f);writer.writerow(COLUMNAS);writer.writerows(datos)
-    metadatos={"DOI":DOI,"parametro":PARAMETRO,"valores_docentes":dict(zip("ABC",VALORES)),
-               "alcance":"Simulación de un submodelo; parámetros de práctica, sin calibración física"}
-    (carpeta/"parametros.json").write_text(json.dumps(metadatos,indent=2,ensure_ascii=False),encoding="utf-8")
-
-
-def graficar_resultados(resultados,carpeta):
-    """Crea una figura comparativa; separa las gráficas del cálculo del modelo."""
-    fig,ax=plt.subplots(figsize=(8,4.8))
-    for etiqueta,datos in resultados.items():
-        valor=VALORES["ABC".index(etiqueta)]
-        ax.plot(datos[:,1],datos[:,2],label=f"{etiqueta}: alpha={valor:g}")
-    ax.set(xlabel=XLABEL,ylabel=YLABEL,title=TITULO)
-    ax.grid(alpha=0.25);ax.legend()
-    fig.text(0.5,0.01,"Ejemplo docente: valores relativos de práctica; no reproduce mediciones",ha="center",fontsize=8)
-    fig.tight_layout(rect=[0,0.03,1,1]);fig.savefig(carpeta/"comparacion.png",dpi=160);plt.close(fig)
+    for e,r in resultados.items():
+        with (carpeta/f'escenario_{e}.csv').open('w',newline='',encoding='utf8') as f:
+            writer=csv.writer(f);writer.writerow(COLUMNAS)
+            writer.writerows([[float(v) if np.isfinite(v) else '' for v in fila] for fila in r['datos']])
+    (carpeta/'metricas.json').write_text(json.dumps({e:r['metricas'] for e,r in resultados.items()},ensure_ascii=False,indent=2),encoding='utf8')
+    meta=dict(doi=DOI,tipo=TIPO,parametro=PARAMETRO,escenarios=dict(zip('ABC',VALORES)),
+              radio_sobre_L=RADIO_RELATIVO,escala='m=v0=1, q=delta/L, s=t*v0/L',
+              alcance='Indentación global del blanco; perfil espacial Hertz adoptado, sin cálculo de daño celular')
+    (carpeta/'parametros.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding='utf8')
 
 
 def main():
-    """Lee opciones, verifica, calcula, exporta y grafica en ese orden."""
-    parser=argparse.ArgumentParser(description=TITULO)
-    parser.add_argument("--escenario",choices=["A","B","C","todos"],default="todos")
-    parser.add_argument("--salida",type=Path,default=Path("resultados")/"alumno_06")
-    parser.add_argument("--verificar",action="store_true")
-    parser.add_argument("--animar",action="store_true",help="Genera GIF además del visor HTML y las métricas")
+    """Opciones → verificación → modelo → exportación → gráficas y animación."""
+    parser=argparse.ArgumentParser(description='A model for collisions in granular gases')
+    parser.add_argument('--escenario',choices=['A','B','C','todos'],default='todos')
+    parser.add_argument('--paso',type=float,default=.002)
+    parser.add_argument('--salida',type=Path,default=Path('resultados')/('alumno_'+NUMERO))
+    parser.add_argument('--verificar',action='store_true')
+    parser.add_argument('--animar',action='store_true',help='Genera GIF del escenario B, o el único seleccionado')
     args=parser.parse_args()
-    if args.verificar:
-        metricas=verificar()
-        print(json.dumps({"verificacion":"OK","metricas":metricas},ensure_ascii=False))
-    resultados=comparar_escenarios(args.escenario)
+    if args.verificar: print(json.dumps(dict(verificacion='OK',metricas=verificar())))
+    resultados=comparar_escenarios(args.escenario,args.paso)
     guardar_resultados(resultados,args.salida)
-    graficar_resultados(resultados,args.salida)
-    exportar_movimiento("06",resultados,args.salida,args.animar)
-    print(f"Alumno 06: {len(resultados)} escenario(s). Resultados en {args.salida}")
+    graficar_comparacion(NUMERO,resultados,args.salida)
+    exportar_movimiento(NUMERO,resultados,args.salida,args.animar)
+    print(f'Alumno {NUMERO}: abre {args.salida / "visor.html"}')
 
 
-if __name__=="__main__":
-    main()
+if __name__=='__main__':main()

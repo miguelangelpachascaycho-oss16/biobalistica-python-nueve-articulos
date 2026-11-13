@@ -1,31 +1,37 @@
-# Guía docente
+# Guía docente: aprender a generar simulaciones
 
-Distribuye los casos por número y comparte el enlace a su ficha. Hay nueve DOI diferentes; verifica su lista en README y FUENTES.json.
+Asigna una ficha a cada alumno. Hay nueve artículos y nueve DOI únicos, aunque algunos autores y familias de modelos se repiten. Todos calculan indentación del blanco, con esfera rígida; se sustituyeron los casos antiguos de vuelo, penetración sin deformación y pared rígida.
 
-Los ejemplos son código de referencia, no entregas terminadas de alumnos. Pide una predicción previa, una modificación justificada y una defensa con ejecución en vivo. Puedes dedicar la primera sesión a mostrar un solo ejemplo.
+La selección es de fundamentos de mecánica de impacto relacionados con la biobalística. No se afirma que los nueve artículos estudien células. Antes de fijar la entrega, revisa el acceso a las lecturas de suscripción (02–05); se indican enlaces y versiones. No es necesario comprar PDFs para ejecutar los ejemplos. Si la biblioteca no proporciona una lectura, la ficha identifica el alcance disponible y el complemento de autores cuando existe.
 
-## Evaluación: 20 puntos
+## Secuencia sugerida
+
+1. Diagrama, unidades y ley extraída del artículo; predicción sin ejecutar.
+2. Derivación de una referencia analítica con sus supuestos y límites.
+3. Código propio por funciones; contraste con la referencia resuelta.
+4. Verificación, tres escenarios y refinamiento del paso.
+5. Animación de esfera y blanco, métricas y defensa en vivo.
+
+Para una demostración común empieza por 09 (solución cerrada), sigue con 01 (energía y cuadratura) y muestra luego un modelo disipativo. Los casos 06–08 requieren distinguir serie, referencia límite y contacto sin atracción. Sus referencias no son soluciones temporales completas.
+
+## Rúbrica: 20 puntos
 
 | Criterio | Puntos |
 |---|---:|
-| Lectura y trazabilidad de la ecuación | 4 |
-| Explicación de estructura y funciones | 6 |
-| Tres escenarios, ejecución y gráficas | 4 |
-| Comprobación e interpretación | 4 |
-| Modificación propia y uso revisado de Copilot | 2 |
+| Artículo, diagrama, variables y supuestos | 3 |
+| Derivación analítica y dominio de validez | 5 |
+| Estructura, entradas, retornos y explicación de funciones | 5 |
+| Verificación, energía y comparación de escenarios | 4 |
+| Animación coherente y modificación propia revisada | 3 |
 
-## Defensa de 4 a 5 minutos
+## Defensa de 6–8 minutos
 
-Pide al alumno recorrer main(), explicar dos funciones que tú elijas, distinguir argumentos y retornos, localizar la ecuación, anticipar un cambio de parámetro y ejecutar su modificación. Termina preguntando por un supuesto y por la diferencia entre verificación numérica y validación experimental.
+Pide localizar la ley, desarrollar un paso de la deducción, recorrer main() y explicar dos funciones elegidas por ti. Elige una función del modelo y otra del integrador o de la animación. Solicita un cambio de parámetro, predicción previa y ejecución. Pregunta por la forma del arreglo de estado y por qué aumentar cuadros no reduce el error de RK4.
 
-## Dificultad
+En 03/04, pregunta por qué e_obj no coincide necesariamente con e_calculado. En 07, distingue truncamiento y criterio de separación. En 08/09, pregunta por qué una indentación positiva al separarse no demuestra una huella permanente. En todos, diferencia indentación, deformación unitaria y perforación.
 
-01 y 04 introducen movimiento; 02/03/05/07/08 comparan penetración; 06 añade trayectoria 2D; 09 introduce contacto elástico y balance de energía. Ajusta el tiempo de tutoría al nivel del alumno.
+## Evidencias mínimas
 
-## Acceso a las lecturas
+Derivación individual, implementación propia con modificación justificada, 27 escenarios repartidos entre los nueve alumnos, tabla de métricas, comparación con referencia, CSV, visor, GIF y tabla de funciones. No evalúes como aprendizaje suficiente la mera reproducción del archivo proporcionado. Pide tres ejemplos de ayuda de Copilot que el alumno haya verificado, sin exigir conversaciones personales completas.
 
-Cada ficha identifica una versión disponible. En 08 la editorial ofrece contenido de suscripción y el manuscrito se enlaza desde ResearchGate; comprueba el acceso del alumno antes de fijar la fecha. No debe comprarse ni compartirse un PDF sin revisar sus permisos. Los programas se ejecutan sin acceder a ninguna cuenta o servicio externo.
-
-Fecha y plataforma de entrega: por definir por el docente.
-
-Evalúa también la correspondencia entre estado numérico, posición de la esfera, curva y métricas. Pregunta por qué un dibujo de cavidad no sustituye un campo de deformación. Las fichas 05 y 09 reemplazan los antiguos casos estadístico y térmico para priorizar mecánica visible.
+El perfil del blanco es una reconstrucción cuasiestática común. Solo la indentación se resuelve dinámicamente en todos los casos; no exijas interpretar el dibujo como un campo 3D de tensiones. Los parámetros relativos no son propiedades medidas de organismos. Fecha y plataforma de entrega: las define el docente.
