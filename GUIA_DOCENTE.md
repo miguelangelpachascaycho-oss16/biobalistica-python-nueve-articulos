@@ -1,3 +1,5 @@
+> **MATERIAL AUXILIAR ANTERIOR. Esta ficha no constituye una asignación de biobalística en células o tejidos. Consulta [la revisión vigente](REVISION_BIOBALISTICA.md).**
+
 # Guía docente: aprender a generar simulaciones
 
 Asigna una ficha a cada alumno. Hay nueve artículos y nueve DOI únicos, aunque algunos autores y familias de modelos se repiten. Todos calculan indentación del blanco, con esfera rígida; se sustituyeron los casos antiguos de vuelo, penetración sin deformación y pared rígida.

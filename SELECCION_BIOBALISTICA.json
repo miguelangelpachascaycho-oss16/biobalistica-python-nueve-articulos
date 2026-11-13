@@ -1,0 +1,115 @@
+{
+  "fecha": "2026-11-13",
+  "asignacion_definitiva": false,
+  "replicas_completas_verificadas": 0,
+  "candidatos": [
+    {
+      "id": "B01",
+      "autores": "Campello y Zohdi",
+      "year": 2014,
+      "titulo": "A computational framework for simulation of the delivery of substances into cells",
+      "doi": "10.1002/cnm.2649",
+      "blanco": "Célula idealizada con bicapa lipídica",
+      "modelo": "DEM: nodos, enlaces, presión y contactos",
+      "evidencia": "Texto completo: deformación celular dinámica y bombardeo de partículas.",
+      "estado": "Modelo identificado; implementación y validación pendientes",
+      "fuente": "https://www.researchgate.net/publication/262579161_A_computational_framework_for_simulation_of_the_delivery_of_substances_into_cells"
+    },
+    {
+      "id": "B02",
+      "autores": "Campello y Zohdi",
+      "year": 2014,
+      "titulo": "Design Evaluation of a Particle Bombardment System Used to Deliver Substances into Cells",
+      "doi": "10.3970/cmes.2014.098.221",
+      "blanco": "Célula idealizada con bicapa lipídica",
+      "modelo": "DEM celular con variabilidad de los proyectiles",
+      "evidencia": "Texto completo: dinámica celular y evaluación estadística de resultados.",
+      "estado": "Modelo identificado; implementación y validación pendientes",
+      "fuente": "https://msol.berkeley.edu/wp-content/uploads/2025/11/109.pdf"
+    },
+    {
+      "id": "B03",
+      "autores": "Campello",
+      "year": 2015,
+      "titulo": "Computational modeling and simulation of rupture of membranes and thin films",
+      "doi": "10.1007/s40430-014-0273-5",
+      "blanco": "Bicapa lipídica; exclusivamente ejemplo 5.3",
+      "modelo": "DEM de dos capas en tres dimensiones",
+      "evidencia": "Texto completo: chorro de nanopartículas contra bicapa lipídica.",
+      "estado": "Piloto reducido implementado; reproducción completa pendiente",
+      "fuente": "https://www.researchgate.net/publication/269096734_Computational_modeling_and_simulation_of_rupture_of_membranes_and_thin_films"
+    },
+    {
+      "id": "B04",
+      "autores": "Zhang, Meng, Qin y Keten",
+      "year": 2018,
+      "titulo": "Ballistic impact response of lipid membranes",
+      "doi": "10.1039/C7NR08879E",
+      "blanco": "Membrana lipídica",
+      "modelo": "Dinámica molecular de grano grueso",
+      "evidencia": "Resumen: impacto, tubulación y penetración; falta revisar el campo de fuerzas completo.",
+      "estado": "Pendiente de texto completo y suplemento",
+      "fuente": "https://pubs.rsc.org/en/content/articlelanding/2018/nr/c7nr08879e"
+    },
+    {
+      "id": "B05",
+      "autores": "Fraire et al.",
+      "year": 2022,
+      "titulo": "Light triggered nanoscale biolistics for efficient intracellular delivery of functional macromolecules in mammalian cells",
+      "doi": "10.1038/s41467-022-29713-7",
+      "blanco": "Membrana celular en medio acuoso",
+      "modelo": "Fluido bifásico, malla dinámica y movimiento de esfera",
+      "evidencia": "Texto y suplemento: deformación de interfaz; Stokes solo no la reproduce.",
+      "estado": "Faltan detalles para una réplica Python completa y verificada",
+      "fuente": "https://www.nature.com/articles/s41467-022-29713-7"
+    },
+    {
+      "id": "B06",
+      "autores": "Shen, Meng, Hirschler y Roth",
+      "year": 2024,
+      "titulo": "Dynamic behavior of multilayered skin structure: A preliminary numerical and analytical microscopic analysis",
+      "doi": "10.1016/j.matlet.2023.135368",
+      "blanco": "Piel multicapa",
+      "modelo": "SPH-FEM y análisis de penetración",
+      "evidencia": "Resumen y referencias: impacto en piel. Falta cotejar leyes, geometría y condiciones del texto completo.",
+      "estado": "Pendiente de texto completo",
+      "fuente": "https://www.sciencedirect.com/science/article/abs/pii/S0167577X23015537"
+    },
+    {
+      "id": "B07",
+      "autores": "Shen et al.",
+      "year": 2025,
+      "titulo": "Investigation of dynamic behavior of human skin tissue under micro-particle impact in the context of transdermal drug delivery: numerical and analytical perspectives",
+      "doi": "10.1016/j.taml.2024.100567",
+      "blanco": "Tejido cutáneo humano",
+      "modelo": "SPH-FEM con ley hiperelástica de Ogden",
+      "evidencia": "Texto completo: deformación del tejido; Poncelet es la comparación de penetración.",
+      "estado": "Modelo identificado; implementación y validación pendientes",
+      "fuente": "https://pubs-en.cstam.org.cn/data/article/taml/preview/pdf/20250202.pdf"
+    },
+    {
+      "id": "B08",
+      "autores": "Guha, Shear y Papini",
+      "year": 2010,
+      "titulo": "Ballistic Impact of Single Particles Into Gelatin: Experiments and Modeling With Application to Transdermal Pharmaceutical Delivery",
+      "doi": "10.1115/1.4002428",
+      "blanco": "Dermis humana en modelo FEM; gelatina en experimentos",
+      "modelo": "Elementos finitos de impacto y penetración",
+      "evidencia": "Resumen confirma subcaso de dermis; no se acepta como tejido la gelatina por sí sola.",
+      "estado": "Pendiente de texto completo y ley constitutiva",
+      "fuente": "https://pubmed.ncbi.nlm.nih.gov/20887013/"
+    },
+    {
+      "id": "B09",
+      "autores": "Hardy y Kendall",
+      "year": 2005,
+      "titulo": "Mucosal deformation from an impinging transonic gas jet and the ballistic impact of microparticles",
+      "doi": "10.1088/0031-9155/50/19/010",
+      "blanco": "Mucosa",
+      "modelo": "CFD con superficie deformable y micropartículas",
+      "evidencia": "Resumen: la deformación procede del chorro gaseoso. No está confirmado que se calcule como respuesta al impacto de la esfera.",
+      "estado": "CONDICIONAL: no asignar; comprobar si cumple deformación calculada por impacto",
+      "fuente": "https://doi.org/10.1088/0031-9155/50/19/010"
+    }
+  ]
+}

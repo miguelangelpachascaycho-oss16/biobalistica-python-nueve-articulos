@@ -1,0 +1,22 @@
+{
+  "lado": 39.0,
+  "nodos": 14,
+  "espesor": 5.0,
+  "radio_lipido": 1.25,
+  "radio_proyectil": 0.625,
+  "densidad_lipido": 9e-07,
+  "densidad_proyectil": 1.8e-06,
+  "k": 0.004,
+  "c": 1e-05,
+  "deformacion_critica": 0.5,
+  "E": 100.0,
+  "nu": 0.25,
+  "xi": 0.1,
+  "friccion": 0.1,
+  "arrastre": 5e-06,
+  "presion_por_nodo": 6.5e-06,
+  "velocidad": 100.0,
+  "dt": 2e-05,
+  "tiempo_final": 1.0,
+  "con_proyectiles": true
+}

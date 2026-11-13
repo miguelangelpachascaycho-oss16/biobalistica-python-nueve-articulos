@@ -1,3 +1,5 @@
+> **MATERIAL AUXILIAR ANTERIOR. Esta ficha no constituye una asignación de biobalística en células o tejidos. Consulta [la revisión vigente](REVISION_BIOBALISTICA.md).**
+
 # Alumno 06 · Impacto y deformación del blanco
 
 ## Artículo distinto asignado
