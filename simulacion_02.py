@@ -1,4 +1,4 @@
-"""Trabajo del gas y velocidad normalizada.
+"""Impacto con resistencia viscosa, inercial y de fluencia.
 
 Ejemplo educativo del submodelo descrito en ALUMNO_02.md.
 Los parámetros relativos son docentes; no es calibración experimental.
@@ -11,37 +11,68 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from animaciones import exportar_movimiento
+
+
+def integrar_rk4(derivadas, tiempos, estado_inicial):
+    """Integra y'=f(t,y). Recibe malla 1D y estado; devuelve matriz (n,m)."""
+    estados = np.empty((len(tiempos), len(estado_inicial)), dtype=float)
+    estados[0] = estado_inicial
+    for i, dt in enumerate(np.diff(tiempos)):
+        t, y = tiempos[i], estados[i]
+        k1 = np.asarray(derivadas(t, y))
+        k2 = np.asarray(derivadas(t + dt/2, y + dt*k1/2))
+        k3 = np.asarray(derivadas(t + dt/2, y + dt*k2/2))
+        k4 = np.asarray(derivadas(t + dt, y + dt*k3))
+        estados[i+1] = y + dt*(k1 + 2*k2 + 2*k3 + k4)/6
+    return estados
+
+
+def integrar_hasta_parada(resistencia, paso=0.005, horizonte=40.0):
+    """Integra (velocidad, posición) y localiza v=0 por interpolación lineal."""
+    def f(t, y):
+        return np.array([-resistencia(max(float(y[0]), 0.0)), y[0]])
+    t, y = 0.0, np.array([1.0, 0.0])
+    tiempos, estados = [t], [y.copy()]
+    for _ in range(int(np.ceil(horizonte/paso))):
+        siguiente = integrar_rk4(f, np.array([t, t+paso]), y)[-1]
+        if siguiente[0] <= 0:
+            fraccion = y[0] / (y[0] - siguiente[0])
+            final = y + fraccion*(siguiente-y)
+            final[0] = 0.0
+            tiempos.append(t + fraccion*paso)
+            estados.append(final)
+            return np.array(tiempos), np.array(estados)
+        t += paso
+        y = siguiente
+        tiempos.append(t)
+        estados.append(y.copy())
+    raise RuntimeError("No hubo parada: revisa horizonte y parámetros")
 
 
 
-TITULO = 'Trabajo del gas y velocidad normalizada'
+TITULO = 'Impacto con resistencia viscosa, inercial y de fluencia'
 DOI = '10.3109/10717544.2014.887158'
-PARAMETRO = 'gamma'
-VALORES = [1.2, 1.4, 1.6]
-COLUMNAS = ['s', 'J', 'U', 'J_analitica']
-XLABEL = 'Expansión relativa s=V2/V1'
-YLABEL = 'Trabajo relativo J=E/(P1 V1)'
+PARAMETRO = 'B'
+VALORES = [0.1, 0.5, 1.0]
+COLUMNAS = ['s', 'w', 'z']
+XLABEL = 'Tiempo relativo s'
+YLABEL = 'Velocidad relativa w'
 
-def calcular_modelo(gamma):
-    """Integra presión relativa y devuelve s, J, U y referencia cerrada."""
-    if gamma <= 0:
-        raise ValueError("gamma debe ser positivo")
-    s=np.linspace(0,1,501)
-    presion=(1+s)**(-gamma)
-    J=np.r_[0.,np.cumsum((presion[1:]+presion[:-1])*np.diff(s)/2)]
-    referencia=np.log1p(s) if abs(gamma-1)<1e-10 else np.expm1((1-gamma)*np.log1p(s))/(1-gamma)
-    return np.column_stack((s,J,np.sqrt(np.maximum(J,0)),referencia))
-
+def calcular_modelo(B):
+    """Integra velocidad y penetración hasta la parada; B es resistencia inercial."""
+    t,y=integrar_hasta_parada(lambda w: 0.5*w+B*w*w+0.1)
+    return np.column_stack((t,y))
 
 def verificar():
-    """Compara cuadratura y forma cerrada, incluyendo el límite gamma=1."""
+    """Contrasta profundidad con la cuadratura de dz/dw=-w/resistencia."""
     errores=[]
-    for gamma in list(VALORES)+[1.]:
-        d=calcular_modelo(gamma)
-        errores.append(float(np.max(np.abs(d[:,1]-d[:,3]))))
-        assert np.max(np.abs(d[:,2]**2-d[:,1])) < 1e-12
-    assert max(errores) < 1e-6
-    return {"error_maximo_trabajo":max(errores)}
+    for B in VALORES:
+        d=calcular_modelo(B); w=np.linspace(0,1,20001)
+        exacta=np.trapezoid(w/(0.5*w+B*w*w+0.1),w)
+        errores.append(abs(d[-1,2]-exacta))
+        assert errores[-1]<1e-5 and d[-1,1]==0
+    return {"error_profundidad":float(max(errores))}
 
 
 def comparar_escenarios(seleccion="todos"):
@@ -79,6 +110,7 @@ def main():
     parser.add_argument("--escenario",choices=["A","B","C","todos"],default="todos")
     parser.add_argument("--salida",type=Path,default=Path("resultados")/"alumno_02")
     parser.add_argument("--verificar",action="store_true")
+    parser.add_argument("--animar",action="store_true",help="Genera GIF además del visor HTML y las métricas")
     args=parser.parse_args()
     if args.verificar:
         metricas=verificar()
@@ -86,6 +118,7 @@ def main():
     resultados=comparar_escenarios(args.escenario)
     guardar_resultados(resultados,args.salida)
     graficar_resultados(resultados,args.salida)
+    exportar_movimiento("02",resultados,args.salida,args.animar)
     print(f"Alumno 02: {len(resultados)} escenario(s). Resultados en {args.salida}")
 
 

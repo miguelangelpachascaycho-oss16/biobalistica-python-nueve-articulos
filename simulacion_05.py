@@ -1,4 +1,4 @@
-"""Simulación estadística de una razón y su incertidumbre.
+"""Penetración de una microesfera en gel.
 
 Ejemplo educativo del submodelo descrito en ALUMNO_05.md.
 Los parámetros relativos son docentes; no es calibración experimental.
@@ -11,42 +11,68 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from animaciones import exportar_movimiento
+
+
+def integrar_rk4(derivadas, tiempos, estado_inicial):
+    """Integra y'=f(t,y). Recibe malla 1D y estado; devuelve matriz (n,m)."""
+    estados = np.empty((len(tiempos), len(estado_inicial)), dtype=float)
+    estados[0] = estado_inicial
+    for i, dt in enumerate(np.diff(tiempos)):
+        t, y = tiempos[i], estados[i]
+        k1 = np.asarray(derivadas(t, y))
+        k2 = np.asarray(derivadas(t + dt/2, y + dt*k1/2))
+        k3 = np.asarray(derivadas(t + dt/2, y + dt*k2/2))
+        k4 = np.asarray(derivadas(t + dt, y + dt*k3))
+        estados[i+1] = y + dt*(k1 + 2*k2 + 2*k3 + k4)/6
+    return estados
+
+
+def integrar_hasta_parada(resistencia, paso=0.005, horizonte=40.0):
+    """Integra (velocidad, posición) y localiza v=0 por interpolación lineal."""
+    def f(t, y):
+        return np.array([-resistencia(max(float(y[0]), 0.0)), y[0]])
+    t, y = 0.0, np.array([1.0, 0.0])
+    tiempos, estados = [t], [y.copy()]
+    for _ in range(int(np.ceil(horizonte/paso))):
+        siguiente = integrar_rk4(f, np.array([t, t+paso]), y)[-1]
+        if siguiente[0] <= 0:
+            fraccion = y[0] / (y[0] - siguiente[0])
+            final = y + fraccion*(siguiente-y)
+            final[0] = 0.0
+            tiempos.append(t + fraccion*paso)
+            estados.append(final)
+            return np.array(tiempos), np.array(estados)
+        t += paso
+        y = siguiente
+        tiempos.append(t)
+        estados.append(y.copy())
+    raise RuntimeError("No hubo parada: revisa horizonte y parámetros")
 
 
 
-TITULO = 'Simulación estadística de una razón y su incertidumbre'
-DOI = '10.1038/s41598-021-86549-9'
-PARAMETRO = 'CV'
-VALORES = [0.02, 0.05, 0.1]
-COLUMNAS = ['repeticion', 'Q']
-XLABEL = 'Razón Q=a/b'
-YLABEL = 'Densidad de probabilidad simulada'
+TITULO = 'Penetración de una microesfera en gel'
+DOI = '10.1016/j.jmbbm.2018.06.016'
+PARAMETRO = 'Y'
+VALORES = [0.2, 0.5, 1.0]
+COLUMNAS = ['s', 'w', 'z']
+XLABEL = 'Tiempo relativo s'
+YLABEL = 'Velocidad relativa w'
 
-def muestrear_positivo(rng,media,cv,n):
-    """Lognormal docente de media y CV dados; devuelve n valores positivos."""
-    sigma=np.sqrt(np.log1p(cv*cv))
-    mu=np.log(media)-sigma*sigma/2
-    return rng.lognormal(mu,sigma,n)
-
-
-def calcular_modelo(CV,n=10000,semilla=42):
-    """Simula una razón de variables independientes; devuelve repetición,Q."""
-    if CV<=0 or n<2:
-        raise ValueError("CV debe ser positivo y n>=2")
-    rng=np.random.default_rng(semilla)
-    a=muestrear_positivo(rng,100.,CV,n)
-    b=muestrear_positivo(rng,100.,CV,n)
-    return np.column_stack((np.arange(n),a/b))
-
+def calcular_modelo(Y):
+    """Calcula el tramo de penetración de Poncelet hasta velocidad nula."""
+    t,y=integrar_hasta_parada(lambda w: w*w+Y, paso=0.001)
+    return np.column_stack((t,y))
 
 def verificar():
-    """Compara Monte Carlo y propagación de primer orden a CV pequeño."""
-    d=calcular_modelo(0.02,n=40000)
-    sd=float(np.std(d[:,1],ddof=1));pred=np.sqrt(2)*0.02
-    error=abs(sd/pred-1)
-    assert error<0.04 and np.min(d[:,1])>0
-    assert np.array_equal(calcular_modelo(0.05),calcular_modelo(0.05))
-    return {"sd_MC":sd,"sd_primer_orden":float(pred),"discrepancia_relativa":float(error)}
+    """Compara parada y profundidad con soluciones analíticas independientes."""
+    errores=[]
+    for Y in VALORES:
+        d=calcular_modelo(Y)
+        errores.append(abs(d[-1,2]-0.5*np.log1p(1/Y)))
+        assert abs(d[-1,0]-np.arctan(1/np.sqrt(Y))/np.sqrt(Y))<1e-5
+    assert max(errores)<1e-5
+    return {"error_profundidad":float(max(errores))}
 
 
 def comparar_escenarios(seleccion="todos"):
@@ -71,7 +97,7 @@ def graficar_resultados(resultados,carpeta):
     fig,ax=plt.subplots(figsize=(8,4.8))
     for etiqueta,datos in resultados.items():
         valor=VALORES["ABC".index(etiqueta)]
-        ax.hist(datos[:,1],bins=60,density=True,histtype="step",linewidth=1.5,label=f"{etiqueta}: CV={valor:g}")
+        ax.plot(datos[:,0],datos[:,1],label=f"{etiqueta}: {PARAMETRO}={valor:g}")
     ax.set(xlabel=XLABEL,ylabel=YLABEL,title=TITULO)
     ax.grid(alpha=0.25);ax.legend()
     fig.text(0.5,0.01,"Ejemplo docente: valores relativos de práctica; no reproduce mediciones",ha="center",fontsize=8)
@@ -84,6 +110,7 @@ def main():
     parser.add_argument("--escenario",choices=["A","B","C","todos"],default="todos")
     parser.add_argument("--salida",type=Path,default=Path("resultados")/"alumno_05")
     parser.add_argument("--verificar",action="store_true")
+    parser.add_argument("--animar",action="store_true",help="Genera GIF además del visor HTML y las métricas")
     args=parser.parse_args()
     if args.verificar:
         metricas=verificar()
@@ -91,6 +118,7 @@ def main():
     resultados=comparar_escenarios(args.escenario)
     guardar_resultados(resultados,args.salida)
     graficar_resultados(resultados,args.salida)
+    exportar_movimiento("05",resultados,args.salida,args.animar)
     print(f"Alumno 05: {len(resultados)} escenario(s). Resultados en {args.salida}")
 
 

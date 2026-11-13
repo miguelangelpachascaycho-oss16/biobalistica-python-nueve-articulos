@@ -32,7 +32,7 @@
   },
   {
     "n": "02",
-    "tema": "Trabajo del gas y velocidad normalizada",
+    "tema": "Impacto con resistencia viscosa, inercial y de fluencia",
     "autor": "Zhang, Rielly y Das",
     "year": 2015,
     "doi": "10.3109/10717544.2014.887158",
@@ -40,25 +40,24 @@
     "journal": "Drug Delivery 22(3), 335-350; publicación en línea en 2014",
     "url": "https://doi.org/10.3109/10717544.2014.887158",
     "lectura": "https://repository.lboro.ac.uk/articles/journal_contribution/9243026",
-    "ubicacion": "Sección 2.4.1, Acceleration stage, ecuaciones (1)-(4) del manuscrito aceptado.",
-    "modelo": "P1 V1^γ = P2(V1+V2)^γ; E=∫P2 dV2; E=M u²/2.",
-    "reduccion": "Cambio de variables: s=V2/V1, Π=P2/P1, J=E/(P1V1), U=u/sqrt(2P1V1/M). Entonces Π=(1+s)^(-γ), J=∫Π ds y U=sqrt(J). Los valores de práctica no son ajustes del equipo.",
-    "parametro": "gamma",
+    "ubicacion": "Sección 2.4.3, Deceleration stage, ecuaciones (7)-(11) del manuscrito aceptado.",
+    "modelo": "m dv/dt=-(a v+b v²+c); dx/dt=v, hasta la parada.",
+    "reduccion": "Una región homogénea: w'=-(0.5w+B w²+0.1), z'=w, w(0)=1. Los coeficientes son adimensionales y docentes. Se muestra penetración, no el campo de deformaciones del blanco.",
+    "parametro": "B",
     "valores": [
-      1.2,
-      1.4,
-      1.6
+      0.1,
+      0.5,
+      1.0
     ],
-    "xlabel": "Expansión relativa s=V2/V1",
-    "ylabel": "Trabajo relativo J=E/(P1 V1)",
+    "xlabel": "Tiempo relativo s",
+    "ylabel": "Velocidad relativa w",
     "columnas": [
       "s",
-      "J",
-      "U",
-      "J_analitica"
+      "w",
+      "z"
     ],
-    "reto": "Repetir el cálculo con una malla más gruesa y explicar el error de integración. Añadir una gráfica de Π(s) sin mezclar presión, trabajo y velocidad en un mismo eje.",
-    "defensa": "¿Qué integra la función? ¿Por qué la velocidad tiene una raíz cuadrada? ¿Qué cambia cuando γ se aproxima a 1?",
+    "reto": "Comparar profundidad y tiempo de parada al variar B. Refinar el paso y contrastar con una integral independiente respecto de la velocidad.",
+    "defensa": "¿Por qué se detiene el integrador en w=0? ¿Por qué la penetración no es una medida de deformación del tejido?",
     "acceso": "Manuscrito aceptado de autores en Loughborough, CC BY-NC-ND 4.0. Enlace editorial separado."
   },
   {
@@ -123,32 +122,33 @@
   },
   {
     "n": "05",
-    "tema": "Simulación estadística de una razón y su incertidumbre",
-    "autor": "Miller et al.",
-    "year": 2021,
-    "doi": "10.1038/s41598-021-86549-9",
-    "title": "An improved biolistic delivery and analysis method for evaluation of DNA and CRISPR-Cas delivery efficacy in plant tissue",
-    "journal": "Scientific Reports 11, 7695",
-    "url": "https://www.nature.com/articles/s41598-021-86549-9",
-    "lectura": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8032657/",
-    "ubicacion": "Methods: Statistical analysis; fórmula Q=a/b y propagación de incertidumbre. Contexto de normalización: figura 2.",
-    "modelo": "Q=a/b; δQ/|Q|=sqrt[(δa/a)²+(δb/b)²], suponiendo incertidumbres independientes.",
-    "reduccion": "Se reproduce la propagación de incertidumbre. Para contrastarla por Monte Carlo se eligen variables lognormales positivas e independientes con medias 100 y coeficiente de variación CV. Esa distribución y los datos son docentes, no mediciones ni un supuesto atribuido a los autores.",
-    "parametro": "CV",
+    "tema": "Penetración de una microesfera en gel",
+    "autor": "Veysset et al.",
+    "year": 2018,
+    "doi": "10.1016/j.jmbbm.2018.06.016",
+    "title": "High-velocity micro-particle impact on gelatin and synthetic hydrogel",
+    "journal": "Journal of the Mechanical Behavior of Biomedical Materials 86, 71-76",
+    "url": "https://doi.org/10.1016/j.jmbbm.2018.06.016",
+    "lectura": "https://specialised-imaging.com/wp-content/uploads/2025/02/SI_RA__Veysset_et_al._-_2018_-_High-velocity_micro-particle_impact_on_gelatin_and_synthetic_hydrogel-1.pdf",
+    "ubicacion": "Sección 2.3, Poncelet model for particle penetration, ecuación (1).",
+    "modelo": "F=B2 v²+B0; m dv/dt=-F; dx/dt=v.",
+    "reduccion": "Forma adimensional w'=-(w²+Y), z'=w, hasta w=0, con w(0)=1. Se varía la resistencia constante Y. No se reproduce la retracción tardía ni la cavidad observada en los experimentos.",
+    "parametro": "Y",
     "valores": [
-      0.02,
-      0.05,
-      0.1
+      0.2,
+      0.5,
+      1.0
     ],
-    "xlabel": "Repetición Monte Carlo",
-    "ylabel": "Razón Q=a/b",
+    "xlabel": "Tiempo relativo s",
+    "ylabel": "Velocidad relativa w",
     "columnas": [
-      "repeticion",
-      "Q"
+      "s",
+      "w",
+      "z"
     ],
-    "reto": "Comparar la desviación estándar simulada con sqrt(2)*CV. Cambiar la semilla y luego el número de repeticiones; explicar qué cambia. Identificar la independencia requerida por la fórmula.",
-    "defensa": "¿Qué simulas y qué ecuación procede del artículo? ¿Por qué un intervalo del 95 % no demuestra eficacia de transferencia?",
-    "acceso": "Texto completo abierto, CC BY 4.0. Es una simulación estadística de análisis, no de penetración."
+    "reto": "Comprobar z_final=0.5 ln(1+1/Y) y s_final=atan(1/sqrt(Y))/sqrt(Y). Explicar por qué el modelo termina en la máxima penetración.",
+    "defensa": "¿Qué fuerzas resume Poncelet? ¿Qué puedes medir en la animación y qué requeriría un modelo continuo del gel?",
+    "acceso": "PDF completo enlazado desde el fabricante de la cámara utilizada en el estudio; conserva derechos editoriales. No se redistribuye el PDF."
   },
   {
     "n": "06",
@@ -245,32 +245,34 @@
   },
   {
     "n": "09",
-    "tema": "Transferencia térmica transitoria en dos capas",
-    "autor": "Liu",
-    "year": 2006,
-    "doi": "10.3923/jbs.2006.231.237",
-    "title": "Quantitative Evaluation of the Skin Heat Transfer Characteristics Subjected to a Transient High-speed Helium Gas Impingement",
-    "journal": "Journal of Biological Sciences 6(2), 231-237",
-    "url": "https://scialert.net/fulltext/index.php?doi=jbs.2006.231.237",
-    "lectura": "https://scialert.net/fulltext/index.php?doi=jbs.2006.231.237",
-    "ubicacion": "Results and Discussion: Skin heat transfer; modelo unidimensional de dos capas y figura 8.",
-    "modelo": "ρ c ∂T/∂t=∂(k ∂T/∂x)/∂x, con intercambio convectivo en la superficie.",
-    "reduccion": "Se explicita la ecuación de conducción estándar correspondiente al modelo 1D descrito en el texto; no tiene número de ecuación allí. Se usan coordenadas relativas, conductividad uniforme, capacidades relativas 1.3 y 1 en dos capas docentes y un pulso térmico de práctica. No se reproduce el flujo de gas calculado por los autores.",
-    "parametro": "Bi",
+    "tema": "Contacto elástico, indentación y rebote",
+    "autor": "Saifoori, Nezamabadi y Ghadiri",
+    "year": 2024,
+    "doi": "10.1007/s40571-024-00742-x",
+    "title": "Analysis of impact deformation of elastic-perfectly plastic particles",
+    "journal": "Computational Particle Mechanics 11, 2629-2640",
+    "url": "https://link.springer.com/article/10.1007/s40571-024-00742-x",
+    "lectura": "https://link.springer.com/article/10.1007/s40571-024-00742-x",
+    "ubicacion": "Sección 2.2, Verification, ecuaciones (5)-(9).",
+    "modelo": "F=(4/3) sqrt(R) E* δ^(3/2); m δ''=-F durante el contacto.",
+    "reduccion": "Se reproduce únicamente la referencia elástica de Hertz de la sección 2.2. Con δ=Lq, t=Ts: q''=-K max(q,0)^(3/2), q(0)=0, q'(0)=1, K=(4/3)sqrt(R)E*T²sqrt(L)/m. Se calcula indentación global y fuerza; no se ejecuta el MPM ni plasticidad del artículo. El contorno dibujado es esquemático, no un campo de deformación.",
+    "parametro": "K",
     "valores": [
-      0.2,
       0.5,
-      1.0
+      1.0,
+      2.0
     ],
-    "xlabel": "Tiempo relativo s",
-    "ylabel": "Temperatura superficial relativa θ",
+    "xlabel": "Tiempo relativo de contacto s",
+    "ylabel": "Indentación relativa q=δ/L",
     "columnas": [
       "s",
-      "theta_superficie",
-      "theta_interior"
+      "q",
+      "w",
+      "fuerza",
+      "energia"
     ],
-    "reto": "Duplicar el número de nodos y comparar el máximo superficial. Explicar el paso de estabilidad y la condición convectiva. Probar una entrada térmica nula.",
-    "defensa": "¿Qué guarda el arreglo de temperaturas? ¿Por qué no puedes elegir cualquier paso temporal? ¿Qué datos has supuesto en la frontera?",
-    "acceso": "Texto completo accesible en la revista. No se copia ni se redistribuye el artículo."
+    "reto": "Verificar q_max=(5/(4K))^(2/5), energía constante y restitución próxima a 1. Explicar por qué no hay deformación residual en este submodelo.",
+    "defensa": "¿Qué representa la indentación y en qué se diferencia de la deformación unitaria? ¿Qué partes de MPM y plasticidad has omitido?",
+    "acceso": "Artículo completo de acceso abierto. Se usa el submodelo elástico de verificación, no los resultados de grandes deformaciones plásticas."
   }
 ]

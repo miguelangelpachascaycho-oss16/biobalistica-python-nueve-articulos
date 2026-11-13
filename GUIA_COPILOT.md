@@ -12,3 +12,5 @@
 Prompt útil: “No avances todavía. Hazme dos preguntas sobre los argumentos y el retorno de esta función y corrige mi explicación usando el código”.
 
 El código no requiere modelos de IA ni claves de API para ejecutarse. Copilot es un apoyo opcional de tutoría; su disponibilidad depende de tu cuenta.
+
+Para la animación, pregunta: «¿Cómo se obtiene la posición de cada cuadro a partir del vector de estado? ¿Qué se interpola, qué se mide sobre los datos originales y qué parte del dibujo es solo esquemática?». Explica `preparar_serie`, `resumir_metricas`, `crear_paquete`, `crear_gif` y `exportar_movimiento`. La cadena HTML contiene los controles del visor; no introduce un segundo modelo físico.

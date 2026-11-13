@@ -1,6 +1,6 @@
 """Comprueba referencias y ejecuta secuencialmente los nueve ejemplos."""
 from pathlib import Path
-import sys,subprocess,json,time,platform,importlib.metadata
+import sys,subprocess,json,time,platform
 
 
 def main():
@@ -16,7 +16,7 @@ def main():
         if r.returncode:print(r.stdout,r.stderr)
         linea=next((s for s in r.stdout.splitlines() if s.startswith('{')),None)
         registros.append({"alumno":n,"doi":fuente['doi'],"exit_code":r.returncode,"segundos":round(time.perf_counter()-inicio,2),"comprobacion":json.loads(linea) if linea else None})
-    informe={"dependencias":{n:importlib.metadata.version(n) for n in ["numpy","matplotlib"]},"python":platform.python_version(),"articulos_distintos":9,"fecha_revision":"2026-11-13","resultados":registros,"alcance":"Comprobaciones matemáticas y ejecución local; no validación biológica"}
+    informe={"python":platform.python_version(),"articulos_distintos":9,"fecha_revision":"2026-11-13","resultados":registros,"alcance":"Comprobaciones matemáticas y ejecución local; no validación biológica"}
     (raiz/"VERIFICACION.json").write_text(json.dumps(informe,ensure_ascii=False,indent=2),encoding="utf8")
     assert all(r['exit_code']==0 for r in registros),"Hay comprobaciones fallidas"
     print("Nueve artículos distintos y nueve programas verificados.")

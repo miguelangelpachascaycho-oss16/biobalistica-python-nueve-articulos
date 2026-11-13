@@ -7,7 +7,7 @@
       "alumno": "01",
       "doi": "10.1038/s41467-022-29713-7",
       "exit_code": 0,
-      "segundos": 0.69,
+      "segundos": 0.77,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
@@ -19,11 +19,11 @@
       "alumno": "02",
       "doi": "10.3109/10717544.2014.887158",
       "exit_code": 0,
-      "segundos": 0.78,
+      "segundos": 0.73,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
-          "error_maximo_trabajo": 4.453658205560984e-07
+          "error_profundidad": 1.9241571691530623e-07
         }
       }
     },
@@ -31,7 +31,7 @@
       "alumno": "03",
       "doi": "10.1016/j.ces.2014.06.031",
       "exit_code": 0,
-      "segundos": 0.63,
+      "segundos": 0.7,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
@@ -43,7 +43,7 @@
       "alumno": "04",
       "doi": "10.1080/21645515.2015.1029211",
       "exit_code": 0,
-      "segundos": 0.64,
+      "segundos": 0.71,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
@@ -53,15 +53,13 @@
     },
     {
       "alumno": "05",
-      "doi": "10.1038/s41598-021-86549-9",
+      "doi": "10.1016/j.jmbbm.2018.06.016",
       "exit_code": 0,
-      "segundos": 0.66,
+      "segundos": 0.82,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
-          "sd_MC": 0.02849734356238508,
-          "sd_primer_orden": 0.028284271247461905,
-          "discrepancia_relativa": 0.007533243938264711
+          "error_profundidad": 1.198146876157935e-07
         }
       }
     },
@@ -69,7 +67,7 @@
       "alumno": "06",
       "doi": "10.1038/s41467-025-60761-x",
       "exit_code": 0,
-      "segundos": 0.65,
+      "segundos": 0.71,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
@@ -81,7 +79,7 @@
       "alumno": "07",
       "doi": "10.1016/j.taml.2024.100567",
       "exit_code": 0,
-      "segundos": 0.65,
+      "segundos": 0.7,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
@@ -93,7 +91,7 @@
       "alumno": "08",
       "doi": "10.1007/s11340-020-00639-9",
       "exit_code": 0,
-      "segundos": 0.81,
+      "segundos": 0.84,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
@@ -104,21 +102,69 @@
     },
     {
       "alumno": "09",
-      "doi": "10.3923/jbs.2006.231.237",
+      "doi": "10.1007/s40571-024-00742-x",
       "exit_code": 0,
-      "segundos": 0.69,
+      "segundos": 0.82,
       "comprobacion": {
         "verificacion": "OK",
         "metricas": {
-          "discrepancia_maximo_41_vs_81": 0.004323352297471163,
-          "Bi_verificado": 1.0
+          "error_indentacion_maxima": 5.35213862118411e-07,
+          "restitucion": 0.9999999897606309
         }
       }
     }
   ],
   "alcance": "Comprobaciones matemáticas y ejecución local; no validación biológica",
+  "animaciones": [
+    {
+      "alumno": "01",
+      "cuadros": 60,
+      "tamano": 255842
+    },
+    {
+      "alumno": "02",
+      "cuadros": 60,
+      "tamano": 268050
+    },
+    {
+      "alumno": "03",
+      "cuadros": 60,
+      "tamano": 279358
+    },
+    {
+      "alumno": "04",
+      "cuadros": 60,
+      "tamano": 280883
+    },
+    {
+      "alumno": "05",
+      "cuadros": 60,
+      "tamano": 265666
+    },
+    {
+      "alumno": "06",
+      "cuadros": 60,
+      "tamano": 283150
+    },
+    {
+      "alumno": "07",
+      "cuadros": 60,
+      "tamano": 256505
+    },
+    {
+      "alumno": "08",
+      "cuadros": 60,
+      "tamano": 264936
+    },
+    {
+      "alumno": "09",
+      "cuadros": 60,
+      "tamano": 378404
+    }
+  ],
   "dependencias": {
     "numpy": "2.4.3",
-    "matplotlib": "3.10.8"
+    "matplotlib": "3.10.8",
+    "PIL": "12.1.1"
   }
 }

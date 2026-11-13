@@ -11,6 +11,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from animaciones import exportar_movimiento
 
 
 def integrar_rk4(derivadas, tiempos, estado_inicial):
@@ -95,6 +96,7 @@ def main():
     parser.add_argument("--escenario",choices=["A","B","C","todos"],default="todos")
     parser.add_argument("--salida",type=Path,default=Path("resultados")/"alumno_04")
     parser.add_argument("--verificar",action="store_true")
+    parser.add_argument("--animar",action="store_true",help="Genera GIF además del visor HTML y las métricas")
     args=parser.parse_args()
     if args.verificar:
         metricas=verificar()
@@ -102,6 +104,7 @@ def main():
     resultados=comparar_escenarios(args.escenario)
     guardar_resultados(resultados,args.salida)
     graficar_resultados(resultados,args.salida)
+    exportar_movimiento("04",resultados,args.salida,args.animar)
     print(f"Alumno 04: {len(resultados)} escenario(s). Resultados en {args.salida}")
 
 

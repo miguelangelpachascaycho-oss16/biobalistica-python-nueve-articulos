@@ -20,10 +20,12 @@ Pide al alumno recorrer main(), explicar dos funciones que tú elijas, distingui
 
 ## Dificultad
 
-01, 02 y 05 son introducciones; 03, 04, 06 y 07 requieren vectores o integración; 08 y 09 tienen detalles numéricos adicionales. En 09 se incluye una comprobación de refinamiento de malla. Ajusta el tiempo de tutoría al nivel del alumno.
+01 y 04 introducen movimiento; 02/03/05/07/08 comparan penetración; 06 añade trayectoria 2D; 09 introduce contacto elástico y balance de energía. Ajusta el tiempo de tutoría al nivel del alumno.
 
 ## Acceso a las lecturas
 
 Cada ficha identifica una versión disponible. En 08 la editorial ofrece contenido de suscripción y el manuscrito se enlaza desde ResearchGate; comprueba el acceso del alumno antes de fijar la fecha. No debe comprarse ni compartirse un PDF sin revisar sus permisos. Los programas se ejecutan sin acceder a ninguna cuenta o servicio externo.
 
 Fecha y plataforma de entrega: por definir por el docente.
+
+Evalúa también la correspondencia entre estado numérico, posición de la esfera, curva y métricas. Pregunta por qué un dibujo de cavidad no sustituye un campo de deformación. Las fichas 05 y 09 reemplazan los antiguos casos estadístico y térmico para priorizar mecánica visible.

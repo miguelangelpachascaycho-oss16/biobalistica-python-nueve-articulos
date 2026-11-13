@@ -49,13 +49,13 @@ Los tres escenarios modifican únicamente `Re0`: A=0.1, B=1.0, C=10.0. Son escen
 
 | Función | Ubicación |
 |---|---|
-| `integrar_rk4` | [Línea 16](simulacion_04.py#L16) |
-| `calcular_modelo` | [Línea 39](simulacion_04.py#L39) |
-| `verificar` | [Línea 52](simulacion_04.py#L52) |
-| `comparar_escenarios` | [Línea 63](simulacion_04.py#L63) |
-| `guardar_resultados` | [Línea 69](simulacion_04.py#L69) |
-| `graficar_resultados` | [Línea 80](simulacion_04.py#L80) |
-| `main` | [Línea 92](simulacion_04.py#L92) |
+| `integrar_rk4` | [Línea 17](simulacion_04.py#L17) |
+| `calcular_modelo` | [Línea 40](simulacion_04.py#L40) |
+| `verificar` | [Línea 53](simulacion_04.py#L53) |
+| `comparar_escenarios` | [Línea 64](simulacion_04.py#L64) |
+| `guardar_resultados` | [Línea 70](simulacion_04.py#L70) |
+| `graficar_resultados` | [Línea 81](simulacion_04.py#L81) |
+| `main` | [Línea 93](simulacion_04.py#L93) |
 
 Para cada función prepara una fila con: propósito, entradas, unidades o escalas, forma del arreglo, salida, quién la llama y una prueba o comprobación. Explica la diferencia entre devolver un dato con `return`, imprimirlo y guardarlo en un archivo.
 
@@ -67,7 +67,7 @@ Además, el docente podrá elegir una función al azar y pedirte cambiar un par�
 
 ## Entrega
 
-- `mi_simulacion_04.py` y `requirements.txt`.
+- `mi_simulacion_04.py` y `requirements.txt`, junto con el módulo compartido `animaciones.py`.
 - Los tres CSV, los parámetros y la figura comparativa.
 - Informe de 2 páginas: referencia y ubicación de la ecuación; supuestos; predicción; resultados; comprobación; límites.
 - Tabla de funciones y registro breve de tres ayudas de Copilot, con lo que aceptaste, corregiste o verificaste.
@@ -75,3 +75,13 @@ Además, el docente podrá elegir una función al azar y pedirte cambiar un par�
 No entregues `.venv` ni conversaciones personales completas. Fecha y plataforma: las define el docente.
 
 [Volver a la distribución](README.md#distribución-sin-artículos-repetidos).
+
+## Ver el movimiento y analizarlo
+
+Ejecuta `python simulacion_04.py --escenario todos --verificar --animar`. Abre `resultados/alumno_04/visor.html` en el navegador: puedes pausar, arrastrar el tiempo y cambiar A/B/C. También se generan `animacion.gif` (escenario B si existe) y `metricas.json` con resultados de los tres escenarios. El tiempo de reproducción está ralentizado; las unidades del modelo son relativas.
+
+Explica `preparar_serie`, `resumir_metricas` y `exportar_movimiento` en [animaciones.py](animaciones.py): convierten los estados calculados en posiciones, métricas y cuadros. La ecuación permanece en tu archivo individual. El tamaño dibujado de la esfera se amplifica para verla.
+
+Entrega también el visor, el GIF y una tabla de métricas A/B/C. No deduzcas deformación del tejido a partir de una trayectoria: en 02/03/05/07/08 se calcula penetración; en 09, indentación y fuerza del contacto elástico; en 01/04/06 se calcula movimiento en el fluido y el impacto no está resuelto. El dibujo del contorno es esquemático y no proporciona tensiones ni deformaciones locales.
+
+Conserva `animaciones.py` en la misma carpeta que tu programa. El integrador y las ecuaciones están en el archivo individual; el módulo compartido transforma sus resultados en gráficos y animaciones.
