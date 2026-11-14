@@ -8,6 +8,9 @@ La actividad prevista exige nueve artículos distintos, uno por alumno, y una si
 
 Consulta la [revisión de biobalística](REVISION_BIOBALISTICA.md) y el [registro de fuentes y pendientes](SELECCION_BIOBALISTICA.json). La tabla diferencia modelos confirmados, textos incompletos y el candidato que podría no satisfacer la deformación causada por impacto.
 
+
+**Actualización de fuentes:** se obtuvo y revisó la tesis pública de Guha (2009), complementaria al artículo de 2010. Los otros textos siguen pendientes. Consulta [el informe de acceso](ACCESO_FUENTES.md).
+
 ## Primer piloto de deformación calculada
 
 [Campello (2015), ejemplo 5.3](https://doi.org/10.1007/s40430-014-0273-5): bicapa lipídica representada por nodos con inercia, enlaces, contacto y arrastre. La animación proviene de las posiciones integradas de ambas capas. Es una **reducción didáctica 3D**, no una reproducción completa de los resultados publicados.

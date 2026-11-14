@@ -19,7 +19,7 @@ Cada asignación debe reunir: un artículo único; blanco celular o tisular (se 
 | B05 | Fraire et al. (2022). [Light triggered nanoscale biolistics for efficient intracellular delivery of functional macromolecules in mammalian cells](https://doi.org/10.1038/s41467-022-29713-7) | Membrana celular en medio acuoso | Fluido bifásico, malla dinámica y movimiento de esfera | Faltan detalles para una réplica Python completa y verificada |
 | B06 | Shen, Meng, Hirschler y Roth (2024). [Dynamic behavior of multilayered skin structure: A preliminary numerical and analytical microscopic analysis](https://doi.org/10.1016/j.matlet.2023.135368) | Piel multicapa | SPH-FEM y análisis de penetración | Pendiente de texto completo |
 | B07 | Shen et al. (2025). [Investigation of dynamic behavior of human skin tissue under micro-particle impact in the context of transdermal drug delivery: numerical and analytical perspectives](https://doi.org/10.1016/j.taml.2024.100567) | Tejido cutáneo humano | SPH-FEM con ley hiperelástica de Ogden | Modelo identificado; implementación y validación pendientes |
-| B08 | Guha, Shear y Papini (2010). [Ballistic Impact of Single Particles Into Gelatin: Experiments and Modeling With Application to Transdermal Pharmaceutical Delivery](https://doi.org/10.1115/1.4002428) | Dermis humana en modelo FEM; gelatina en experimentos | Elementos finitos de impacto y penetración | Pendiente de texto completo y ley constitutiva |
+| B08 | Guha, Shear y Papini (2010). [Ballistic Impact of Single Particles Into Gelatin: Experiments and Modeling With Application to Transdermal Pharmaceutical Delivery](https://doi.org/10.1115/1.4002428) | Dermis humana en modelo FEM; gelatina en experimentos | Elementos finitos de impacto y penetración | Tesis pública de 2009 revisada; pendiente cotejar el artículo de 2010 |
 | B09 | Hardy y Kendall (2005). [Mucosal deformation from an impinging transonic gas jet and the ballistic impact of microparticles](https://doi.org/10.1088/0031-9155/50/19/010) | Mucosa | CFD con superficie deformable y micropartículas | CONDICIONAL: no asignar; comprobar si cumple deformación calculada por impacto |
 
 ## Decisiones que evitan una falsa reproducción
@@ -36,6 +36,8 @@ Fuentes: cada título enlaza al DOI. Las páginas/textos efectivamente consultad
 
 ## Qué impide cerrar los nueve casos
 
-Faltan los textos completos y/o suplementos de B04, B06, B08 y B09 para comprobar las ecuaciones; en B05 faltan detalles de configuración para una réplica verificable. B01, B02 y B07 tienen modelo identificado pero aún requieren implementación y comprobación. Es necesario confirmar o sustituir B09. Tener un DOI diferente no equivale a tener una simulación reproducida.
+Faltan los textos completos y/o suplementos de los artículos B04, B06, B08 y B09 para comprobar las ecuaciones; en B08 ya se obtuvo y revisó la tesis complementaria de 2009, que debe cotejarse con el artículo; en B05 faltan detalles de configuración para una réplica verificable. B01, B02 y B07 tienen modelo identificado pero aún requieren implementación y comprobación. Es necesario confirmar o sustituir B09. Tener un DOI diferente no equivale a tener una simulación reproducida.
 
 Las prácticas antiguas de contacto permanecen como fundamentos auxiliares. No cumplen por sí solas esta actividad y no deben entregarse como nueve artículos de biobalística celular.
+
+Actualización de acceso: se encontró la tesis pública de Guha (2009). Consulta [el informe de fuentes](ACCESO_FUENTES.md) para distinguir tesis, artículo y enlaces todavía inaccesibles.

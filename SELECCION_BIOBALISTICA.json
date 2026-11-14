@@ -95,9 +95,20 @@
       "doi": "10.1115/1.4002428",
       "blanco": "Dermis humana en modelo FEM; gelatina en experimentos",
       "modelo": "Elementos finitos de impacto y penetración",
-      "evidencia": "Resumen confirma subcaso de dermis; no se acepta como tejido la gelatina por sí sola.",
-      "estado": "Pendiente de texto completo y ley constitutiva",
-      "fuente": "https://pubmed.ncbi.nlm.nih.gov/20887013/"
+      "evidencia": "El resumen del artículo identifica dermis. La tesis de 2009 describe FEM axisimétrico, Ogden y erosión de una capa equivalente de epidermis. Deben cotejarse antes de atribuir ecuaciones al artículo.",
+      "estado": "Tesis complementaria completa revisada; falta cotejar el artículo de 2010",
+      "fuente": "https://pubmed.ncbi.nlm.nih.gov/20887013/",
+      "fuente_complementaria": {
+        "tipo": "Tesis de maestría, no artículo de revista",
+        "autora": "Rachel Ann Guha",
+        "year": 2009,
+        "doi": "10.32920/ryerson.14655951.v1",
+        "url": "https://rshare.library.torontomu.ca/articles/thesis/Ballistic_impact_of_single_particles_into_gelatin_experiments_and_modeling_with_application_to_transdermal_pharmaceutical_delivery/14655951",
+        "texto_completo_revisado": true,
+        "paginas_pdf": 81,
+        "licencia_registro": "In Copyright",
+        "sha256": "9bdf1237ea7b0ba70ba72e65be30c1cd457cad1d3515d5f4eb7f620660339948"
+      }
     },
     {
       "id": "B09",
