@@ -1,0 +1,21 @@
+{
+  "caja": [
+    14.0,
+    14.0,
+    18.0
+  ],
+  "radio_externo": 5.0,
+  "radio_interno": 2.0,
+  "area_lipido": 0.8,
+  "radio_np": 1.1,
+  "hueco": 0.65,
+  "velocidad": 6.0,
+  "rs": 0.86,
+  "C": 100.0,
+  "gamma": 4.5,
+  "sigma": 3.0,
+  "dt": 0.004,
+  "equilibrar": 1200,
+  "pasos": 1800,
+  "semilla": 2026
+}

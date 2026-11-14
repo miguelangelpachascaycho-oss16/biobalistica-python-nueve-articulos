@@ -1,0 +1,17 @@
+{
+  "semilla": 2026,
+  "unidades": "DPD, sin conversión física validada",
+  "frames": 91,
+  "beads_lipidicos": 1824,
+  "beads_np": 72,
+  "t_final": 7.2,
+  "asfericidad_final_impacto": 0.011081691975719732,
+  "asfericidad_final_control": 0.0013203739651097557,
+  "u_rms_alineado_final_impacto": 1.6957248718352567,
+  "u_rms_alineado_final_control": 1.550161404506848,
+  "limitacion": "Un ensayo por condición; no se ha verificado convergencia de distribución estocástica ni equivalencia con las fases del artículo. RMS incluye difusión; asfericidad mide forma global, no daño.",
+  "radio_giro_inicial_impacto": 4.282595231839698,
+  "radio_giro_final_impacto": 4.486844299163653,
+  "radio_giro_inicial_control": 4.282595231839698,
+  "radio_giro_final_control": 4.352282798541744
+}

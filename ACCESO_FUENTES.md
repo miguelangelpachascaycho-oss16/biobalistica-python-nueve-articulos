@@ -1,13 +1,13 @@
 # Acceso a las fuentes pendientes
 
-Revisión del 13 de noviembre de 2026. Se comprobaron registros bibliográficos, repositorios institucionales y páginas editoriales. Un registro de acceso abierto no garantiza que el archivo sea accesible desde esta sesión ni que corresponda exactamente al artículo.
+Revisión del 14 de noviembre de 2026. Se comprobaron registros bibliográficos, repositorios institucionales y páginas editoriales. Un registro de acceso abierto no garantiza que el archivo sea accesible desde esta sesión ni que corresponda exactamente al artículo.
 
 | Caso | Hallazgo | Estado real |
 |---|---|---|
 | Guha 2010 | [Tesis pública de Rachel Ann Guha, 2009, RShare/Toronto Metropolitan University](https://rshare.library.torontomu.ca/articles/thesis/Ballistic_impact_of_single_particles_into_gelatin_experiments_and_modeling_with_application_to_transdermal_pharmaceutical_delivery/14655951), [DOI de la tesis](https://doi.org/10.32920/ryerson.14655951.v1) | PDF completo de 81 páginas descargado y revisado. Es una tesis complementaria; aún falta cotejar el artículo de 2010. |
 | Zhang 2018 | [Página editorial](https://doi.org/10.1039/C7NR08879E) | No se localizó una copia completa pública verificable; acceso editorial bloqueado en esta sesión. |
 | Hardy 2005 | [PDF editorial indicado por el catálogo de acceso abierto](https://iopscience.iop.org/article/10.1088/0031-9155/50/19/010/pdf) | El servidor devuelve una verificación humana, no un PDF. No se obtuvo el texto completo. |
-| Shen 2024 | [Manuscrito aceptado indicado por el catálogo](https://www.sciencedirect.com/science/article/am/pii/S0167577X23015537) | El servidor devuelve HTTP 403. La referencia existe; el texto completo sigue pendiente. |
+| Shen 2024 | [Manuscrito aceptado indicado por el catálogo](https://www.sciencedirect.com/science/article/am/pii/S0167577X23015537) | El enlace al manuscrito aceptado redirigió a una página de PDF no encontrada en la comprobación actual. El texto completo sigue pendiente. |
 
 ## Qué aporta la tesis de Guha
 
@@ -25,3 +25,7 @@ P_z = (2 mu_infinito / alpha) (lambda_z^(alpha-1) - lambda_z^(-1-alpha/2))
 Estos hallazgos no convierten todavía B08 en una réplica del artículo. El siguiente paso es cotejar ambos documentos y registrar parámetros, contacto, erosión, malla y condiciones de contorno antes de implementarlo.
 
 El repositorio enlaza la tesis y no redistribuye su PDF. El registro institucional la identifica como «In Copyright». Los catálogos se usaron para localizar fuentes; la identidad del documento y las ecuaciones se comprobaron en el PDF, incluida revisión visual de la página de fórmulas.
+
+## Fuentes revisadas en la continuación
+
+Arai et al. (2013) ya tiene texto completo editorial abierto y un piloto DPD documentado en [VESICULA_DPD.md](VESICULA_DPD.md). Se obtuvo además el suplemento teórico de Ballistic Microscopy; no define todavía un caso de evolución espacial de membrana que pueda contarse como terminado. La revisión de estas y otras fuentes está en [BUSQUEDA_FALTANTES.md](BUSQUEDA_FALTANTES.md).

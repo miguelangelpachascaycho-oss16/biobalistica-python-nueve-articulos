@@ -1,0 +1,11 @@
+{
+  "accion_reaccion": 0.0,
+  "gradiente_energia": 2.996102921315469e-09,
+  "vuelo_libre": 1.3322676295501878e-14,
+  "potencia_disipativa": -2.942947233760478,
+  "fluctuacion_disipacion": 0.0,
+  "error_oscilador_dt": 0.0006391236443317183,
+  "error_oscilador_dt_mitad": 0.00031910357445852355,
+  "error_desplazamiento_rigido": 3.9103932939717356e-16,
+  "alcance": "Fuerzas y límite analítico conservativo; no certifica equilibrio de vesícula ni fases de Arai"
+}

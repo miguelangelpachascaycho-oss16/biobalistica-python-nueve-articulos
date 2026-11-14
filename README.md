@@ -4,12 +4,23 @@
 
 La actividad prevista exige nueve artículos distintos, uno por alumno, y una simulación de cada modelo que calcule el impacto de micro/nanoesferas y la deformación del blanco. Incluye ecuaciones, funciones explicadas, comparación analítica cuando corresponda y defensa del código en Visual Studio Code con ayuda de GitHub Copilot.
 
-**Estado actual: cuatro implementaciones didácticas reducidas de cuatro artículos distintos; cero réplicas completas verificadas; selección de nueve aún incompleta. La distribución definitiva para los nueve alumnos está pendiente.**
+**Estado actual: cinco implementaciones didácticas reducidas de cinco artículos distintos, incluida una exploración DPD provisional; cero réplicas completas verificadas; selección de nueve aún incompleta. La distribución definitiva para los nueve alumnos está pendiente.**
 
 Consulta la [revisión de biobalística](REVISION_BIOBALISTICA.md) y el [registro de fuentes y pendientes](SELECCION_BIOBALISTICA.json). La tabla diferencia modelos confirmados, textos incompletos y el candidato que podría no satisfacer la deformación causada por impacto.
 
 
-**Actualización 14 de noviembre:** se retiran de la asignación los candidatos sin texto/modelo abierto verificado y se añade Arai et al. (2013) como candidato de colisión en vesícula, aún sin implementar. Las tres fuentes anteriores de Campello son copias públicas de autor cuya licencia abierta no se ha confirmado. El nuevo caso de piel usa un artículo CC BY 4.0. Consulta el [estado de selección](REVISION_BIOBALISTICA.md).
+**Actualización 14 de noviembre:** se añadió un piloto DPD 3D de Arai et al. (2013), con impacto de nanopartícula, vesícula HTTT, agua explícita y control sin velocidad inicial. Hay decisiones complementarias y correcciones de convención documentadas: no se presenta como réplica cuantitativa. Faltan cuatro implementaciones y el cierre de la selección. Consulta el [resultado de la búsqueda](BUSQUEDA_FALTANTES.md).
+
+## Nuevo piloto: colisión con vesícula lipídica
+
+[Arai et al. (2013), DOI 10.1039/C3NR02024J](https://doi.org/10.1039/C3NR02024J), texto editorial abierto CC BY 3.0. La [guía DPD](VESICULA_DPD.md) contiene instalación, ecuaciones, decisiones, explicación de todas las funciones, solución analítica del oscilador y preguntas para defender el código. La figura compara posiciones integradas de impacto y control; no es una forma impuesta al dibujo.
+
+```powershell
+.\.venv\Scripts\python.exe vesicula_dpd.py --animar
+.\.venv\Scripts\python.exe verificar_vesicula.py
+```
+
+![Piloto DPD: colisión con vesícula y control](vesicula_dpd.gif)
 
 ## Impacto temprano en piel: cuarto artículo
 

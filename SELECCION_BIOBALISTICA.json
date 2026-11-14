@@ -83,10 +83,12 @@
       "blanco": "Vesícula lipídica idealizada",
       "modelo": "DPD con colisión de nanopartícula de velocidad inicial prescrita",
       "evidencia": "Describe deformación, radio, poros y pérdida de agua; colisión nanométrica, no pistola génica",
-      "estado": "Candidato abierto de sustitución; implementación pendiente, no asignado como caso terminado",
-      "fuente": "https://digitalcommons.unl.edu/chemzeng/117/",
-      "licencia_texto": "CC BY 3.0 según repositorio institucional CityUHK",
-      "fuente_licencia": "https://scholars.cityu.edu.hk/en/publications/a-vesicle-cell-under-collision-with-a-janus-or-homogeneous-nanopa/"
+      "estado": "Piloto DPD 3D reducido implementado; control sin velocidad inicial y pruebas mecánicas; pendiente de calibración y fidelidad, no asignación definitiva",
+      "fuente": "https://pubs.rsc.org/nr/article/5/19/9089/407469/A-vesicle-cell-under-collision-with-a-Janus-or",
+      "licencia_texto": "CC BY 3.0 confirmada en página editorial",
+      "fuente_licencia": "https://scholars.cityu.edu.hk/en/publications/a-vesicle-cell-under-collision-with-a-janus-or-homogeneous-nanopa/",
+      "programa": "vesicula_dpd.py",
+      "guia": "VESICULA_DPD.md"
     }
   ],
   "implementaciones_didacticas_reducidas": 4,
@@ -151,5 +153,8 @@
       "estado": "Retirado de la asignación; no hay texto/modelo abierto verificado que cumpla todos los criterios",
       "fuente": "https://doi.org/10.1088/0031-9155/50/19/010"
     }
-  ]
+  ],
+  "implementaciones_reducidas": 5,
+  "implementaciones_faltantes": 4,
+  "nota_conteo": "Incluye un piloto DPD provisional; no significa cinco réplicas completas ni nueve asignaciones cerradas"
 }
