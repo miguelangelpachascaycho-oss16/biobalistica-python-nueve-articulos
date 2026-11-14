@@ -1,4 +1,4 @@
-"""Verificación secuencial de nueve artículos, dinámica y reconstrucción del blanco."""
+"""Verificación del material AUXILIAR de contacto general, no de las nueve actividades actuales."""
 from pathlib import Path
 import sys,subprocess,json,time,platform,importlib.metadata
 import numpy as np
@@ -21,7 +21,7 @@ def verificar_perfil():
 def main():
     """Ejecuta 27 escenarios y registra evidencia matemática y salidas del software."""
     raiz=Path(__file__).resolve().parent
-    fuentes=json.loads((raiz/'FUENTES.json').read_text(encoding='utf8'))
+    fuentes=json.loads((raiz/'FUENTES_CONTACTO_AUXILIAR.json').read_text(encoding='utf8'))
     assert len(fuentes)==len({f['doi'].lower() for f in fuentes})==9
     assert len({f['title'].lower() for f in fuentes})==9
     perfil=verificar_perfil();registros=[]

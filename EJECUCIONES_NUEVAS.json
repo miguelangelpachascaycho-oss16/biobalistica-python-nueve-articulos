@@ -1,0 +1,28 @@
+{
+  "6": {
+    "control_en_reposo": "comprobado en verificar_nuevos.py",
+    "contacto_no_omitido": true,
+    "desplazamiento_maximo": 0.5656774033404576,
+    "error_perfil_abs_max": 0.018547261132352832,
+    "nota": "Comparación con límite continuo: no igualdad exacta exigida cerca del contacto finito"
+  },
+  "7": {
+    "control_en_reposo": "comprobado en verificar_nuevos.py",
+    "contacto_no_omitido": true,
+    "desplazamiento_maximo": 0.45119014080428227,
+    "error_perfil_abs_max": 0.02567421596134012,
+    "nota": "Comparación con límite continuo: no igualdad exacta exigida cerca del contacto finito"
+  },
+  "8": {
+    "movimiento_np": -4.351933823202481,
+    "rugosidad_contacto": 0.8232179017370092,
+    "rugosidad_control": 0.48655832855820175,
+    "nota": "Un ensayo por condición, sin inferencia estadística ni calibración de equilibrio"
+  },
+  "9": {
+    "movimiento_np": -5.1308143992900135,
+    "rugosidad_contacto": 0.5411076867115737,
+    "rugosidad_control": 0.39074357302632795,
+    "nota": "Un ensayo por condición, sin inferencia estadística ni calibración de equilibrio"
+  }
+}

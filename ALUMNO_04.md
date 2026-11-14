@@ -1,80 +1,32 @@
-> **MATERIAL AUXILIAR ANTERIOR. Esta ficha no constituye una asignación de biobalística en células o tejidos. Consulta [la revisión vigente](REVISION_BIOBALISTICA.md).**
+# Alumno 04 — Shen et al. (2025)
 
-# Alumno 04 · Impacto y deformación del blanco
+**Artículo distinto:** *Investigation of dynamic behavior of human skin tissue under micro-particle impact in the context of transdermal drug delivery: numerical and analytical perspectives*. [DOI 10.1016/j.taml.2024.100567](https://doi.org/10.1016/j.taml.2024.100567). [Lectura de texto completo](<https://pubs-en.cstam.org.cn/data/article/taml/preview/pdf/20250202.pdf>). Acceso: CC BY 4.0.
 
-## Artículo distinto asignado
+**Tipo:** Biobalística tisular; impacto temprano. **Blanco:** Piel hiperelástica, reducción FEM axisimétrica. Es una implementación docente reducida; las diferencias con el artículo se explican en [la guía del modelo](PIEL_OGDEN.md).
 
-**Flores, Machado, Silva y Martins (2011). On the continuous contact force models for soft materials in multibody dynamics.** Multibody System Dynamics 25, 357-375. [DOI 10.1007/s11044-010-9237-4](https://doi.org/10.1007/s11044-010-9237-4).
+## Paso a paso
 
-[Lectura](https://www.researchgate.net/publication/225871744_On_the_continuous_contact_force_models_for_soft_materials_in_multibody_dynamics). Texto completo de los autores en ResearchGate y registro institucional https://researchportal.ulisboa.pt/en/publications/on-the-continuous-contact-force-models-for-soft-materials-in-mult/ . Puede requerir cuenta.
+1. Descarga **Code → Download ZIP** desde GitHub, extrae el archivo y abre la carpeta en Visual Studio Code.
+2. Abre **Terminal → New Terminal** y ejecuta desde la raíz:
 
-**Localización:** Ecuación (44), nueva expresión de la fuerza normal; ecuación (43), amortiguamiento.
+```powershell
+py -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe ejecutar_caso.py 4 --animar
+.\.venv\Scripts\python.exe verificar_piel.py
+```
 
-**Ley que vas a representar:** `F=k δ^(3/2)[1+8(1-e_obj) δ'/(5e_obj v0)]`.
+3. Selecciona `.venv` como intérprete en VS Code. Abre `piel_ogden.py` y el motor que indica la guía. Copilot ayuda a estudiar el código; no hace falta para ejecutarlo.
+4. Consulta las salidas en `resultados/piel_ogden`. La [vista previa GIF](piel_ogden.gif) y [figura](piel_ogden.png) del repositorio son resultados pregenerados; el comando anterior genera tus propios archivos.
+5. Abre el CSV de métricas y el JSON de parámetros de esa carpeta. Relaciona posiciones, contacto y deformación con un mismo instante. No concluyas daño celular solo por ver un cambio de forma.
+6. Ejecuta el control y la comparación sugerida en [la guía](PIEL_OGDEN.md). Distingue los valores publicados, las elecciones docentes y las variables que cambiaste.
 
-**Adaptación declarada:** Modelo normal de materiales blandos. Se toma esfera rígida y blanco fijo con compliancia equivalente. No se asignan propiedades de un organismo.
+## Trabajo analítico y explicación del código
 
-Todos los casos de esta edición calculan la indentación del **blanco deformable**, con esfera rígida. Se trabaja en coordenadas relativas y con propiedades docentes. No son calibraciones de células ni reproducciones completas de los experimentos del artículo. Consulta [cómo se dibuja y qué se mide](MODELO_DEFORMACION_BLANCO.md).
+Deriva la trayectoria Poncelet y explica por qué no calcula por sí sola la deformación FEM. Revisa unidades, J y compresibilidad.
 
-## Construir la simulación analítica
+Para cada función explica entrada, unidades, retorno, forma de los arreglos y quién la llama. Señala dónde se calcula la fuerza sobre el blanco, dónde se aplica la reacción y dónde se actualizan las coordenadas. Explica cómo el dibujado utiliza esas coordenadas.
 
-Primera integral y cuadratura; comparación independiente de e_obj y la restitución real de esta ley.
+Pide a Copilot: «Lee mi guía y explícame una sola función cada vez. Pregúntame por signos, dimensiones y supuestos. Ayúdame a derivar el límite analítico antes de modificar el programa. No atribuyas al artículo un parámetro añadido por el ejercicio». Revisa el diff y registra una ayuda aceptada y una corrección razonada.
 
-**Tu derivación individual:** Comparar la indentación y el área de histéresis con la ficha 03. Identificar qué aproximación cambia.
-
-Consulta [las deducciones y límites](SOLUCIONES_ANALITICAS.md). Identifica si tu resultado es cerrado, implícito, semianalítico o una aproximación. No presentes una integración numérica como solución analítica.
-
-## Paso a paso en VS Code
-
-1. Sigue la [instalación común](README.md#instalación-y-ejecución). Conserva `motor_contacto.py` y `animaciones.py` junto al programa.
-2. Antes de ver el ejemplo, dibuja la esfera, el blanco y las fuerzas. Define δ, v, m, la reacción y la convención de signos.
-3. Escribe `m δ''=-F(δ,δ')`, las condiciones iniciales y la condición de separación. Desarrolla a mano tu relación analítica.
-4. Crea tu propio `mi_simulacion_04.py` siguiendo [Aprende a construir](APRENDE_A_CONSTRUIR.md). Primero implementa el cálculo de F; comprueba un valor a mano. Luego construye la referencia analítica de tu caso.
-5. Ejecuta la referencia preparada para contrastar tu implementación:
-
-   ```powershell
-   .\.venv\Scripts\python.exe simulacion_04.py --escenario A --verificar --animar
-   ```
-
-6. Abre `resultados/alumno_04/visor.html`: reproduce, pausa y cambia el tiempo. Observa cómo la esfera desplaza la superficie del blanco. La curva de δ(t) usa exactamente el mismo estado que la escena.
-7. Ejecuta los tres escenarios:
-
-   ```powershell
-   .\.venv\Scripts\python.exe simulacion_04.py --escenario todos --verificar --animar
-   ```
-
-8. El parámetro `e_obj` toma A=0.9, B=0.75, C=0.6. Predice qué pasará con la indentación máxima, la fuerza, la restitución y la energía antes de compararlos.
-9. Abre `comparacion.png`, `metricas.json` y los CSV. Explica el error numérico frente a la referencia y el error de aproximación cuando corresponda. Un vacío en las columnas de referencia significa que la serie ya está fuera de su ventana de validez.
-10. Reduce el paso a la mitad con `--paso 0.001`, cambia `--salida resultados/mi_refinamiento_04` y compara. Distingue resolución del integrador y número de cuadros del GIF.
-11. Implementa tu reto personal y ejecuta tu archivo desde una terminal nueva. Explica cada función sin leer respuestas de Copilot.
-
-## Funciones que debes explicar
-
-| Función | Propósito |
-|---|---|
-| [`parametros_escenario`](simulacion_04.py#L20) | Transforma el parámetro del escenario en constantes de la ley. |
-| [`fuerza_contacto`](simulacion_04.py#L27) | Aplica la ecuación y devuelve la reacción del blanco. |
-| [`solucion_analitica`](simulacion_04.py#L33) | Construye la referencia sin reutilizar RK4. |
-| [`calcular_modelo`](simulacion_04.py#L38) | Coordina el integrador, la referencia y las métricas. |
-| [`comparar_escenarios`](simulacion_04.py#L51) | Organiza tres ejecuciones que cambian un parámetro. |
-| [`verificar`](simulacion_04.py#L57) | Contrasta referencias, balance de energía y paso temporal. |
-| [`guardar_resultados`](simulacion_04.py#L88) | Exporta resultados, con unidades relativas y alcance. |
-| [`main`](simulacion_04.py#L102) | Lee argumentos y define el orden de ejecución. |
-
-Para cada una documenta **entradas, salida, forma de arreglos, unidades, quién la llama y una comprobación**. Amplía el mapa con las funciones de [motor_contacto.py](motor_contacto.py) y [animaciones.py](animaciones.py), descritas en [EXPLICACION_FUNCIONES.md](EXPLICACION_FUNCIONES.md).
-
-## Copilot como tutor
-
-> Lee ALUMNO_04.md. Ayúdame a deducir la ley y la relación analítica antes de programar. Hazme una pregunta por paso y espera mi explicación. Después revisa mis funciones: argumentos, retorno, arreglo de estado y unidades. No cambies la ecuación del artículo sin avisarme. Diferencia fórmula cerrada, raíz de una ecuación implícita, cuadratura, serie aproximada y RK4. Ayúdame a comprobar mi código con un límite analítico y un balance de energía. No inventes propiedades ni resultados de células.
-
-## Entrega y defensa
-
-- Tu código, dependencias y módulos utilizados, con una modificación propia justificada.
-- Derivación manuscrita o explicada de la relación analítica, referencia y supuestos.
-- Tres CSV, tabla de métricas A/B/C, figura comparativa, visor y GIF.
-- Tabla de funciones y tres ejemplos breves de ayuda de Copilot que revisaste.
-- Defensa: localizar la ecuación, recorrer `main()`, explicar dos funciones elegidas por el docente, predecir un cambio y ejecutarlo.
-
-Debes distinguir **indentación δ**, **δ/R**, **penetración con perforación** y **deformación unitaria local**. Aquí se calculan las dos primeras; el perfil es una reconstrucción cuasiestática adoptada. No se modelan rotura, transfección, daño ni un campo 3D de deformaciones. En los modelos con separación a δ>0, el último cuadro termina el contacto y no demuestra una huella permanente.
-
-[Volver a la distribución](README.md).
+Entrega código comentado, derivación, parámetros, CSV, curvas, animación, control y una defensa oral. Las comprobaciones numéricas no validan el comportamiento de células reales ni convierten la reducción en una reproducción completa del artículo.

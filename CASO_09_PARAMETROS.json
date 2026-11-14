@@ -1,0 +1,14 @@
+{
+  "caso": 9,
+  "lado": 8,
+  "altura": 18.0,
+  "area_lipido": 1.6,
+  "dt": 0.002,
+  "preparar": 1600,
+  "pasos": 2600,
+  "semilla": 2026,
+  "velocidad": 5.0,
+  "resorte_guia": 40.0,
+  "numero_np": 1,
+  "radio_np": 1.15
+}

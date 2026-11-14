@@ -2,7 +2,7 @@
 
 Artículo distinto: N. Arai, K. Yasuoka y X. C. Zeng (2013), *A vesicle cell under collision with a Janus or homogeneous nanoparticle: translocation dynamics and late-stage morphology*, Nanoscale 5, 9089–9100, [DOI 10.1039/C3NR02024J](https://doi.org/10.1039/C3NR02024J). [Texto completo editorial y licencia CC BY 3.0](https://pubs.rsc.org/nr/article/5/19/9089/407469/A-vesicle-cell-under-collision-with-a-Janus-or). [Copia institucional UNL](https://digitalcommons.unl.edu/chemzeng/117/).
 
-El artículo estudia colisiones nanométricas con una vesícula lipídica idealizada; no utiliza una pistola génica ni células completas con orgánulos. Este programa es un **piloto mecánico reducido**, con decisiones complementarias explícitas. Aún no es una asignación terminada ni una reproducción de las fases de penetración del artículo. El control y las comprobaciones permiten evaluar si resulta apto como actividad.
+El artículo estudia colisiones nanométricas con una vesícula lipídica idealizada; no utiliza una pistola génica ni células completas con orgánulos. Este programa es un **piloto mecánico reducido**, con decisiones complementarias explícitas. Se asigna como actividad exploratoria reducida; no reproduce las fases de penetración del artículo. El control y las comprobaciones forman parte del ejercicio.
 
 ## Ejecutar en Visual Studio Code
 

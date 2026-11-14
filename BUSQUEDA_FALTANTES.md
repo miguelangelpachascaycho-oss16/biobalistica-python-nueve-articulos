@@ -1,6 +1,8 @@
-# Resultado de la búsqueda de los cinco casos faltantes
+# Búsqueda y resolución de los casos restantes
 
-Revisión: 14 de noviembre de 2026. Se mantienen tres condiciones simultáneas: artículo distinto, texto/modelo públicamente accesible y colisión biobalística con deformación del blanco calculada. No se cambian estos requisitos por un número suficiente de DOI.
+**Estado actual:** nueve actividades reducidas asignadas y ejecutadas en el alcance ampliado a penetración mecánica aprobado por el docente. Los cuatro añadidos son Daddi-Moussa-Ider et al. (NJP 2019), Daddi-Moussa-Ider et al. (JCP 2019), Zhang et al. (2015) y Yong/Du (2023). [Selección vigente](REVISION_BIOBALISTICA.md). La revisión que sigue describe la búsqueda previa bajo el criterio de biobalística estricta; no es el estado actual de entrega.
+
+Revisión histórica: 14 de noviembre de 2026. Se mantienen tres condiciones simultáneas: artículo distinto, texto/modelo públicamente accesible y colisión biobalística con deformación del blanco calculada. No se cambian estos requisitos por un número suficiente de DOI.
 
 ## Nuevo piloto implementado
 
@@ -21,8 +23,8 @@ Revisión: 14 de noviembre de 2026. Se mantienen tres condiciones simultáneas: 
 
 También se revisaron estudios abiertos de penetración activa, endocitosis, gelatina/hidrogeles y dinámica de vesículas en flujo. No equivalen por sí mismos a los casos pedidos. Una tesis pública puede servir para estudiar ecuaciones, pero no se cuenta como un artículo distinto de acceso abierto.
 
-## Estado que debe comunicarse a los alumnos
+## Estado previo a la ampliación de alcance
 
-Hay **cinco implementaciones didácticas reducidas de cinco artículos distintos, incluida la nueva exploración DPD**, y no nueve casos cerrados. El quinto piloto conserva pendientes de fidelidad y calibración descritos en su guía. Las tres copias públicas de autor de Campello mantienen su salvedad de licencia. El acceso y la fidelidad de cada fuente se registran por separado en [la revisión](REVISION_BIOBALISTICA.md).
+Antes de la ampliación había **cinco implementaciones didácticas reducidas de cinco artículos distintos, incluida la nueva exploración DPD**, y no nueve casos cerrados. El quinto piloto conserva pendientes de fidelidad y calibración descritos en su guía. Las tres copias públicas de autor de Campello mantienen su salvedad de licencia. El acceso y la fidelidad de cada fuente se registran por separado en [la revisión](REVISION_BIOBALISTICA.md).
 
-Faltan cuatro implementaciones y una selección definitiva que satisfaga todos los requisitos. Esta búsqueda no demuestra que no existan otras fuentes; indica cuáles se comprobaron y por qué no permiten declarar la tarea completa. Los archivos auxiliares antiguos tampoco completan ese número.
+Bajo aquel criterio faltaban cuatro implementaciones y una selección definitiva. El alcance ampliado permitió completar las nueve actividades docentes, con las limitaciones de fidelidad señaladas en cada guía. Esta búsqueda no demuestra que no existan otras fuentes; indica cuáles se comprobaron y por qué no permiten declarar la tarea completa. Los archivos auxiliares antiguos tampoco completan ese número.

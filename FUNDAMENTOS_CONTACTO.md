@@ -1,3 +1,5 @@
+> Material auxiliar conservado. Las asignaciones actuales están en [README.md](README.md) y [ACTIVIDADES.json](ACTIVIDADES.json).
+
 > Material auxiliar de mecánica. No es la selección de nueve artículos de biobalística celular o tisular.
 
 # Biobalística: nueve prácticas de impacto y deformación del blanco
@@ -10,15 +12,15 @@ Esta edición reemplaza la selección anterior. Se priorizan fundamentos de cont
 
 | Alumno | Artículo | DOI | Modelo |
 |---|---|---|---|
-| [01](ALUMNO_01.md) | Argatov (2024) | [10.3390/lubricants12060193](https://doi.org/10.3390/lubricants12060193) | hertz |
-| [02](ALUMNO_02.md) | Hunt y Crossley (1975) | [10.1115/1.3423596](https://doi.org/10.1115/1.3423596) | hc |
-| [03](ALUMNO_03.md) | Lankarani y Nikravesh (1990) | [10.1115/1.2912617](https://doi.org/10.1115/1.2912617) | ln |
-| [04](ALUMNO_04.md) | Flores, Machado, Silva y Martins (2011) | [10.1007/s11044-010-9237-4](https://doi.org/10.1007/s11044-010-9237-4) | flores |
-| [05](ALUMNO_05.md) | Carvalho y Martins (2019) | [10.1016/j.mechmachtheory.2019.03.028](https://doi.org/10.1016/j.mechmachtheory.2019.03.028) | exponencial |
-| [06](ALUMNO_06.md) | Brilliantov, Spahn, Hertzsch y Pöschel (1996) | [10.1103/PhysRevE.53.5382](https://doi.org/10.1103/PhysRevE.53.5382) | visco |
-| [07](ALUMNO_07.md) | Ramírez, Pöschel, Brilliantov y Schwager (1999) | [10.1103/PhysRevE.60.4465](https://doi.org/10.1103/PhysRevE.60.4465) | serie |
-| [08](ALUMNO_08.md) | Schwager y Pöschel (2008) | [10.1103/PhysRevE.78.051304](https://doi.org/10.1103/PhysRevE.78.051304) | recuperacion |
-| [09](ALUMNO_09.md) | Schwager y Pöschel (2007) | [10.1007/s10035-007-0065-z](https://doi.org/10.1007/s10035-007-0065-z) | lineal |
+| [01](CONTACTO_AUX_01.md) | Argatov (2024) | [10.3390/lubricants12060193](https://doi.org/10.3390/lubricants12060193) | hertz |
+| [02](CONTACTO_AUX_02.md) | Hunt y Crossley (1975) | [10.1115/1.3423596](https://doi.org/10.1115/1.3423596) | hc |
+| [03](CONTACTO_AUX_03.md) | Lankarani y Nikravesh (1990) | [10.1115/1.2912617](https://doi.org/10.1115/1.2912617) | ln |
+| [04](CONTACTO_AUX_04.md) | Flores, Machado, Silva y Martins (2011) | [10.1007/s11044-010-9237-4](https://doi.org/10.1007/s11044-010-9237-4) | flores |
+| [05](CONTACTO_AUX_05.md) | Carvalho y Martins (2019) | [10.1016/j.mechmachtheory.2019.03.028](https://doi.org/10.1016/j.mechmachtheory.2019.03.028) | exponencial |
+| [06](CONTACTO_AUX_06.md) | Brilliantov, Spahn, Hertzsch y Pöschel (1996) | [10.1103/PhysRevE.53.5382](https://doi.org/10.1103/PhysRevE.53.5382) | visco |
+| [07](CONTACTO_AUX_07.md) | Ramírez, Pöschel, Brilliantov y Schwager (1999) | [10.1103/PhysRevE.60.4465](https://doi.org/10.1103/PhysRevE.60.4465) | serie |
+| [08](CONTACTO_AUX_08.md) | Schwager y Pöschel (2008) | [10.1103/PhysRevE.78.051304](https://doi.org/10.1103/PhysRevE.78.051304) | recuperacion |
+| [09](CONTACTO_AUX_09.md) | Schwager y Pöschel (2007) | [10.1007/s10035-007-0065-z](https://doi.org/10.1007/s10035-007-0065-z) | lineal |
 
 Los autores pueden repetirse; los artículos no. Algunos casos comparten una familia de ecuaciones y estudian aportes diferentes: selección del amortiguamiento, expansión analítica o criterio de separación. No se presentan como nueve algoritmos completamente distintos.
 
@@ -30,7 +32,7 @@ Los autores pueden repetirse; los artículos no. Algunos casos comparten una fam
 4. Comparar predicción analítica y solución numérica con errores cuantitativos.
 5. Animar esfera y superficie deformada desde el mismo estado, y explicar cada función.
 
-Empieza por [Aprende a construir](APRENDE_A_CONSTRUIR.md), [Soluciones analíticas](SOLUCIONES_ANALITICAS.md) y [Explicación de funciones](EXPLICACION_FUNCIONES.md). Para una introducción, el caso 09 tiene solución temporal cerrada; después puede estudiarse Hertz y añadir disipación.
+Empieza por [Aprende a construir](APRENDE_CONTACTO_AUXILIAR.md), [Soluciones analíticas](SOLUCIONES_CONTACTO_AUXILIAR.md) y [Explicación de funciones](FUNCIONES_CONTACTO_AUXILIAR.md). Para una introducción, el caso 09 tiene solución temporal cerrada; después puede estudiarse Hertz y añadir disipación.
 
 ## Instalación y ejecución
 

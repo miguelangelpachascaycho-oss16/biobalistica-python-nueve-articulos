@@ -1,6 +1,6 @@
 # Piloto: nanoesferas contra una bicapa lipídica
 
-**Reducción didáctica 3D en desarrollo, no réplica completa ni modelo calibrado de células reales.** Fuente: Campello (2015), [DOI 10.1007/s40430-014-0273-5](https://doi.org/10.1007/s40430-014-0273-5), exclusivamente el ejemplo biológico 5.3. Se usa el marco de dinámica de partículas de sus secciones 2–4. Véase la [copia pública aportada por el autor](https://www.researchgate.net/publication/269096734_Computational_modeling_and_simulation_of_rupture_of_membranes_and_thin_films).
+**Reducción didáctica 3D, no réplica completa ni modelo calibrado de células reales.** Fuente: Campello (2015), [DOI 10.1007/s40430-014-0273-5](https://doi.org/10.1007/s40430-014-0273-5), exclusivamente el ejemplo biológico 5.3. Se usa el marco de dinámica de partículas de sus secciones 2–4. Véase la [copia pública aportada por el autor](https://www.researchgate.net/publication/269096734_Computational_modeling_and_simulation_of_rupture_of_membranes_and_thin_films).
 
 ## Qué representa
 

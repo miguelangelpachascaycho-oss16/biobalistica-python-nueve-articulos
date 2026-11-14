@@ -1,0 +1,11 @@
+{
+  "desplazamiento_maximo": 0.5656774033404576,
+  "centro_final": [
+    3.6842704692699776e-16,
+    -1.0225465470733812e-08,
+    -0.9854233156165746
+  ],
+  "evaluaciones": 81956,
+  "unidades": "a=epsilon=movilidad=1",
+  "alcance": "Modelo m\u00ednimo de membrana; penetraci\u00f3n activa, sin inercia ni fluctuaci\u00f3n t\u00e9rmica"
+}

@@ -1,0 +1,13 @@
+{
+  "caso": 7,
+  "n_lado": 14,
+  "n_cadena": 20,
+  "radio_np": 1.0,
+  "actividad": 0.01,
+  "rigidez_reducida": 0.0,
+  "preestres": 0.9,
+  "dipolo": 1.0,
+  "tiempo": 12000.0,
+  "rtol": 2e-06,
+  "atol": 1e-08
+}

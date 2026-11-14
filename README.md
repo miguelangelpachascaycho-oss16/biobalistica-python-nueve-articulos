@@ -1,75 +1,52 @@
-# Biobalística en células y tejidos: simulaciones en Python
+# Biobalística y penetración mecánica: nueve simulaciones en Python
 
-> **Actividad en revisión. La selección anterior de nueve artículos de contacto general no cumple el requisito de biobalística celular o tisular. Sus animaciones no son réplicas de nueve modelos biológicos.**
+**Nueve actividades docentes, con nueve artículos distintos y una ficha por alumno.** Cada programa calcula el movimiento de partículas y la deformación del blanco. Los casos 06–09 corresponden a la ampliación autorizada a penetración mecánica: no se presentan como biobalística estricta; 06 y 07 usan membranas artificiales mínimas.
 
-La actividad prevista exige nueve artículos distintos, uno por alumno, y una simulación de cada modelo que calcule el impacto de micro/nanoesferas y la deformación del blanco. Incluye ecuaciones, funciones explicadas, comparación analítica cuando corresponda y defensa del código en Visual Studio Code con ayuda de GitHub Copilot.
+Son implementaciones reducidas para aprender a construir y explicar simulaciones, con supuestos y parámetros complementarios declarados. No son nueve reproducciones cuantitativas completas ni predicciones validadas de células reales. Las lecturas se enlazan en cada ficha: hay artículos CC BY y copias públicas de autor; las tres de Campello conservan una salvedad de licencia en [la revisión de fuentes](REVISION_BIOBALISTICA.md).
 
-**Estado actual: cinco implementaciones didácticas reducidas de cinco artículos distintos, incluida una exploración DPD provisional; cero réplicas completas verificadas; selección de nueve aún incompleta. La distribución definitiva para los nueve alumnos está pendiente.**
+## Asignación y vistas previas
 
-Consulta la [revisión de biobalística](REVISION_BIOBALISTICA.md) y el [registro de fuentes y pendientes](SELECCION_BIOBALISTICA.json). La tabla diferencia modelos confirmados, textos incompletos y el candidato que podría no satisfacer la deformación causada por impacto.
+| Alumno | Artículo distinto | Blanco calculado | Guía y movimiento |
+|---|---|---|---|
+| [01](ALUMNO_01.md) | Campello y Zohdi (2014), [10.1002/cnm.2649](https://doi.org/10.1002/cnm.2649) | Célula idealizada DEM 2D | [Modelo y funciones](CASOS_CELULARES.md) · [GIF](celula_01.gif) |
+| [02](ALUMNO_02.md) | Campello y Zohdi (2014), [10.3970/cmes.2014.098.221](https://doi.org/10.3970/cmes.2014.098.221) | Célula idealizada DEM 2D | [Modelo y funciones](CASOS_CELULARES.md) · [GIF](celula_02.gif) |
+| [03](ALUMNO_03.md) | Campello (2015), [10.1007/s40430-014-0273-5](https://doi.org/10.1007/s40430-014-0273-5) | Bicapa lipídica idealizada DEM 3D | [Modelo y funciones](PILOTO_MEMBRANA.md) · [GIF](piloto_membrana.gif) |
+| [04](ALUMNO_04.md) | Shen et al. (2025), [10.1016/j.taml.2024.100567](https://doi.org/10.1016/j.taml.2024.100567) | Piel hiperelástica, reducción FEM axisimétrica | [Modelo y funciones](PIEL_OGDEN.md) · [GIF](piel_ogden.gif) |
+| [05](ALUMNO_05.md) | Arai, Yasuoka y Zeng (2013), [10.1039/C3NR02024J](https://doi.org/10.1039/C3NR02024J) | Vesícula HTTT y agua explícita DPD | [Modelo y funciones](VESICULA_DPD.md) · [GIF](vesicula_dpd.gif) |
+| [06](ALUMNO_06.md) | Daddi-Moussa-Ider et al. (2019), [10.1088/1367-2630/ab35d2](https://doi.org/10.1088/1367-2630/ab35d2) | Membrana artificial mínima: hoja elástica | [Modelo y funciones](CASO_06.md) · [GIF](caso_06.gif) |
+| [07](ALUMNO_07.md) | Daddi-Moussa-Ider et al. (2019), [10.1063/1.5080807](https://doi.org/10.1063/1.5080807) | Membrana artificial mínima: cadena dipolar | [Modelo y funciones](CASO_07.md) · [GIF](caso_07.gif) |
+| [08](ALUMNO_08.md) | Zhang et al. (2015), [10.1038/srep10525](https://doi.org/10.1038/srep10525) | Bicapa H2T5, agua y dos NP rígidas | [Modelo y funciones](CASO_08.md) · [GIF](caso_08.gif) |
+| [09](ALUMNO_09.md) | Yong y Du (2023), [10.1021/acs.jpcb.2c07460](https://doi.org/10.1021/acs.jpcb.2c07460) | Bicapa DOPC H2E2(C5)2 y tetraedro rígido | [Modelo y funciones](CASO_09.md) · [GIF](caso_09.gif) |
 
+## Abrir y ejecutar en Visual Studio Code
 
-**Actualización 14 de noviembre:** se añadió un piloto DPD 3D de Arai et al. (2013), con impacto de nanopartícula, vesícula HTTT, agua explícita y control sin velocidad inicial. Hay decisiones complementarias y correcciones de convención documentadas: no se presenta como réplica cuantitativa. Faltan cuatro implementaciones y el cierre de la selección. Consulta el [resultado de la búsqueda](BUSQUEDA_FALTANTES.md).
-
-## Nuevo piloto: colisión con vesícula lipídica
-
-[Arai et al. (2013), DOI 10.1039/C3NR02024J](https://doi.org/10.1039/C3NR02024J), texto editorial abierto CC BY 3.0. La [guía DPD](VESICULA_DPD.md) contiene instalación, ecuaciones, decisiones, explicación de todas las funciones, solución analítica del oscilador y preguntas para defender el código. La figura compara posiciones integradas de impacto y control; no es una forma impuesta al dibujo.
-
-```powershell
-.\.venv\Scripts\python.exe vesicula_dpd.py --animar
-.\.venv\Scripts\python.exe verificar_vesicula.py
-```
-
-![Piloto DPD: colisión con vesícula y control](vesicula_dpd.gif)
-
-## Impacto temprano en piel: cuarto artículo
-
-[Shen et al. (2025), DOI 10.1016/j.taml.2024.100567](https://doi.org/10.1016/j.taml.2024.100567), acceso abierto CC BY 4.0. El nuevo [paso a paso y mapa de funciones](PIEL_OGDEN.md) explica la energía de Ogden, FEM axisimétrico, contacto, integración y comparación analítica Poncelet. La deformación se calcula a partir de posiciones nodales. Es una reducción de impacto temprano, sin perforación; conserva las unidades impresas y declara las fuertes compresiones locales y los cambios respecto al artículo.
-
-```powershell
-.\.venv\Scripts\python.exe piel_ogden.py --animar
-.\.venv\Scripts\python.exe verificar_piel.py
-```
-
-![Piel: impacto temprano y deformación calculada](piel_ogden.gif)
-
-## Impacto sobre una célula completa: dos artículos distintos
-
-Se añadieron [dos programas celulares y su explicación de funciones](CASOS_CELULARES.md), basados en las leyes DEM de dos publicaciones distintas de Campello y Zohdi (2014). Cada célula tiene dos capas, enlaces circunferenciales/radiales/cruzados, presión, contacto, arrastre y ruptura. Son reducciones docentes con parámetros y diferencias declarados; no reproducen las figuras o tablas completas.
-
-```powershell
-.\.venv\Scripts\python.exe caso_celular_01.py --animar
-.\.venv\Scripts\python.exe caso_celular_02.py --muestras 3 --animar
-.\.venv\Scripts\python.exe verificar_celulas.py
-```
-
-![Célula completa, cnm.2649](celula_01.gif)
-
-![Célula con variabilidad, CMES](celula_02.gif)
-
-`VERIFICACION_CELULAS.json` registra controles de fuerzas, vuelo libre analítico, refinamiento temporal y control sin proyectiles. Las copias de autor son consultables, pero no se afirma que tengan licencia abierta. La selección de nueve artículos que cumpla simultáneamente todos los requisitos sigue pendiente.
-
-## Primer piloto de deformación calculada
-
-[Campello (2015), ejemplo 5.3](https://doi.org/10.1007/s40430-014-0273-5): bicapa lipídica representada por nodos con inercia, enlaces, contacto y arrastre. La animación proviene de las posiciones integradas de ambas capas. Es una **reducción didáctica 3D**, no una reproducción completa de los resultados publicados.
-
-Lee [el paso a paso, ecuaciones, diferencias y explicación de funciones](PILOTO_MEMBRANA.md).
-
-![Piloto reducido de bicapa lipídica](piloto_membrana.gif)
-
-## Ejecutar el piloto en Visual Studio Code
-
-Descarga **Code → Download ZIP**, extrae la carpeta y ábrela en VS Code. Instala Python y la extensión Python de Microsoft; elige el intérprete del entorno creado abajo. Copilot puede ayudar a estudiar el código y no es necesario para ejecutarlo.
+Descarga **Code → Download ZIP**, extrae la carpeta y ábrela en VS Code. Desde **Terminal → New Terminal**, crea un entorno e instala las dependencias:
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe piloto_membrana.py --animar
-.\.venv\Scripts\python.exe verificar_piloto.py
+.\.venv\Scripts\python.exe ejecutar_caso.py --listar
+.\.venv\Scripts\python.exe ejecutar_caso.py 6 --animar
 ```
 
-Abre `resultados/piloto_membrana/piloto_membrana.gif`. El NPZ guarda estados; el CSV guarda desplazamiento máximo, altura de proyectiles y enlaces rotos; el JSON documenta parámetros. Las comprobaciones independientes están en `VERIFICACION_PILOTO.json`. Una comprobación numérica no valida el comportamiento de células reales.
+Cambia `6` por tu número del 1 al 9. Selecciona `.venv` como intérprete de VS Code. La ficha `ALUMNO_NN.md` indica la carpeta de resultados, controles y verificador de cada caso. Copilot puede ayudar a estudiar el programa y no es necesario para ejecutarlo. Ejecuta un caso cada vez; los DPD y algunas animaciones pueden tardar varios minutos en una laptop.
 
-## Material auxiliar anterior
+Los CSV y JSON guardan métricas y parámetros; los NPZ conservan estados. El GIF representa las coordenadas calculadas. Las vistas de esta página están pregeneradas; al ejecutar se crean tus propios resultados en `resultados/`.
 
-Los archivos `simulacion_01.py`–`09.py`, sus fichas `ALUMNO_01.md`–`09.md`, los nueve GIF antiguos y `visor_simulaciones.html` corresponden a [fundamentos de contacto](FUNDAMENTOS_CONTACTO.md). Se conservan para estudiar mecánica y soluciones analíticas; **no son las nueve asignaciones biológicas solicitadas**. Su verificación es matemática y no demuestra correspondencia con modelos de tejidos o células.
+## Qué debe explicar el alumno
+
+[Guía docente](GUIA_DOCENTE.md) · [Aprender a construir](APRENDE_A_CONSTRUIR.md) · [Funciones](EXPLICACION_FUNCIONES.md) · [Referencias analíticas](SOLUCIONES_ANALITICAS.md) · [Copilot](GUIA_COPILOT.md).
+
+Cada entrega debe incluir diagrama de fuerzas, ecuaciones y unidades, código comentado, comparación analítica de un límite válido, control sin contacto o sin excitación, CSV, curvas, animación y defensa de las funciones. Debe distinguir deformación, desplazamiento rígido, ruido térmico, difusión y daño.
+
+Las comprobaciones de los cuatro casos nuevos se ejecutan con:
+
+```powershell
+.\.venv\Scripts\python.exe verificar_nuevos.py
+```
+
+Comprueban gradientes de energía, torque, acción/reacción, disipación, control en reposo, rotación libre y resorte móvil analítico. Los casos anteriores tienen verificadores específicos indicados en sus fichas. Estas pruebas son verificación matemática, no validación biológica ni reproducción de todas las figuras de los artículos.
+
+## Material auxiliar preservado
+
+`simulacion_01.py`–`simulacion_09.py`, `CONTACTO_AUX_NN.md`, `animacion_NN.gif` y `visor_simulaciones.html` pertenecen al anterior material de [fundamentos de contacto](FUNDAMENTOS_CONTACTO.md). **Las asignaciones actuales son las fichas ALUMNO y el lanzador `ejecutar_caso.py`.** El auxiliar no se cuenta como otros nueve artículos celulares. El PDF original del docente no se ha modificado.

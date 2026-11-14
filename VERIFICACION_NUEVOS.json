@@ -1,0 +1,26 @@
+{
+  "activos": {
+    "6": {
+      "control_reposo": 6.938893903907228e-18,
+      "fuerza_gradiente": 7.434942401324252e-10,
+      "torque_gradiente": 0.0,
+      "accion_reaccion": 1.4323028831098085e-16
+    },
+    "7": {
+      "control_reposo": 0.0,
+      "fuerza_gradiente": 1.6829992954825457e-10,
+      "torque_gradiente": 5.428531582585272e-11,
+      "accion_reaccion": 5.551115123125783e-17
+    }
+  },
+  "dpd": {
+    "fuerza_gradiente": 7.664421985964509e-09,
+    "accion_reaccion": 5.329070518200751e-15,
+    "potencia_disipativa": -28.96303339360872,
+    "error_rotacion_libre": 6.661338147750939e-14,
+    "beads_tetraedro": 56,
+    "error_resorte_movil_dt": 2.735866408976051e-06,
+    "error_resorte_movil_dt_mitad": 6.839640862565943e-07
+  },
+  "alcance": "Verificación mecánica y límites analíticos; no validación de modelos biológicos ni reproducción de fases publicadas"
+}

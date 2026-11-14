@@ -1,3 +1,5 @@
+> Registro de candidatos de la búsqueda previa; Guha, Zhang 2018, Hardy y Shen 2024 no se asignan entre las nueve actividades actuales. Consulta [la selección vigente](REVISION_BIOBALISTICA.md).
+
 # Acceso a las fuentes pendientes
 
 Revisión del 14 de noviembre de 2026. Se comprobaron registros bibliográficos, repositorios institucionales y páginas editoriales. Un registro de acceso abierto no garantiza que el archivo sea accesible desde esta sesión ni que corresponda exactamente al artículo.
