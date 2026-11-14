@@ -1,0 +1,15 @@
+{
+  "diametro": 5.85e-05,
+  "velocidad": 200.0,
+  "mu": 10.0,
+  "alfa": 16.0,
+  "nu": 0.48,
+  "radio_dominio": 0.00016,
+  "profundidad": 0.0002,
+  "nr": 24,
+  "nz": 30,
+  "hueco": 5e-06,
+  "dt": 1e-10,
+  "tiempo": 4e-08,
+  "penalidad": 2000000000000000.0
+}

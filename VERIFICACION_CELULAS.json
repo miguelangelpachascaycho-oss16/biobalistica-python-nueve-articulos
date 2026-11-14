@@ -1,0 +1,27 @@
+{
+  "alcance": "Verificación de implementaciones didácticas reducidas; sin validación biológica",
+  "resultados": [
+    {
+      "doi": "10.1002/cnm.2649",
+      "nodos": 180,
+      "cinco_enlaces_por_nodo": true,
+      "balance_enlaces_nN": 6.06087439757635e-20,
+      "invariancia_traslacion_nN": 1.0234868508263162e-16,
+      "error_vuelo_libre_nm": 5.242561940121959e-09,
+      "error_relativo_blanco_dt_mitad_t_0_3_ns": 0.0004895411087121577,
+      "u_max_impacto_nm": 0.7657204963243385,
+      "u_max_control_nm": 0.1851954042210743
+    },
+    {
+      "doi": "10.3970/cmes.2014.098.221",
+      "nodos": 240,
+      "cinco_enlaces_por_nodo": true,
+      "balance_enlaces_nN": 6.06087439757635e-20,
+      "invariancia_traslacion_nN": 1.614601959856362e-16,
+      "error_vuelo_libre_nm": 3.4938807402795646e-10,
+      "error_relativo_blanco_dt_mitad_t_0_3_ns": 0.000794254291267611,
+      "u_max_impacto_nm": 7.5965061115333,
+      "u_max_control_nm": 0.937326964856157
+    }
+  ]
+}

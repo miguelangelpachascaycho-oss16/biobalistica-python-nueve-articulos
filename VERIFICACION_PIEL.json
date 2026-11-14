@@ -1,0 +1,16 @@
+{
+  "articulo": "10.1016/j.taml.2024.100567",
+  "modelo": "Reducción docente FEM axisimétrica, fase temprana sin perforación",
+  "error_derivada_W_P_Pa": 4.408719167514619e-09,
+  "error_gradiente_nodal_N": 2.2856292050084717e-16,
+  "error_Poncelet_m_s": 1.1266820365563035e-08,
+  "error_vuelo_libre_m": 5.929230630780102e-19,
+  "cambio_relativo_u_final_al_reducir_dt": 1.961409194506961e-05,
+  "deriva_relativa_energia": 1.5845110186152311e-06,
+  "desplazamiento_maximo_m": 4.536144398449068e-06,
+  "J_minimo": 0.3195785520558521,
+  "solape_contacto_maximo_m": 4.6419946838755475e-07,
+  "validacion_experimental": false,
+  "replica_SPH_FEM_RADIOSS": false,
+  "estado": "Controles numéricos aprobados; convergencia espacial y validación física pendientes"
+}

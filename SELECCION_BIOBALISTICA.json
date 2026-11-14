@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-13",
+  "fecha": "2026-11-14",
   "asignacion_definitiva": false,
   "replicas_completas_verificadas": 0,
   "candidatos": [
@@ -12,8 +12,11 @@
       "blanco": "Célula idealizada con bicapa lipídica",
       "modelo": "DEM: nodos, enlaces, presión y contactos",
       "evidencia": "Texto completo: deformación celular dinámica y bombardeo de partículas.",
-      "estado": "Modelo identificado; implementación y validación pendientes",
-      "fuente": "https://www.researchgate.net/publication/262579161_A_computational_framework_for_simulation_of_the_delivery_of_substances_into_cells"
+      "estado": "Implementación didáctica reducida, con controles numéricos; reproducción de figuras y tablas pendiente",
+      "fuente": "https://www.researchgate.net/publication/262579161_A_computational_framework_for_simulation_of_the_delivery_of_substances_into_cells",
+      "programa": "caso_celular_01.py",
+      "guia": "CASOS_CELULARES.md",
+      "licencia_texto": "Copia pública de autor; licencia abierta no confirmada; no redistribuir PDF"
     },
     {
       "id": "B02",
@@ -24,8 +27,11 @@
       "blanco": "Célula idealizada con bicapa lipídica",
       "modelo": "DEM celular con variabilidad de los proyectiles",
       "evidencia": "Texto completo: dinámica celular y evaluación estadística de resultados.",
-      "estado": "Modelo identificado; implementación y validación pendientes",
-      "fuente": "https://msol.berkeley.edu/wp-content/uploads/2025/11/109.pdf"
+      "estado": "Implementación didáctica reducida, con controles numéricos; reproducción de figuras y tablas pendiente",
+      "fuente": "https://msol.berkeley.edu/wp-content/uploads/2025/11/109.pdf",
+      "programa": "caso_celular_02.py",
+      "guia": "CASOS_CELULARES.md",
+      "licencia_texto": "Copia pública de autor; licencia abierta no confirmada; no redistribuir PDF"
     },
     {
       "id": "B03",
@@ -37,19 +43,8 @@
       "modelo": "DEM de dos capas en tres dimensiones",
       "evidencia": "Texto completo: chorro de nanopartículas contra bicapa lipídica.",
       "estado": "Piloto reducido implementado; reproducción completa pendiente",
-      "fuente": "https://www.researchgate.net/publication/269096734_Computational_modeling_and_simulation_of_rupture_of_membranes_and_thin_films"
-    },
-    {
-      "id": "B04",
-      "autores": "Zhang, Meng, Qin y Keten",
-      "year": 2018,
-      "titulo": "Ballistic impact response of lipid membranes",
-      "doi": "10.1039/C7NR08879E",
-      "blanco": "Membrana lipídica",
-      "modelo": "Dinámica molecular de grano grueso",
-      "evidencia": "Resumen: impacto, tubulación y penetración; falta revisar el campo de fuerzas completo.",
-      "estado": "Pendiente de texto completo y suplemento",
-      "fuente": "https://pubs.rsc.org/en/content/articlelanding/2018/nr/c7nr08879e"
+      "fuente": "https://www.researchgate.net/publication/269096734_Computational_modeling_and_simulation_of_rupture_of_membranes_and_thin_films",
+      "licencia_texto": "Copia pública de autor; licencia abierta no confirmada; no redistribuir PDF"
     },
     {
       "id": "B05",
@@ -61,19 +56,8 @@
       "modelo": "Fluido bifásico, malla dinámica y movimiento de esfera",
       "evidencia": "Texto y suplemento: deformación de interfaz; Stokes solo no la reproduce.",
       "estado": "Faltan detalles para una réplica Python completa y verificada",
-      "fuente": "https://www.nature.com/articles/s41467-022-29713-7"
-    },
-    {
-      "id": "B06",
-      "autores": "Shen, Meng, Hirschler y Roth",
-      "year": 2024,
-      "titulo": "Dynamic behavior of multilayered skin structure: A preliminary numerical and analytical microscopic analysis",
-      "doi": "10.1016/j.matlet.2023.135368",
-      "blanco": "Piel multicapa",
-      "modelo": "SPH-FEM y análisis de penetración",
-      "evidencia": "Resumen y referencias: impacto en piel. Falta cotejar leyes, geometría y condiciones del texto completo.",
-      "estado": "Pendiente de texto completo",
-      "fuente": "https://www.sciencedirect.com/science/article/abs/pii/S0167577X23015537"
+      "fuente": "https://www.nature.com/articles/s41467-022-29713-7",
+      "licencia_texto": "CC BY 4.0"
     },
     {
       "id": "B07",
@@ -84,8 +68,53 @@
       "blanco": "Tejido cutáneo humano",
       "modelo": "SPH-FEM con ley hiperelástica de Ogden",
       "evidencia": "Texto completo: deformación del tejido; Poncelet es la comparación de penetración.",
-      "estado": "Modelo identificado; implementación y validación pendientes",
-      "fuente": "https://pubs-en.cstam.org.cn/data/article/taml/preview/pdf/20250202.pdf"
+      "estado": "Reducción FEM axisimétrica de impacto temprano implementada; no reproduce SPH-FEM ni perforación; límites materiales declarados",
+      "fuente": "https://pubs-en.cstam.org.cn/data/article/taml/preview/pdf/20250202.pdf",
+      "programa": "piel_ogden.py",
+      "guia": "PIEL_OGDEN.md",
+      "licencia_texto": "CC BY 4.0"
+    },
+    {
+      "id": "N01",
+      "autores": "Arai, Yasuoka y Zeng",
+      "year": 2013,
+      "titulo": "A vesicle cell under collision with a Janus or homogeneous nanoparticle: translocation dynamics and late-stage morphology",
+      "doi": "10.1039/C3NR02024J",
+      "blanco": "Vesícula lipídica idealizada",
+      "modelo": "DPD con colisión de nanopartícula de velocidad inicial prescrita",
+      "evidencia": "Describe deformación, radio, poros y pérdida de agua; colisión nanométrica, no pistola génica",
+      "estado": "Candidato abierto de sustitución; implementación pendiente, no asignado como caso terminado",
+      "fuente": "https://digitalcommons.unl.edu/chemzeng/117/",
+      "licencia_texto": "CC BY 3.0 según repositorio institucional CityUHK",
+      "fuente_licencia": "https://scholars.cityu.edu.hk/en/publications/a-vesicle-cell-under-collision-with-a-janus-or-homogeneous-nanopa/"
+    }
+  ],
+  "implementaciones_didacticas_reducidas": 4,
+  "requisito_actual": "Nueve artículos distintos, acceso abierto, biobalística en células/tejidos y deformación desde su modelo: NO ALCANZADO. Cuatro implementaciones reducidas; seis candidatos activos, incluidos tres textos con licencia abierta confirmada.",
+  "descartados_de_asignacion": [
+    {
+      "id": "B04",
+      "autores": "Zhang, Meng, Qin y Keten",
+      "year": 2018,
+      "titulo": "Ballistic impact response of lipid membranes",
+      "doi": "10.1039/C7NR08879E",
+      "blanco": "Membrana lipídica",
+      "modelo": "Dinámica molecular de grano grueso",
+      "evidencia": "Resumen: impacto, tubulación y penetración; falta revisar el campo de fuerzas completo.",
+      "estado": "Retirado de la asignación; no hay texto/modelo abierto verificado que cumpla todos los criterios",
+      "fuente": "https://pubs.rsc.org/en/content/articlelanding/2018/nr/c7nr08879e"
+    },
+    {
+      "id": "B06",
+      "autores": "Shen, Meng, Hirschler y Roth",
+      "year": 2024,
+      "titulo": "Dynamic behavior of multilayered skin structure: A preliminary numerical and analytical microscopic analysis",
+      "doi": "10.1016/j.matlet.2023.135368",
+      "blanco": "Piel multicapa",
+      "modelo": "SPH-FEM y análisis de penetración",
+      "evidencia": "Resumen y referencias: impacto en piel. Falta cotejar leyes, geometría y condiciones del texto completo.",
+      "estado": "Retirado de la asignación; no hay texto/modelo abierto verificado que cumpla todos los criterios",
+      "fuente": "https://www.sciencedirect.com/science/article/abs/pii/S0167577X23015537"
     },
     {
       "id": "B08",
@@ -96,7 +125,7 @@
       "blanco": "Dermis humana en modelo FEM; gelatina en experimentos",
       "modelo": "Elementos finitos de impacto y penetración",
       "evidencia": "El resumen del artículo identifica dermis. La tesis de 2009 describe FEM axisimétrico, Ogden y erosión de una capa equivalente de epidermis. Deben cotejarse antes de atribuir ecuaciones al artículo.",
-      "estado": "Tesis complementaria completa revisada; falta cotejar el artículo de 2010",
+      "estado": "Retirado de la asignación; no hay texto/modelo abierto verificado que cumpla todos los criterios",
       "fuente": "https://pubmed.ncbi.nlm.nih.gov/20887013/",
       "fuente_complementaria": {
         "tipo": "Tesis de maestría, no artículo de revista",
@@ -119,7 +148,7 @@
       "blanco": "Mucosa",
       "modelo": "CFD con superficie deformable y micropartículas",
       "evidencia": "Resumen: la deformación procede del chorro gaseoso. No está confirmado que se calcule como respuesta al impacto de la esfera.",
-      "estado": "CONDICIONAL: no asignar; comprobar si cumple deformación calculada por impacto",
+      "estado": "Retirado de la asignación; no hay texto/modelo abierto verificado que cumpla todos los criterios",
       "fuente": "https://doi.org/10.1088/0031-9155/50/19/010"
     }
   ]
