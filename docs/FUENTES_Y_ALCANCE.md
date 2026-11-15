@@ -27,4 +27,4 @@ Los casos 06 y 07 son modelos mínimos de membranas artificiales; incluyen refer
 Todos tienen enlaces a textos completos públicamente consultables; acceso público y licencia de reutilización se registran por separado. Para los tres de Campello no se confirmó una licencia abierta de reutilización y no se redistribuyen PDFs. Los nuevos 06 y 08 indican CC BY; 07 y 09 tienen versiones abiertas en repositorios. El código Python docente se escribió para esta actividad; no se copiaron scripts GPLv3 del repositorio de Yong/Du. Sus leyes, parámetros y topologías se citan en la guía 09.
 
 
-El antiguo material de contacto general se conserva como auxiliar separado. La asignación actual está en `casos/01_celula_individual/README.md`–`casos/09_bicapa_tetraedro/README.md` y `docs/ACTIVIDADES.json`.
+El antiguo material de contacto general se retiró de la entrega actual y permanece recuperable en el historial de Git. La asignación actual está en `casos/01_celula_individual/README.md`–`casos/09_bicapa_tetraedro/README.md` y `docs/ACTIVIDADES.json`.

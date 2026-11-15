@@ -13,4 +13,4 @@
 11. Contrasta con el artículo sin olvidar diferencias de dimensión, escala, solvente, química o duración. La comparación de un límite no valida la célula completa.
 12. Explica cada función y presenta una limitación concreta. Usa Copilot para revisar pasos, no para sustituir tu defensa de las ecuaciones.
 
-Cada alumno sigue `ALUMNO_NN.md` y la guía de su modelo. Las animaciones pregeneradas sirven para revisar el resultado esperado; la entrega incluye una ejecución propia y un cambio razonado.
+Cada alumno sigue el README de su carpeta en `casos/` y la guía de su modelo. Las animaciones pregeneradas sirven para revisar el resultado esperado; la entrega incluye una ejecución propia y un cambio razonado.
