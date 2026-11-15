@@ -1,4 +1,6 @@
-# De la ecuación a una simulación analítica
+> **ARCHIVO AUXILIAR DE MECÁNICA DE CONTACTO. Las nueve actividades actuales comienzan en [README.md](README.md#empieza-aquí-actividad-para-alumnos).**
+
+# Auxiliar: soluciones analíticas de contacto
 
 Una animación muestra resultados; la solución comienza al escribir y analizar las ecuaciones. Esta guía desarrolla las relaciones usadas por las nueve prácticas. Las deducciones intermedias son desarrollo docente, identificado como tal, a partir de las leyes enlazadas en cada ficha.
 

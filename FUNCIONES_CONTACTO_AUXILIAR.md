@@ -1,6 +1,8 @@
+> **ARCHIVO AUXILIAR DE MECÁNICA DE CONTACTO. Las nueve actividades actuales comienzan en [README.md](README.md#empieza-aquí-actividad-para-alumnos).**
+
 > El recorrido que sigue corresponde al motor auxiliar anterior. Para los modelos celulares/tisulares actuales consulta [DEM celular](CASOS_CELULARES.md), [bicapa 3D](PILOTO_MEMBRANA.md), [piel Ogden](PIEL_OGDEN.md) y [vesícula DPD](VESICULA_DPD.md), que explican las funciones de sus cinco implementaciones reducidas. Las nueve simulaciones auxiliares no son las nueve asignaciones biológicas solicitadas.
 
-# Explicación de la estructura y las funciones
+# Auxiliar: funciones del motor de contacto
 
 ## Recorrido del programa
 

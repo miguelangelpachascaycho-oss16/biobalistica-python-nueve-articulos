@@ -1,4 +1,6 @@
-# Aprende a construir tu simulación
+> **ARCHIVO AUXILIAR DE MECÁNICA DE CONTACTO. Las nueve actividades actuales comienzan en [README.md](README.md#empieza-aquí-actividad-para-alumnos).**
+
+# Auxiliar: construir una simulación de contacto
 
 El objetivo es que puedas crear y defender una simulación desde una ecuación. Los archivos resueltos son referencias para contrastar tu trabajo; tu entrega debe incluir una derivación, una implementación propia y una modificación razonada.
 
@@ -10,7 +12,7 @@ Entrega antes de programar: una hoja con el diagrama, `m*delta_ddot=-F(delta,del
 
 ## 2. Resolver primero una relación analítica
 
-Si necesitas una introducción, estudia el caso 09 y deduce la solución del oscilador amortiguado. Después trabaja tu caso individual con [SOLUCIONES_ANALITICAS.md](SOLUCIONES_ANALITICAS.md).
+Si necesitas una introducción, estudia el caso 09 y deduce la solución del oscilador amortiguado. Después trabaja tu caso individual con [SOLUCIONES_ANALITICAS.md](SOLUCIONES_CONTACTO_AUXILIAR.md).
 
 Tu resultado puede ser una fórmula temporal cerrada, una primera integral implícita o una serie truncada. Escribe qué sabes calcular directamente, qué exige una raíz o cuadratura y dónde vale la aproximación. Comprueba una derivada a mano. No llames «analítica» a una curva obtenida únicamente integrando una ODE.
 

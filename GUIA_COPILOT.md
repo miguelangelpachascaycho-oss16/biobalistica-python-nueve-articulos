@@ -6,7 +6,7 @@
 4. Programa una función a la vez. Para cada una explica entradas, unidades, retorno, forma del arreglo y quién la llama.
 5. Pide a Copilot preguntas sobre tu código y contesta sin copiar su explicación.
 6. Revisa el diff de cada cambio. Comprueba signos, energía, referencia y refinamiento.
-7. Verifica que la posición de la esfera, la superficie y el punto de la curva usen el mismo estado temporal.
+7. Verifica que la posición de la partícula, la superficie y el punto de la curva usen el mismo estado temporal.
 8. Registra tres ayudas concretas: solicitud, propuesta, qué aceptaste o corregiste y cómo lo comprobaste.
 
 Prompts útiles:

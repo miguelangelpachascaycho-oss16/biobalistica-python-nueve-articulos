@@ -1,4 +1,6 @@
-"""Alumno 01: impacto y deformación del blanco según su ficha.
+"""MATERIAL AUXILIAR DE CONTACTO 01; no es la actividad actual del alumno.
+
+Actividad actual: ALUMNO_01.md; ejecutar: python ejecutar_caso.py 1 --animar.
 
 Modelo escalar normalizado: no son propiedades medidas de un organismo.
 El proyectil es rígido; q es la indentación global del blanco fijo.
@@ -100,8 +102,9 @@ def guardar_resultados(resultados,carpeta):
 
 
 def main():
+    print("MATERIAL AUXILIAR DE CONTACTO 01. Actividad actual: python ejecutar_caso.py 1 --animar (ver ALUMNO_01.md).")
     """Opciones → verificación → modelo → exportación → gráficas y animación."""
-    parser=argparse.ArgumentParser(description='Viscoelastic Hertzian Impact')
+    parser=argparse.ArgumentParser(description='MATERIAL AUXILIAR DE CONTACTO; para la actividad actual consulta README.md. ' + 'Viscoelastic Hertzian Impact')
     parser.add_argument('--escenario',choices=['A','B','C','todos'],default='todos')
     parser.add_argument('--paso',type=float,default=.002)
     parser.add_argument('--salida',type=Path,default=Path('resultados')/('alumno_'+NUMERO))
@@ -113,7 +116,7 @@ def main():
     guardar_resultados(resultados,args.salida)
     graficar_comparacion(NUMERO,resultados,args.salida)
     exportar_movimiento(NUMERO,resultados,args.salida,args.animar)
-    print(f'Alumno {NUMERO}: abre {args.salida / "visor.html"}')
+    print(f'Auxiliar de contacto {NUMERO}: abre {args.salida / "visor.html"}')
 
 
 if __name__=='__main__':main()

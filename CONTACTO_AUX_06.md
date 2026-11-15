@@ -1,8 +1,8 @@
-> **MATERIAL AUXILIAR ANTERIOR. Esta ficha no constituye una asignación de biobalística en células o tejidos. Consulta [la revisión vigente](REVISION_BIOBALISTICA.md).**
+> **ARCHIVO AUXILIAR DE CONTACTO 06. Esta numeración es independiente de las actividades actuales. Para la tarea del alumno 06, abre [ALUMNO_06.md](ALUMNO_06.md).**
 
-# Alumno 06 · Impacto y deformación del blanco
+# Auxiliar de contacto 06 · Impacto y deformación del blanco
 
-## Artículo distinto asignado
+## Artículo del ejercicio auxiliar
 
 **Brilliantov, Spahn, Hertzsch y Pöschel (1996). A model for collisions in granular gases.** Physical Review E 53, 5382-5392. [DOI 10.1103/PhysRevE.53.5382](https://doi.org/10.1103/PhysRevE.53.5382).
 
@@ -22,14 +22,14 @@ Serie de tiempo corto δ≈t-(4d/15)t^(5/2)-(4/35)t^(7/2), con m=k=v0=1, y soluc
 
 **Tu derivación individual:** Obtener los primeros términos sustituyendo δ≈t en la aceleración. Reducir la ventana y medir el error de la serie.
 
-Consulta [las deducciones y límites](SOLUCIONES_ANALITICAS.md). Identifica si tu resultado es cerrado, implícito, semianalítico o una aproximación. No presentes una integración numérica como solución analítica.
+Consulta [las deducciones y límites](SOLUCIONES_CONTACTO_AUXILIAR.md). Identifica si tu resultado es cerrado, implícito, semianalítico o una aproximación. No presentes una integración numérica como solución analítica.
 
 ## Paso a paso en VS Code
 
-1. Sigue la [instalación común](README.md#instalación-y-ejecución). Conserva `motor_contacto.py` y `animaciones.py` junto al programa.
+1. Sigue la [instalación común](README.md#abrir-y-ejecutar-en-visual-studio-code). Conserva `motor_contacto.py` y `animaciones.py` junto al programa.
 2. Antes de ver el ejemplo, dibuja la esfera, el blanco y las fuerzas. Define δ, v, m, la reacción y la convención de signos.
 3. Escribe `m δ''=-F(δ,δ')`, las condiciones iniciales y la condición de separación. Desarrolla a mano tu relación analítica.
-4. Crea tu propio `mi_simulacion_06.py` siguiendo [Aprende a construir](APRENDE_A_CONSTRUIR.md). Primero implementa el cálculo de F; comprueba un valor a mano. Luego construye la referencia analítica de tu caso.
+4. Crea tu propio `mi_simulacion_06.py` siguiendo [Aprende a construir](APRENDE_CONTACTO_AUXILIAR.md). Primero implementa el cálculo de F; comprueba un valor a mano. Luego construye la referencia analítica de tu caso.
 5. Ejecuta la referencia preparada para contrastar tu implementación:
 
    ```powershell
@@ -61,7 +61,7 @@ Consulta [las deducciones y límites](SOLUCIONES_ANALITICAS.md). Identifica si t
 | [`guardar_resultados`](simulacion_06.py#L88) | Exporta resultados, con unidades relativas y alcance. |
 | [`main`](simulacion_06.py#L102) | Lee argumentos y define el orden de ejecución. |
 
-Para cada una documenta **entradas, salida, forma de arreglos, unidades, quién la llama y una comprobación**. Amplía el mapa con las funciones de [motor_contacto.py](motor_contacto.py) y [animaciones.py](animaciones.py), descritas en [EXPLICACION_FUNCIONES.md](EXPLICACION_FUNCIONES.md).
+Para cada una documenta **entradas, salida, forma de arreglos, unidades, quién la llama y una comprobación**. Amplía el mapa con las funciones de [motor_contacto.py](motor_contacto.py) y [animaciones.py](animaciones.py), descritas en [EXPLICACION_FUNCIONES.md](FUNCIONES_CONTACTO_AUXILIAR.md).
 
 ## Copilot como tutor
 

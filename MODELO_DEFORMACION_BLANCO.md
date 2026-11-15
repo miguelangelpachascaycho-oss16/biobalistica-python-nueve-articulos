@@ -1,6 +1,8 @@
+> **ARCHIVO AUXILIAR DE MECÁNICA DE CONTACTO. Las nueve actividades actuales comienzan en [README.md](README.md#empieza-aquí-actividad-para-alumnos).**
+
 > **MATERIAL AUXILIAR ANTERIOR. Esta ficha no constituye una asignación de biobalística en células o tejidos. Consulta [la revisión vigente](REVISION_BIOBALISTICA.md).**
 
-# Qué deformación calcula y muestra esta edición
+# Auxiliar: deformación en el modelo escalar de contacto
 
 Los nueve casos resuelven **impacto normal e indentación del blanco**. La esfera se supone rígida y el blanco está fijo globalmente, pero su superficie puede desplazarse. En los artículos que estudian dos cuerpos se adopta este límite del contacto equivalente. No se conserva una escena de esfera deformándose contra una pared rígida.
 

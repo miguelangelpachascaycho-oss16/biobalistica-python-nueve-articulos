@@ -1,16 +1,14 @@
-> Material auxiliar conservado. Las asignaciones actuales están en [README.md](README.md) y [ACTIVIDADES.json](ACTIVIDADES.json).
+> **ARCHIVO AUXILIAR DE MECÁNICA DE CONTACTO. Las nueve actividades actuales comienzan en [README.md](README.md#empieza-aquí-actividad-para-alumnos).**
 
-> Material auxiliar de mecánica. No es la selección de nueve artículos de biobalística celular o tisular.
+# Archivo auxiliar: fundamentos de contacto
 
-# Biobalística: nueve prácticas de impacto y deformación del blanco
+Este archivo conserva nueve ejercicios de mecánica de contacto: esfera rígida y blanco deformable escalar. Incluye lecturas, deducciones analíticas, código y escenarios como apoyo complementario. Su numeración AUX 01–09 es independiente de las nueve fichas ALUMNO actuales.
 
-**Nueve artículos diferentes y nueve DOI únicos. En los nueve casos la esfera es rígida y el blanco se deforma.** Cada alumno tiene lectura, modelo, deducción analítica, código de referencia, tres escenarios y defensa de funciones con apoyo de GitHub Copilot.
+Estos ejercicios permiten estudiar soluciones analíticas y compararlas con cálculos numéricos. Sus artículos son de mecánica del impacto; no integran la selección actual de biobalística y penetración mecánica. Las adaptaciones y submodelos están declarados en cada ficha CONTACTO_AUX.
 
-Esta edición reemplaza la selección anterior. Se priorizan fundamentos de contacto e impacto que permiten aprender soluciones analíticas y compararlas con cálculos numéricos. Los artículos son de mecánica del impacto relacionada con la biobalística; **no todos son estudios de biobalística ni de células**. Las adaptaciones al contacto esfera–blanco y los submodelos seleccionados están declarados en cada ficha.
+## Índice de ejercicios auxiliares
 
-## Distribución: un artículo por alumno
-
-| Alumno | Artículo | DOI | Modelo |
+| Auxiliar | Artículo | DOI | Modelo |
 |---|---|---|---|
 | [01](CONTACTO_AUX_01.md) | Argatov (2024) | [10.3390/lubricants12060193](https://doi.org/10.3390/lubricants12060193) | hertz |
 | [02](CONTACTO_AUX_02.md) | Hunt y Crossley (1975) | [10.1115/1.3423596](https://doi.org/10.1115/1.3423596) | hc |
@@ -32,7 +30,7 @@ Los autores pueden repetirse; los artículos no. Algunos casos comparten una fam
 4. Comparar predicción analítica y solución numérica con errores cuantitativos.
 5. Animar esfera y superficie deformada desde el mismo estado, y explicar cada función.
 
-Empieza por [Aprende a construir](APRENDE_CONTACTO_AUXILIAR.md), [Soluciones analíticas](SOLUCIONES_CONTACTO_AUXILIAR.md) y [Explicación de funciones](FUNCIONES_CONTACTO_AUXILIAR.md). Para una introducción, el caso 09 tiene solución temporal cerrada; después puede estudiarse Hertz y añadir disipación.
+Empieza por [Aprende a construir](APRENDE_CONTACTO_AUXILIAR.md), [Soluciones analíticas](SOLUCIONES_CONTACTO_AUXILIAR.md) y [Explicación de funciones](FUNCIONES_CONTACTO_AUXILIAR.md). Para una introducción, el auxiliar 09 tiene solución temporal cerrada; después puede estudiarse Hertz y añadir disipación.
 
 ## Instalación y ejecución
 
@@ -46,13 +44,13 @@ Empieza por [Aprende a construir](APRENDE_CONTACTO_AUXILIAR.md), [Soluciones ana
    ```
 
    Si `py` no existe, usa `python -m venv .venv`. En VS Code selecciona `.venv` con **Python: Select Interpreter**. Los comandos usan directamente su ejecutable: no requieren cambiar la política de ejecución de PowerShell.
-4. Lee tu ficha `ALUMNO_NN.md`, deduce primero la relación analítica y ejecuta tu caso. Ejemplo con el alumno 09:
+4. Lee la ficha auxiliar `CONTACTO_AUX_NN.md` y deduce primero la relación analítica. Ejemplo con el ejercicio auxiliar 09:
 
    ```powershell
    .\.venv\Scripts\python.exe simulacion_09.py --escenario todos --verificar --animar
    ```
 
-5. Abre `resultados/alumno_09/visor.html` con un navegador y `animacion.gif` con un visor de imágenes. Sustituye `09` por tu número. Conserva `motor_contacto.py` y `animaciones.py` en la misma carpeta que el programa.
+5. Abre `resultados/alumno_09/visor.html` con un navegador y `animacion.gif` con un visor de imágenes. Sustituye `09` por el número del ejercicio auxiliar. Conserva `motor_contacto.py` y `animaciones.py` en la misma carpeta que el programa.
 
 En macOS/Linux usa `python3 -m venv .venv` y `.venv/bin/python`. Los pasos completos de cada práctica están en su ficha. Documentación oficial: [Python en VS Code](https://code.visualstudio.com/docs/python/python-tutorial), [Copilot en VS Code](https://code.visualstudio.com/docs/copilot/setup) y [raíces con SciPy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.brentq.html).
 
@@ -65,7 +63,7 @@ En macOS/Linux usa `python3 -m venv .venv` y `.venv/bin/python`. Los pasos compl
 - `animacion.gif`: movimiento de la esfera y deformación del blanco; se genera con `--animar`.
 - Caso 07: también `restitucion_analitica.png`.
 
-El [visor conjunto](visor_simulaciones.html) reúne los nueve casos. **Descarga el repositorio y abre ese HTML localmente**; GitHub muestra su código, no ejecuta el visor. Los GIF de abajo sí se ven directamente en GitHub.
+El [visor auxiliar conjunto](visor_simulaciones.html) reúne estos nueve ejercicios de contacto. **Descarga el repositorio y abre ese HTML localmente**; GitHub muestra su código, no ejecuta el visor. Los GIF de abajo sí se ven directamente en GitHub.
 
 ## Alcance de las soluciones
 

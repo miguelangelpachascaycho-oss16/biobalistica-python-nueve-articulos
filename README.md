@@ -4,6 +4,25 @@
 
 Son implementaciones reducidas para aprender a construir y explicar simulaciones, con supuestos y parámetros complementarios declarados. No son nueve reproducciones cuantitativas completas ni predicciones validadas de células reales. Las lecturas se enlazan en cada ficha: hay artículos CC BY y copias públicas de autor; las tres de Campello conservan una salvedad de licencia en [la revisión de fuentes](REVISION_BIOBALISTICA.md).
 
+## Empieza aquí: actividad para alumnos
+
+1. Abre **tu ficha [ALUMNO_01](ALUMNO_01.md), [02](ALUMNO_02.md), [03](ALUMNO_03.md), [04](ALUMNO_04.md), [05](ALUMNO_05.md), [06](ALUMNO_06.md), [07](ALUMNO_07.md), [08](ALUMNO_08.md) o [09](ALUMNO_09.md)**. Cada una contiene un artículo diferente, el paso a paso, el modelo, las funciones y lo que debes entregar.
+2. Sigue la [instalación en VS Code](#abrir-y-ejecutar-en-visual-studio-code) y ejecuta `ejecutar_caso.py` con tu número. Por ejemplo, para el alumno 06: `python ejecutar_caso.py 6 --animar`, usando el intérprete del entorno instalado.
+3. Explica las ecuaciones y cada función; compara un límite con su referencia analítica y analiza las curvas y la deformación calculada.
+
+> **Ruta de la actividad actual: `ALUMNO_NN.md` → `ejecutar_caso.py N --animar`.** Los archivos `simulacion_NN.py`, `CONTACTO_AUX_NN.md`, `animacion_NN.gif` y `visor_simulaciones.html` son un archivo auxiliar de mecánica de contacto. Sus números no corresponden a las asignaciones actuales. Consulta ese material solo como apoyo adicional.
+
+## Qué representa cada grupo
+
+| Alumnos | Tema | Alcance del blanco |
+|---|---|---|
+| 01–04 | Biobalística | Célula idealizada, bicapa y tejido cutáneo; modelos reducidos |
+| 05 | Colisión de nanopartícula con vesícula | Vesícula idealizada, ampliación a interacción de nanopartículas |
+| 06–07 | Penetración mecánica | Membranas artificiales mínimas: hoja elástica y cadena dipolar; no son células ni bicapas moleculares |
+| 08–09 | Penetración/interacción mecánica con bicapa | Modelos de lípidos y nanopartículas; no son disparos de un cañón de genes |
+
+**Las nueve implementaciones son reducciones docentes de modelos publicados.** Cada guía declara qué ecuaciones usa, qué simplifica y qué parámetros añade. Una comparación analítica verifica un límite del modelo; no demuestra por sí sola que se hayan reproducido los experimentos o todas las figuras del artículo.
+
 ## Asignación y vistas previas
 
 | Alumno | Artículo distinto | Blanco calculado | Guía y movimiento |
@@ -39,7 +58,7 @@ Los CSV y JSON guardan métricas y parámetros; los NPZ conservan estados. El GI
 
 Cada entrega debe incluir diagrama de fuerzas, ecuaciones y unidades, código comentado, comparación analítica de un límite válido, control sin contacto o sin excitación, CSV, curvas, animación y defensa de las funciones. Debe distinguir deformación, desplazamiento rígido, ruido térmico, difusión y daño.
 
-Las comprobaciones de los cuatro casos nuevos se ejecutan con:
+Las comprobaciones de los casos 06–09 se ejecutan con:
 
 ```powershell
 .\.venv\Scripts\python.exe verificar_nuevos.py
@@ -49,4 +68,4 @@ Comprueban gradientes de energía, torque, acción/reacción, disipación, contr
 
 ## Material auxiliar preservado
 
-`simulacion_01.py`–`simulacion_09.py`, `CONTACTO_AUX_NN.md`, `animacion_NN.gif` y `visor_simulaciones.html` pertenecen al anterior material de [fundamentos de contacto](FUNDAMENTOS_CONTACTO.md). **Las asignaciones actuales son las fichas ALUMNO y el lanzador `ejecutar_caso.py`.** El auxiliar no se cuenta como otros nueve artículos celulares. El PDF original del docente no se ha modificado.
+`simulacion_01.py`–`simulacion_09.py`, `CONTACTO_AUX_NN.md`, `animacion_NN.gif` y `visor_simulaciones.html` pertenecen al anterior material de [fundamentos de contacto](FUNDAMENTOS_CONTACTO.md), junto con `motor_contacto.py`, `animaciones.py` y `verificar_todos.py`. **Las asignaciones actuales son las fichas ALUMNO y el lanzador `ejecutar_caso.py`.** El auxiliar no se cuenta como otros nueve artículos celulares. El PDF original del docente no se ha modificado.
