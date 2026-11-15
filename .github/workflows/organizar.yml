@@ -1,0 +1,27 @@
+name: Organizar entrega docente
+on:
+  push:
+    paths:
+      - organizar_entrega.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  organizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Aplicar estructura ya verificada
+        run: python organizar_entrega.py --aplicar
+      - name: Comprobar sintaxis e indice
+        run: |
+          python -m compileall -q src pruebas ejecutar_caso.py
+          python ejecutar_caso.py --listar
+      - name: Publicar carpetas de la actividad
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Organizar nueve casos y retirar material auxiliar historico"
+          git push origin HEAD:main
