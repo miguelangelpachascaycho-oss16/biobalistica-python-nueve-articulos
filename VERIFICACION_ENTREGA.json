@@ -1,9 +1,0 @@
-{
-  "actividades": 9,
-  "doi_distintos": 9,
-  "comandos_help": 9,
-  "gifs_verificados": 9,
-  "enlaces_locales_ausentes": [],
-  "alcance": "Cuatro casos nuevos ejecutados con control y pruebas mecánicas. Los cinco anteriores conservan sus informes; no se repitieron cálculos no modificados.",
-  "salida_utf8_verificada": true
-}

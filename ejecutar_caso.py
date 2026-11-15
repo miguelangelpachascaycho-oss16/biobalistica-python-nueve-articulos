@@ -9,7 +9,7 @@ import sys
 def main():
     """Lee el índice docente y ejecuta el programa del alumno con su intérprete."""
     raiz = Path(__file__).resolve().parent
-    actividades = json.loads((raiz/'ACTIVIDADES.json').read_text(encoding='utf-8'))
+    actividades = json.loads((raiz/'docs'/'ACTIVIDADES.json').read_text(encoding='utf-8'))
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('caso', type=int, nargs='?', choices=range(1, 10))
     parser.add_argument('--listar', action='store_true')
