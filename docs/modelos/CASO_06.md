@@ -1,4 +1,4 @@
-# Alumno 06 — contacto activo con una hoja elástica
+# Caso 06 — contacto activo con una hoja elástica
 
 **Categoría: penetración mecánica, no biobalística inercial.** Se incluye por la ampliación de tema autorizada por el docente. El blanco es un modelo mínimo de membrana artificial inspirado en membranas celulares; no una célula real ni una bicapa molecular.
 

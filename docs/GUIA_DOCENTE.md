@@ -2,7 +2,7 @@
 
 La selección docente contiene nueve artículos distintos, con implementaciones reducidas. Los casos 06–09 se incluyen tras autorizar la ampliación a penetración mecánica de nanopartículas; no se renombran como biobalística. Los modelos 06 y 07 son membranas artificiales mínimas; 08 y 09 usan bicapas moleculares idealizadas. Ningún ejercicio constituye validación de células reales ni una reproducción completa del artículo.
 
-La asignación está en [README](../README.md), [ACTIVIDADES.json](ACTIVIDADES.json) y `casos/01_celula_individual/README.md`–`casos/09_bicapa_tetraedro/README.md`. Cada ficha incluye lectura, comandos, salidas, funciones, derivación y defensa. Las diferencias entre modelos, acceso y licencias están en [REVISION_BIOBALISTICA.md](FUENTES_Y_ALCANCE.md).
+La asignación está en [README](../README.md), [ACTIVIDADES.json](ACTIVIDADES.json) y `casos/01_alisson_xiomara_torres_chappa/README.md`–`casos/09_flor_angelita_mendoza_garcia/README.md`. Cada ficha incluye lectura, comandos, salidas, funciones, derivación y defensa. Las diferencias entre modelos, acceso y licencias están en [REVISION_BIOBALISTICA.md](FUENTES_Y_ALCANCE.md).
 
 ## Ejecutar un caso
 
@@ -10,7 +10,7 @@ La asignación está en [README](../README.md), [ACTIVIDADES.json](ACTIVIDADES.j
 .\.venv\Scripts\python.exe ejecutar_caso.py 8 --animar
 ```
 
-Sustituye 8 por el número del alumno; no se ejecutan nueve simulaciones en paralelo. Sigue la instalación de cada ficha. Los motores separan fuerzas, integración, observables y dibujo. Los cuatro programas nuevos usan `src/penetracion_activa.py` y `src/bicapa_dpd.py`, con leyes y topologías específicas según artículo.
+Sustituye 8 por el número de tu caso; no se ejecutan nueve simulaciones en paralelo. Sigue la instalación de cada ficha. Los motores separan fuerzas, integración, observables y dibujo. Los cuatro programas nuevos usan `src/penetracion_activa.py` y `src/bicapa_dpd.py`, con leyes y topologías específicas según artículo.
 
 ## Secuencia de aprendizaje
 
@@ -34,3 +34,7 @@ Sustituye 8 por el número del alumno; no se ejecutan nueve simulaciones en para
 | Registro crítico del trabajo con Copilot y limitaciones | 10 |
 
 El alumno debe poder señalar la línea donde se calcula la fuerza sobre el blanco, la reacción sobre el proyectil y la actualización de posición. Debe explicar por qué trayectoria, deformación, difusión, daño y penetración son magnitudes diferentes. No se exige ejecutar experimentos biológicos.
+
+## Inicio del grupo
+
+[Lista nominal y fichas](../README.md#actividades-asignadas) · [Instalación, implementación y Copilot paso a paso](INICIO_VSCODE_COPILOT.md). El grupo tiene ocho actividades asignadas y el caso 07 como reserva. Los números de caso identifican los modelos.

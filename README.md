@@ -1,24 +1,39 @@
 # Biobalística y penetración mecánica en Python
 
-Nueve actividades docentes con **nueve artículos distintos**. Cada caso tiene su ficha, animación, figura y resultados de ejemplo en una carpeta propia.
+## Actividades asignadas
 
-**[Ver las nueve animaciones](GALERIA.md)** · [Guía del docente](docs/GUIA_DOCENTE.md) · [Funciones](docs/EXPLICACION_FUNCIONES.md) · [Trabajo analítico](docs/SOLUCIONES_ANALITICAS.md)
+**Busca tu nombre y abre «Tu ficha».** Allí encontrarás el artículo, las ecuaciones, el paso a paso, el programa, sus funciones y el trabajo que debes implementar con ayuda de Copilot.
 
-## Elige tu caso
+**[Empezar: instalar y trabajar en VS Code con Copilot](docs/INICIO_VSCODE_COPILOT.md)** · [Ver las animaciones](GALERIA.md)
 
-| Alumno | Artículo | Blanco del modelo | Animación |
+| Estudiante | Caso | Simulación | Paso a paso |
 |---|---|---|---|
-| [01](casos/01_celula_individual/README.md) | Campello y Zohdi (2014) | Célula idealizada DEM 2D | [GIF](casos/01_celula_individual/animacion.gif) |
-| [02](casos/02_celula_multiples/README.md) | Campello y Zohdi (2014) | Célula idealizada DEM 2D | [GIF](casos/02_celula_multiples/animacion.gif) |
-| [03](casos/03_bicapa_dem/README.md) | Campello (2015) | Bicapa lipídica idealizada DEM 3D | [GIF](casos/03_bicapa_dem/animacion.gif) |
-| [04](casos/04_piel_ogden/README.md) | Shen et al. (2025) | Piel hiperelástica, reducción FEM axisimétrica | [GIF](casos/04_piel_ogden/animacion.gif) |
-| [05](casos/05_vesicula_dpd/README.md) | Arai, Yasuoka y Zeng (2013) | Vesícula HTTT y agua explícita DPD | [GIF](casos/05_vesicula_dpd/animacion.gif) |
-| [06](casos/06_membrana_plana/README.md) | Daddi-Moussa-Ider et al. (2019) | Membrana artificial mínima: hoja elástica | [GIF](casos/06_membrana_plana/animacion.gif) |
-| [07](casos/07_membrana_dipolar/README.md) | Daddi-Moussa-Ider et al. (2019) | Membrana artificial mínima: cadena dipolar | [GIF](casos/07_membrana_dipolar/animacion.gif) |
-| [08](casos/08_bicapa_cooperativa/README.md) | Zhang et al. (2015) | Bicapa H2T5, agua y dos NP rígidas | [GIF](casos/08_bicapa_cooperativa/animacion.gif) |
-| [09](casos/09_bicapa_tetraedro/README.md) | Yong y Du (2023) | Bicapa DOPC H2E2(C5)2 y tetraedro rígido | [GIF](casos/09_bicapa_tetraedro/animacion.gif) |
+| Flor Angelita Mendoza García | 09 | Bicapa DOPC H2E2(C5)2 y tetraedro rígido | [Tu ficha](casos/09_flor_angelita_mendoza_garcia/README.md) |
+| Nayeli Mishel Albarrán Chávez | 08 | Bicapa H2T5, agua y dos NP rígidas | [Tu ficha](casos/08_nayeli_mishel_albarran_chavez/README.md) |
+| Gerwins Branco Díaz Delgado | 05 | Vesícula HTTT y agua explícita DPD | [Tu ficha](casos/05_gerwins_branco_diaz_delgado/README.md) |
+| Dafne Luana Vilcarromero Santillán | 04 | Piel hiperelástica, reducción FEM axisimétrica | [Tu ficha](casos/04_dafne_luana_vilcarromero_santillan/README.md) |
+| Heily Amelith Huamán Rojas | 03 | Bicapa lipídica idealizada DEM 3D | [Tu ficha](casos/03_heily_amelith_huaman_rojas/README.md) |
+| Daria Danae Flores Rodrigo | 02 | Célula idealizada DEM 2D | [Tu ficha](casos/02_daria_danae_flores_rodrigo/README.md) |
+| Víctor Ronaldo Zuta Rodríguez | 06 | Membrana artificial mínima: hoja elástica | [Tu ficha](casos/06_victor_ronaldo_zuta_rodriguez/README.md) |
+| Alisson Xiomara Torres Chappa | 01 | Célula idealizada DEM 2D | [Tu ficha](casos/01_alisson_xiomara_torres_chappa/README.md) |
 
-## Ejecutar en Visual Studio Code
+El [caso 07 — membrana dipolar](casos/07_reserva_docente_membrana_dipolar/README.md) queda como reserva docente, sin estudiante asignado. Hay **ocho asignaciones individuales y nueve artículos distintos disponibles**. Cada carpeta de `casos/` lleva el nombre de su estudiante.
+
+## Artículos y vistas previas
+
+| Caso | Artículo | Blanco del modelo | Animación |
+|---|---|---|---|
+| [01](casos/01_alisson_xiomara_torres_chappa/README.md) | Campello y Zohdi (2014) | Célula idealizada DEM 2D | [GIF](casos/01_alisson_xiomara_torres_chappa/animacion.gif) |
+| [02](casos/02_daria_danae_flores_rodrigo/README.md) | Campello y Zohdi (2014) | Célula idealizada DEM 2D | [GIF](casos/02_daria_danae_flores_rodrigo/animacion.gif) |
+| [03](casos/03_heily_amelith_huaman_rojas/README.md) | Campello (2015) | Bicapa lipídica idealizada DEM 3D | [GIF](casos/03_heily_amelith_huaman_rojas/animacion.gif) |
+| [04](casos/04_dafne_luana_vilcarromero_santillan/README.md) | Shen et al. (2025) | Piel hiperelástica, reducción FEM axisimétrica | [GIF](casos/04_dafne_luana_vilcarromero_santillan/animacion.gif) |
+| [05](casos/05_gerwins_branco_diaz_delgado/README.md) | Arai, Yasuoka y Zeng (2013) | Vesícula HTTT y agua explícita DPD | [GIF](casos/05_gerwins_branco_diaz_delgado/animacion.gif) |
+| [06](casos/06_victor_ronaldo_zuta_rodriguez/README.md) | Daddi-Moussa-Ider et al. (2019) | Membrana artificial mínima: hoja elástica | [GIF](casos/06_victor_ronaldo_zuta_rodriguez/animacion.gif) |
+| [07](casos/07_reserva_docente_membrana_dipolar/README.md) | Daddi-Moussa-Ider et al. (2019) | Membrana artificial mínima: cadena dipolar | [GIF](casos/07_reserva_docente_membrana_dipolar/animacion.gif) |
+| [08](casos/08_nayeli_mishel_albarran_chavez/README.md) | Zhang et al. (2015) | Bicapa H2T5, agua y dos NP rígidas | [GIF](casos/08_nayeli_mishel_albarran_chavez/animacion.gif) |
+| [09](casos/09_flor_angelita_mendoza_garcia/README.md) | Yong y Du (2023) | Bicapa DOPC H2E2(C5)2 y tetraedro rígido | [GIF](casos/09_flor_angelita_mendoza_garcia/animacion.gif) |
+
+## Ejecutar la referencia en Visual Studio Code
 
 Descarga **Code → Download ZIP**, extrae el archivo y abre la carpeta completa en VS Code. Desde **Terminal → New Terminal**, ejecuta en la raíz:
 
@@ -29,12 +44,12 @@ py -m venv .venv
 .\.venv\Scripts\python.exe ejecutar_caso.py 1 --animar
 ```
 
-Cambia `1` por tu número del 1 al 9 y selecciona `.venv` como intérprete. Si `py` no está disponible, utiliza `python -m venv .venv`. Ejecuta un caso cada vez. Tu ficha indica la salida en `resultados/`, el verificador, los controles y las tareas analíticas. La instalación de dependencias requiere Internet; el cálculo se ejecuta sin Copilot ni claves de IA.
+Cambia `1` por el número del caso que figura junto a tu nombre y selecciona `.venv` como intérprete. Si `py` no está disponible, utiliza `python -m venv .venv`. Ejecuta un caso cada vez. Tu ficha indica la salida en `resultados/`, el verificador, los controles y las tareas analíticas. La instalación de dependencias requiere Internet; el cálculo se ejecuta sin Copilot ni claves de IA.
 
 ## Cómo está organizado
 
 ```text
-casos/       Una carpeta por alumno: README, GIF, figura y ejemplo/
+casos/       Carpetas con nombre: ficha, GIF, figura y ejemplo/
 src/         Programas de simulación y motores físicos compartidos
 docs/        Guías, funciones, referencias analíticas y fuentes
 pruebas/     Verificadores matemáticos y evidencia de las ejecuciones

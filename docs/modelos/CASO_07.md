@@ -1,4 +1,4 @@
-# Alumno 07 — contacto con una membrana dipolar mínima
+# Caso 07 — contacto con una membrana dipolar mínima
 
 **Categoría: penetración mecánica activa, no biobalística.** El blanco es una cadena artificial de partículas dipolares que modela propiedades mecánicas de membranas; no una bicapa lipídica explícita. El docente autorizó incluir esta clase de modelo.
 

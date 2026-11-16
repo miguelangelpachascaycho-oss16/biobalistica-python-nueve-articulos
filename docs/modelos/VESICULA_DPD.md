@@ -17,8 +17,8 @@ py -m venv .venv
 .\.venv\Scripts\python.exe src/vesicula_dpd.py --animar
 ```
 
-4. Abre `resultados/vesicula/vesicula_dpd.gif` y `casos/05_vesicula_dpd/figura.png`. Los dos paneles de posiciones comparan impacto y control sin velocidad inicial. El agua está en el cálculo aunque no se dibuje.
-5. Abre `casos/05_vesicula_dpd/ejemplo/metricas.csv` para analizar desplazamiento RMS alineado sin traslación ni rotación rígida, asfericidad, energía cinética y posición de la nanopartícula. `VESICULA_ESTADOS.npz` conserva las posiciones calculadas. `casos/05_vesicula_dpd/ejemplo/parametros.json` registra los parámetros ejecutados.
+4. Abre `resultados/vesicula/vesicula_dpd.gif` y `casos/05_gerwins_branco_diaz_delgado/figura.png`. Los dos paneles de posiciones comparan impacto y control sin velocidad inicial. El agua está en el cálculo aunque no se dibuje.
+5. Abre `casos/05_gerwins_branco_diaz_delgado/ejemplo/metricas.csv` para analizar desplazamiento RMS alineado sin traslación ni rotación rígida, asfericidad, energía cinética y posición de la nanopartícula. `VESICULA_ESTADOS.npz` conserva las posiciones calculadas. `casos/05_gerwins_branco_diaz_delgado/ejemplo/parametros.json` registra los parámetros ejecutados.
 6. Presenta primero el control y explica sus cambios antes de atribuir cambios al impacto. Una vesícula que se desarma espontáneamente no permite interpretar un resultado como perforación causada por el proyectil.
 
 Las longitudes están en radios de corte `rc`, las masas en masa de bead y las energías en `kBT`. **No hay conversión validada a nanómetros, metros por segundo o segundos**. El programa predeterminado usa un hilo y aproximadamente diez mil beads; el tiempo depende del equipo. No ejecuta LAMMPS ni necesita GPU.

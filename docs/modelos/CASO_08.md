@@ -1,4 +1,4 @@
-# Alumno 08 — penetración cooperativa de dos nanopartículas
+# Caso 08 — penetración cooperativa de dos nanopartículas
 
 **Categoría: penetración mecánica guiada; no biobalística libre.** El modelo molecular representa una bicapa lipídica y partículas movidas mediante resortes. Se incluye con la ampliación de tema autorizada por el docente.
 

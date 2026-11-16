@@ -2,7 +2,7 @@
 
 Una solución analítica de un subproblema comprueba una parte del programa. No sustituye la simulación de todo el blanco.
 
-| Alumno | Límite o solución para estudiar | Ubicación |
+| Caso | Límite o solución para estudiar | Ubicación |
 |---|---|---|
 | 01 | Vuelo libre y enlace lineal; acción/reacción del contacto | [Guía DEM](modelos/CASOS_CELULARES.md) |
 | 02 | Los mismos límites mecánicos, separando variabilidad de parámetros | [Guía DEM](modelos/CASOS_CELULARES.md) |

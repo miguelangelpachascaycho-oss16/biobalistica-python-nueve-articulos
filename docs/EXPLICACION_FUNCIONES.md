@@ -2,7 +2,7 @@
 
 El lanzador `ejecutar_caso.py` no calcula fuerzas. Su `main()` lee `docs/ACTIVIDADES.json`, selecciona un programa y lo ejecuta con el mismo intérprete Python. Los argumentos adicionales llegan al programa científico. Así, `ejecutar_caso.py 9 --animar` ejecuta `src/caso_09_tetraedro.py --animar`.
 
-| Alumnos | Programa o motor | Explicación de funciones |
+| Casos | Programa o motor | Explicación de funciones |
 |---|---|---|
 | 01–02 | `src/caso_celular_01.py`, `src/caso_celular_02.py`, `src/celula_dem.py` | [DEM celular](modelos/CASOS_CELULARES.md) |
 | 03 | `src/piloto_membrana.py` | [Bicapa DEM 3D](modelos/PILOTO_MEMBRANA.md) |

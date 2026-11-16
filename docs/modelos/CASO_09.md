@@ -1,4 +1,4 @@
-# Alumno 09 — contacto de un nanotetraedro con una bicapa DOPC
+# Caso 09 — contacto de un nanotetraedro con una bicapa DOPC
 
 **Categoría: interacción y penetración mecánica de nanoplásticos; no una pistola génica.** El blanco es una bicapa molecular idealizada de membrana celular. Su inclusión responde a la ampliación de tema autorizada por el docente.
 

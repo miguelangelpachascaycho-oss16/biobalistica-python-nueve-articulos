@@ -7,7 +7,7 @@ import sys
 
 
 def main():
-    """Lee el índice docente y ejecuta el programa del alumno con su intérprete."""
+    """Lee el índice docente y ejecuta el programa del caso asignado con su intérprete."""
     raiz = Path(__file__).resolve().parent
     actividades = json.loads((raiz/'docs'/'ACTIVIDADES.json').read_text(encoding='utf-8'))
     parser = argparse.ArgumentParser(description=__doc__)
@@ -16,12 +16,12 @@ def main():
     args, resto = parser.parse_known_args()
     if args.listar:
         for a in actividades:
-            print(f"{a['alumno']:02d} | {a['autor']} ({a['year']}) | {a['doi']} | {a['categoria']}")
+            print(f"{a['caso']:02d} | {a.get('estudiante') or 'Reserva docente'} | {a['autor']} ({a['year']}) | {a['doi']} | {a['categoria']}")
         return 0
     if args.caso is None:
         parser.print_help()
         return 0
-    actividad = next(a for a in actividades if a['alumno'] == args.caso)
+    actividad = next(a for a in actividades if a['caso'] == args.caso)
     comando = [sys.executable, '-X', 'utf8', str(raiz/actividad['programa']), *actividad.get('argumentos', []), *resto]
     return subprocess.run(comando, cwd=raiz, check=False).returncode
 

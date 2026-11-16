@@ -20,3 +20,7 @@ Prompts útiles:
 > «Mi animación se ve bien. Propón una comprobación física o matemática que podría descubrir un error aunque la curva sea suave».
 
 Copilot puede proponer código incorrecto o cambiar una ecuación. La entrega es responsabilidad del alumno. El programa se ejecuta sin IA, Internet ni claves API; Copilot es apoyo de tutoría, no parte del cálculo físico.
+
+## Inicio del grupo
+
+[Lista nominal y fichas](../README.md#actividades-asignadas) · [Instalación, implementación y Copilot paso a paso](INICIO_VSCODE_COPILOT.md). El grupo tiene ocho actividades asignadas y el caso 07 como reserva. Los números de caso identifican los modelos.

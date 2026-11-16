@@ -4,7 +4,7 @@ Shen, Huang, Wen y Roth (2025), *Investigation of dynamic behavior of human skin
 
 Esta práctica implementa una **reducción FEM axisimétrica de la fase temprana**. La deformación procede de integrar las fuerzas internas del tejido y el contacto con la esfera. No reproduce las curvas publicadas ni el acoplamiento SPH-FEM de RADIOSS; tampoco representa perforación o ruptura. Es el cuarto artículo con una implementación docente en este repositorio, no la entrega completa de nueve casos.
 
-![Impacto temprano y desplazamiento calculado](../../casos/04_piel_ogden/animacion.gif)
+![Impacto temprano y desplazamiento calculado](../../casos/04_dafne_luana_vilcarromero_santillan/animacion.gif)
 
 ## Paso a paso en Visual Studio Code
 
